@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Zustand - Simple and Scalable State Management for React",
+    "description": "Learn Zustand, a small, fast and scalable state management solution for React. Complete documentation, tutorials, and examples.",
+    "keywords": "zustand, react state management, react hooks, state management, react tutorial, zustand tutorial"
+  },
+  "nav": {
+    "home": "Home",
+    "docs": "Documentation",
+    "tutorial": "Tutorial",
+    "examples": "Examples",
+    "api": "API Reference"
+  },
+  "home": {
+    "hero": {
+      "title": "Zustand",
+      "subtitle": "A small, fast and scalable bearbones state-management solution",
+      "description": "Zustand is a simple and performant state management library for React applications. It has a minimal API, is easy to learn, and doesn't require boilerplate code.",
+      "getStarted": "Get Started",
+      "viewDocs": "View Documentation"
+    },
+    "features": {
+      "title": "Why Choose Zustand?",
+      "simple": {
+        "title": "Simple & Minimal",
+        "description": "No providers, no context, just pure React hooks. Simple API that's easy to learn and use."
+      },
+      "fast": {
+        "title": "Fast & Performant",
+        "description": "Optimized for performance with automatic render optimization and minimal re-renders."
+      },
+      "scalable": {
+        "title": "Scalable",
+        "description": "Works great for small apps and scales effortlessly to large, complex applications."
+      },
+      "typescript": {
+        "title": "TypeScript First",
+        "description": "Built with TypeScript in mind, providing excellent type inference and developer experience."
+      },
+      "devtools": {
+        "title": "DevTools Support",
+        "description": "Integrate with Redux DevTools for easy debugging and state inspection."
+      },
+      "middleware": {
+        "title": "Flexible Middleware",
+        "description": "Extend functionality with middleware for persistence, devtools, and more."
+      }
+    },
+    "quickStart": {
+      "title": "Quick Start",
+      "step1": "Install Zustand",
+      "step2": "Create a store",
+      "step3": "Use the store in your components"
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "description": "Explore our comprehensive documentation and tutorials to master Zustand.",
+      "button": "Start Learning"
+    }
+  },
+  "docs": {
+    "gettingStarted": {
+      "title": "Getting Started",
+      "installation": "Installation",
+      "firstStore": "Your First Store",
+      "basicUsage": "Basic Usage"
+    },
+    "coreConcepts": {
+      "title": "Core Concepts",
+      "store": "Store",
+      "state": "State",
+      "actions": "Actions",
+      "selectors": "Selectors"
+    },
+    "advanced": {
+      "title": "Advanced Topics",
+      "middleware": "Middleware",
+      "persist": "Persisting State",
+      "devtools": "DevTools Integration",
+      "immer": "Using Immer"
+    }
+  },
+  "footer": {
+    "description": "Learn Zustand - A comprehensive guide to state management in React",
+    "documentation": "Documentation",
+    "resources": "Resources",
+    "community": "Community",
+    "github": "GitHub",
+    "npm": "NPM Package"
+  }
+}

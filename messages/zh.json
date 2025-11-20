@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Zustand - 简单且可扩展的 React 状态管理",
+    "description": "学习 Zustand，一个小巧、快速且可扩展的 React 状态管理解决方案。完整的文档、教程和示例。",
+    "keywords": "zustand, react 状态管理, react hooks, 状态管理, react 教程, zustand 教程"
+  },
+  "nav": {
+    "home": "首页",
+    "docs": "文档",
+    "tutorial": "教程",
+    "examples": "示例",
+    "api": "API 参考"
+  },
+  "home": {
+    "hero": {
+      "title": "Zustand",
+      "subtitle": "小巧、快速且可扩展的轻量级状态管理解决方案",
+      "description": "Zustand 是一个简单而高性能的 React 应用程序状态管理库。它具有最小的 API，易于学习，不需要样板代码。",
+      "getStarted": "开始使用",
+      "viewDocs": "查看文档"
+    },
+    "features": {
+      "title": "为什么选择 Zustand？",
+      "simple": {
+        "title": "简单且最小化",
+        "description": "无需 Provider，无需 Context，只需纯粹的 React Hooks。简单易用的 API。"
+      },
+      "fast": {
+        "title": "快速且高性能",
+        "description": "针对性能优化，自动渲染优化，最小化重新渲染。"
+      },
+      "scalable": {
+        "title": "可扩展",
+        "description": "适用于小型应用，也能轻松扩展到大型复杂应用。"
+      },
+      "typescript": {
+        "title": "TypeScript 优先",
+        "description": "考虑到 TypeScript 构建，提供出色的类型推断和开发体验。"
+      },
+      "devtools": {
+        "title": "开发工具支持",
+        "description": "集成 Redux DevTools，便于调试和状态检查。"
+      },
+      "middleware": {
+        "title": "灵活的中间件",
+        "description": "通过中间件扩展功能，支持持久化、开发工具等。"
+      }
+    },
+    "quickStart": {
+      "title": "快速开始",
+      "step1": "安装 Zustand",
+      "step2": "创建一个 store",
+      "step3": "在组件中使用 store"
+    },
+    "cta": {
+      "title": "准备好开始了吗？",
+      "description": "探索我们全面的文档和教程来掌握 Zustand。",
+      "button": "开始学习"
+    }
+  },
+  "docs": {
+    "gettingStarted": {
+      "title": "入门指南",
+      "installation": "安装",
+      "firstStore": "你的第一个 Store",
+      "basicUsage": "基本用法"
+    },
+    "coreConcepts": {
+      "title": "核心概念",
+      "store": "Store",
+      "state": "状态",
+      "actions": "操作",
+      "selectors": "选择器"
+    },
+    "advanced": {
+      "title": "高级主题",
+      "middleware": "中间件",
+      "persist": "持久化状态",
+      "devtools": "开发工具集成",
+      "immer": "使用 Immer"
+    }
+  },
+  "footer": {
+    "description": "学习 Zustand - React 状态管理的全面指南",
+    "documentation": "文档",
+    "resources": "资源",
+    "community": "社区",
+    "github": "GitHub",
+    "npm": "NPM 包"
+  }
+}
