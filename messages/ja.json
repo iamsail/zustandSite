@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Zustand - シンプルでスケーラブルな React 状態管理",
+    "description": "Zustand を学ぶ - 小型、高速、スケーラブルな React 状態管理ソリューション。完全なドキュメント、チュートリアル、例。",
+    "keywords": "zustand, react 状態管理, react hooks, 状態管理, react チュートリアル, zustand チュートリアル"
+  },
+  "nav": {
+    "home": "ホーム",
+    "docs": "ドキュメント",
+    "tutorial": "チュートリアル",
+    "examples": "例",
+    "api": "API リファレンス"
+  },
+  "home": {
+    "hero": {
+      "title": "Zustand",
+      "subtitle": "小型、高速、スケーラブルなベアボーン状態管理ソリューション",
+      "description": "Zustand は、React アプリケーション向けのシンプルで高性能な状態管理ライブラリです。最小限の API を持ち、学習が簡単で、ボイラープレートコードは必要ありません。",
+      "getStarted": "始める",
+      "viewDocs": "ドキュメントを見る"
+    },
+    "features": {
+      "title": "なぜ Zustand を選ぶのか？",
+      "simple": {
+        "title": "シンプル & ミニマル",
+        "description": "プロバイダーなし、コンテキストなし、純粋な React フック。学習しやすく使いやすいシンプルな API。"
+      },
+      "fast": {
+        "title": "高速 & パフォーマンス",
+        "description": "自動レンダリング最適化と最小限の再レンダリングによるパフォーマンス最適化。"
+      },
+      "scalable": {
+        "title": "スケーラブル",
+        "description": "小規模アプリに最適で、大規模で複雑なアプリケーションにも簡単にスケールします。"
+      },
+      "typescript": {
+        "title": "TypeScript ファースト",
+        "description": "TypeScript を念頭に構築され、優れた型推論と開発者エクスペリエンスを提供します。"
+      },
+      "devtools": {
+        "title": "DevTools サポート",
+        "description": "Redux DevTools と統合して、デバッグと状態検査を簡単に。"
+      },
+      "middleware": {
+        "title": "柔軟なミドルウェア",
+        "description": "永続化、開発ツールなどのミドルウェアで機能を拡張。"
+      }
+    },
+    "quickStart": {
+      "title": "クイックスタート",
+      "step1": "Zustand をインストール",
+      "step2": "ストアを作成",
+      "step3": "コンポーネントでストアを使用"
+    },
+    "cta": {
+      "title": "始める準備はできましたか？",
+      "description": "包括的なドキュメントとチュートリアルで Zustand をマスターしましょう。",
+      "button": "学習を始める"
+    }
+  },
+  "docs": {
+    "gettingStarted": {
+      "title": "はじめに",
+      "installation": "インストール",
+      "firstStore": "最初のストア",
+      "basicUsage": "基本的な使い方"
+    },
+    "coreConcepts": {
+      "title": "コアコンセプト",
+      "store": "ストア",
+      "state": "状態",
+      "actions": "アクション",
+      "selectors": "セレクター"
+    },
+    "advanced": {
+      "title": "高度なトピック",
+      "middleware": "ミドルウェア",
+      "persist": "状態の永続化",
+      "devtools": "DevTools 統合",
+      "immer": "Immer の使用"
+    }
+  },
+  "footer": {
+    "description": "Zustand を学ぶ - React の状態管理の包括的なガイド",
+    "documentation": "ドキュメント",
+    "resources": "リソース",
+    "community": "コミュニティ",
+    "github": "GitHub",
+    "npm": "NPM パッケージ"
+  }
+}
