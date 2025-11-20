@@ -4,9 +4,9 @@
   "description": "Zustand framework documentation and tutorial website with multi-language support and SEO optimization",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3010",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3010",
     "lint": "next lint"
   },
   "keywords": [],
