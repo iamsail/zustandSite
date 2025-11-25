@@ -1,10 +1,9 @@
 # Tasks Index
 
 ## In Progress
-- None
+- [TASK002] Production Deployment to Vercel - Configuring and deploying to Vercel
 
 ## Pending
-- [TASK002] Production Deployment - Configure domain and deploy to Vercel
 - [TASK003] Google Analytics Setup - Configure GTM and GA4 tracking
 
 ## Completed
