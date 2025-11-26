@@ -1,16 +1,18 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zustand-site.vercel.app';
+
 export const defaultSEO = {
   titleTemplate: '%s | Zustand Tutorial',
   defaultTitle: 'Zustand - Simple and Scalable State Management for React',
   description: 'Learn Zustand, a small, fast and scalable state management solution for React. Complete documentation, tutorials, and examples.',
-  canonical: 'https://your-domain.com',
+  canonical: siteUrl,
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
+    url: siteUrl,
     site_name: 'Zustand Tutorial',
     images: [
       {
-        url: 'https://your-domain.com/og-image.jpg',
+        url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: 'Zustand State Management',

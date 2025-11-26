@@ -1,7 +1,7 @@
 # Progress - Zustand Documentation Site
 
-**Last Updated:** 2025-11-20  
-**Project Status:** Initial Development Complete, Preparing for Deployment
+**Last Updated:** 2025-11-25  
+**Project Status:** Deploying to Vercel Production
 
 ## What Works
 
@@ -34,25 +34,6 @@
 - ✅ Language switcher in header functional
 - ✅ Locale context maintained across navigation
 
-**Translation Files**
-- ✅ `messages/en.json` - Complete English translations
-- ✅ `messages/zh.json` - Complete Chinese translations
-- ✅ `messages/ja.json` - Complete Japanese translations
-- ✅ All pages have translations in all locales
-- ✅ Organized by namespace (meta, home, docs, etc.)
-
-### ✅ Styling System
-
-**Tailwind CSS**
-- ✅ Tailwind CSS v4 installed
-- ✅ PostCSS configured for Tailwind processing
-- ✅ Global styles in `app/globals.css`
-- ✅ Custom color scheme (primary red shades)
-- ✅ Custom utility classes (container-custom, btn-primary, btn-secondary)
-- ✅ Responsive design works on all screen sizes
-- ✅ Hover effects and transitions implemented
-- ✅ Mobile-first approach throughout
-
 ### ✅ SEO Configuration
 
 **Metadata & Tags**
@@ -60,415 +41,142 @@
 - ✅ Page-specific titles, descriptions, keywords
 - ✅ Open Graph tags for social sharing
 - ✅ Twitter Card tags configured
-- ✅ Canonical URL support ready
+- ✅ Canonical URL support with environment variables
 - ✅ Language alternate tags for i18n
-- ✅ Metadata base URL in root layout
+- ✅ Metadata base URL uses environment variable
 
 **Search Engine Files**
 - ✅ XML sitemap generated at `/sitemap.xml`
-- ✅ Sitemap includes all pages in all locales
-- ✅ Sitemap has proper lastModified dates
-- ✅ Sitemap includes language alternates
-- ✅ robots.txt generated dynamically
-- ✅ robots.txt allows all crawlers
-- ✅ Sitemap URL in robots.txt
+- ✅ Sitemap uses environment variable for base URL
+- ✅ robots.txt uses environment variable for sitemap URL
+- ✅ All files use `NEXT_PUBLIC_SITE_URL` environment variable
 
-**HTML Structure**
-- ✅ Semantic HTML elements used throughout
-- ✅ Proper heading hierarchy (h1, h2, h3)
-- ✅ Alt text ready for images (when added)
-- ✅ ARIA labels where appropriate
-- ✅ Mobile-friendly responsive design
+### ✅ Deployment Configuration
 
-### ✅ Analytics Integration
-
-**Google Tag Manager**
-- ✅ react-gtm-module installed
-- ✅ GTM initialization in locale layout
-- ✅ Environment variable support (NEXT_PUBLIC_GTM_ID)
-- ✅ GTM script injection working
-- ✅ Ready for GA4 configuration in GTM dashboard
+**Vercel Setup**
+- ✅ vercel.json created with proper configuration
+- ✅ Framework: Next.js (auto-detected)
+- ✅ Region: Tokyo (hnd1) for Asia optimization
+- ✅ Security headers configured:
+  - X-Content-Type-Options: nosniff
+  - X-Frame-Options: DENY
+  - X-XSS-Protection: 1; mode=block
+- ✅ Caching headers for sitemap.xml and robots.txt
+- ✅ Environment variable based domain configuration
+- ✅ Default domain: zustand-site.vercel.app
 
 ### ✅ Page Components
 
-**Homepage (`/[locale]`)**
-- ✅ Hero section with value proposition
-- ✅ Features section with 6 key features
-- ✅ Quick start section with code examples
-- ✅ CTA section encouraging docs exploration
-- ✅ Fully responsive design
-- ✅ All text localized in 3 languages
-- ✅ Links work correctly with locale prefix
+- ✅ Homepage with hero, features, quick start, CTA
+- ✅ Documentation page with getting started, core concepts, advanced
+- ✅ Tutorial page with step-by-step learning path
+- ✅ Examples page with 4 complete examples
+- ✅ API reference page with full documentation
+- ✅ Header and Footer components
 
-**Documentation (`/[locale]/docs`)**
-- ✅ Getting Started section
-- ✅ Core Concepts section
-- ✅ Advanced Topics section
-- ✅ Navigation menu structure
-- ✅ Code examples with syntax highlighting
-- ✅ All content localized
-- ✅ Responsive layout
+### ✅ Memory Bank Documentation
 
-**Tutorial (`/[locale]/tutorial`)**
-- ✅ Step-by-step learning path
-- ✅ Installation instructions
-- ✅ Basic store creation
-- ✅ Building Todo app example
-- ✅ Async actions example
-- ✅ Computed values example
-- ✅ Best practices section
-- ✅ All steps with code examples
-- ✅ Fully localized
-
-**Examples (`/[locale]/examples`)**
-- ✅ Counter example
-- ✅ Shopping cart example
-- ✅ Form management example
-- ✅ Async data fetching example
-- ✅ All examples with full code
-- ✅ Explanations for each example
-- ✅ Copy-paste ready code
-- ✅ Localized descriptions
-
-**API Reference (`/[locale]/api`)**
-- ✅ `create()` function documentation
-- ✅ `set()` method documentation
-- ✅ `get()` method documentation
-- ✅ `subscribe()` method documentation
-- ✅ Middleware section (persist, devtools, immer)
-- ✅ Selectors documentation
-- ✅ Parameter details and return types
-- ✅ Usage examples for all APIs
-- ✅ Fully localized
-
-### ✅ Layout Components
-
-**Header Component**
-- ✅ Navigation links to all sections
-- ✅ Language switcher dropdown
-- ✅ Locale-aware navigation
-- ✅ Responsive mobile menu structure
-- ✅ Consistent across all pages
-- ✅ Clean, professional design
-
-**Footer Component**
-- ✅ Resource links
-- ✅ Documentation links
-- ✅ Copyright information
-- ✅ Consistent across all pages
-- ✅ Fully localized
-- ✅ Responsive design
-
-### ✅ Project Documentation
-
-**README.md**
-- ✅ Comprehensive project overview
-- ✅ Feature list
-- ✅ Installation instructions
-- ✅ Development commands
-- ✅ Project structure documentation
-- ✅ Multi-language support explanation
-- ✅ SEO configuration details
-- ✅ Deployment section
-- ✅ Customization guide
-
-**FEATURES.md**
-- ✅ Detailed feature overview
-- ✅ SEO strategy documentation
-- ✅ Monetization strategy
-- ✅ Growth opportunities
-- ✅ Success metrics
-- ✅ Compliance requirements
-- ✅ Next steps outlined
-
-**DEPLOYMENT.md**
-- ✅ Step-by-step deployment guide
-- ✅ Google Tag Manager setup
-- ✅ Google Analytics setup
-- ✅ Environment variable configuration
-- ✅ Vercel deployment instructions
-- ✅ Alternative deployment options
-- ✅ SEO optimization steps
-- ✅ Troubleshooting guide
-
-**Memory Bank Documentation**
-- ✅ memory-bank.instructions.md created
-- ✅ Memory Bank system defined
-- ✅ Task management structure defined
-- ✅ Documentation standards established
-
-### ✅ Configuration Files
-
-**Next.js**
-- ✅ `next.config.js` - Basic configuration
-- ✅ `next-env.d.ts` - TypeScript definitions
-- ✅ React strict mode enabled
-
-**TypeScript**
-- ✅ `tsconfig.json` - Strict mode, modern target
-- ✅ Path aliases configured (@/*)
-- ✅ Type checking working in IDE
-
-**Tailwind CSS**
-- ✅ `tailwind.config.ts` - Custom theme configured
-- ✅ `postcss.config.js` - PostCSS plugins
-- ✅ Content paths configured
-- ✅ Custom colors and utilities
-
-**Internationalization**
-- ✅ `i18n.ts` - next-intl configuration
-- ✅ `middleware.ts` - Locale routing middleware
-- ✅ Locale detection working
-
-**Package Management**
-- ✅ `package.json` - All dependencies listed
-- ✅ Scripts configured (dev, build, start, lint)
-- ✅ Custom port 3010 configured
-
-### ✅ Git & Version Control
-
-- ✅ Repository initialized
-- ✅ Branch: copilot/create-zustand-documentation-site
-- ✅ .gitignore configured properly
-- ✅ Ready for commits
+- ✅ memory-bank.instructions.md - AI development guide
+- ✅ projectbrief.md - Project overview and goals
+- ✅ productContext.md - Product vision and UX
+- ✅ systemPatterns.md - Architecture and patterns
+- ✅ techContext.md - Technology stack
+- ✅ activeContext.md - Current work focus
+- ✅ progress.md - This file
+- ✅ tasks/_index.md - Task tracking
+- ✅ TASK001 completed - Memory Bank setup
+- ✅ TASK002 in progress - Vercel deployment
 
 ## What's Left to Build
 
-### ⏳ Deployment (High Priority)
+### ⏳ Deployment (Current Focus)
 
-**Domain Configuration**
-- ⏳ Purchase or select domain name
-- ⏳ Update NEXT_PUBLIC_SITE_URL in .env.local
-- ⏳ Update lib/seo-config.ts with real domain
-- ⏳ Update app/sitemap.ts with real domain
-- ⏳ Update app/robots.ts with real domain
-- ⏳ Update public/robots.txt with real domain
-
-**Vercel Setup**
-- ⏳ Push code to GitHub (if not already)
-- ⏳ Import project in Vercel
+**Vercel Deployment**
+- ✅ vercel.json configuration created
+- ✅ Domain config updated to use env vars
+- ⏳ Commit and push to GitHub
+- ⏳ Import project in Vercel dashboard
 - ⏳ Configure environment variables in Vercel
-- ⏳ Deploy to production
-- ⏳ Configure custom domain in Vercel
-- ⏳ Verify HTTPS and DNS
+- ⏳ Verify deployment succeeded
+- ⏳ Test all pages and languages
 
-**Google Services**
-- ⏳ Create Google Tag Manager account
-- ⏳ Set up GTM container
-- ⏳ Configure Google Analytics 4 in GTM
-- ⏳ Add GTM_ID to Vercel environment variables
-- ⏳ Test tracking in production
-- ⏳ Submit sitemap to Google Search Console
-- ⏳ Submit sitemap to Bing Webmaster Tools
+**Post-Deployment**
+- ⏳ Set up custom domain (optional)
+- ⏳ Configure Google Analytics 4
+- ⏳ Submit sitemap to Search Console
+- ⏳ Monitor performance metrics
 
-### 📝 Content Enhancements (Medium Priority)
+### 📝 Content Enhancements (After Deployment)
 
-**Documentation Expansion**
-- 📝 Add more detailed explanations
-- 📝 Add troubleshooting section
+- 📝 Add more code examples
+- 📝 Expand documentation details
 - 📝 Add FAQ section
-- 📝 Add migration guides from other state management
-- 📝 Add performance optimization tips
-
-**Tutorial Improvements**
-- 📝 Add more intermediate examples
-- 📝 Add advanced patterns
-- 📝 Add video tutorial embeds
-- 📝 Add interactive exercises
-
-**Examples Additions**
-- 📝 Add authentication example
-- 📝 Add real-time data example
-- 📝 Add React Query integration example
-- 📝 Add Next.js specific examples
-- 📝 Add testing examples
-
-**Blog Section**
-- 📝 Create blog structure
-- 📝 Add first blog posts (tips, patterns)
-- 📝 Set up RSS feed
-- 📝 Add blog to navigation
+- 📝 Create blog section
+- 📝 Add comparison guides
 
 ### 🔧 Features (Low Priority)
 
-**Search Functionality**
-- 🔧 Choose search solution (Algolia or local)
-- 🔧 Implement search UI
-- 🔧 Index all content
-- 🔧 Add search to header
-- 🔧 Implement locale-aware search
-
-**Dark Mode**
-- 🔧 Add dark mode toggle
-- 🔧 Implement dark mode styles
-- 🔧 Save preference to localStorage
-- 🔧 Respect system preference
-
-**Interactive Features**
-- 🔧 Code playground (CodeSandbox embed)
-- 🔧 Copy code button
-- 🔧 Live examples
+- 🔧 Search functionality
+- 🔧 Dark mode support
+- 🔧 Code playground
 - 🔧 Interactive demos
-
-**Visual Enhancements**
-- 🔧 Add logo/branding
-- 🔧 Add feature illustrations
-- 🔧 Add diagrams for concepts
-- 🔧 Optimize images with Next.js Image
-
-**Community Features**
-- 🔧 Comments section (optional)
-- 🔧 Feedback widget
-- 🔧 Newsletter signup
-- 🔧 Social sharing buttons
-
-### 📊 Analytics & Optimization (Ongoing)
-
-**Performance**
-- 📊 Monitor Lighthouse scores
-- 📊 Optimize Core Web Vitals
-- 📊 Implement performance budgets
-- 📊 Add performance monitoring
-
-**SEO**
-- 📊 Monitor search rankings
-- 📊 Optimize based on Search Console data
-- 📊 Build backlinks
-- 📊 Track keyword performance
-
-**Content**
-- 📊 Analyze user behavior
-- 📊 Identify popular pages
-- 📊 Optimize underperforming content
-- 📊 Add content based on search queries
-
-### 💰 Monetization (Future)
-
-**AdSense Preparation**
-- 💰 Grow traffic to 5,000+ monthly visitors
-- 💰 Maintain quality content for 6+ months
-- 💰 Apply for Google AdSense
-- 💰 Implement ad units through GTM
-- 💰 Optimize ad placements
-- 💰 A/B test ad formats
 
 ## Current Status Summary
 
 ### Completed ✅
-- **Infrastructure:** 100% - All technical foundation complete
-- **i18n:** 100% - Full multi-language support working
-- **SEO:** 95% - Complete except domain configuration
-- **Pages:** 100% - All core pages built with content
-- **Components:** 100% - Header and Footer complete
-- **Styling:** 100% - Tailwind configured and working
-- **Analytics:** 90% - GTM integrated, needs GA4 setup
-- **Documentation:** 100% - All docs written
+- **Infrastructure:** 100%
+- **i18n:** 100%
+- **SEO:** 100% (with env var configuration)
+- **Pages:** 100%
+- **Components:** 100%
+- **Styling:** 100%
+- **Memory Bank:** 100%
+- **Vercel Config:** 100%
 
 ### In Progress 🚧
-- **Memory Bank:** 60% - Creating core files now
+- **Deployment:** 80% - Config done, pushing to GitHub
 
-### Not Started ⏳
-- **Deployment:** 0% - Needs domain and Vercel setup
-- **Content Expansion:** 0% - Initial content is sufficient
-- **Advanced Features:** 0% - Not needed for v1
-- **Monetization:** 0% - Too early, needs traffic first
+### Pending ⏳
+- **Analytics Setup:** 0%
+- **Content Expansion:** 0%
+- **Advanced Features:** 0%
 
-## Known Issues
+## Environment Variables
 
-### Critical 🔴
-- None
+For Vercel dashboard configuration:
 
-### High Priority 🟡
-1. **Domain not configured** - Blocks production deployment
-2. **GTM ID not set** - Blocks analytics in production
-3. **Not deployed** - Can't start building traffic
+```
+NEXT_PUBLIC_SITE_URL=https://zustand-site.vercel.app
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX  (optional, add when ready)
+```
 
-### Medium Priority 🟢
-- None currently
+## Files Modified for Deployment
 
-### Low Priority 🔵
-1. **No images** - Using emoji icons, could add branding
-2. **No search** - Not needed until content grows significantly
-3. **No dark mode** - Nice-to-have, not critical
+1. `vercel.json` - NEW: Deployment configuration
+2. `lib/seo-config.ts` - Updated: Uses env var for domain
+3. `app/sitemap.ts` - Updated: Uses env var for base URL
+4. `app/robots.ts` - Updated: Uses env var for sitemap URL
+5. `app/layout.tsx` - Updated: Uses env var for metadataBase
+6. `.env.example` - Updated: Default Vercel domain
 
-## Performance Metrics
+## Next Milestone: Live on Vercel
 
-### Current (Development)
-- ✅ Page load: Fast (local)
-- ✅ Build time: ~30 seconds
-- ✅ Bundle size: Optimized by Next.js
-- ✅ No console errors
-- ✅ TypeScript compiles without errors
-
-### Target (Production)
-- 🎯 Lighthouse score: 90+
-- 🎯 First Contentful Paint: <1.5s
-- 🎯 Time to Interactive: <3.5s
-- 🎯 Cumulative Layout Shift: <0.1
-- 🎯 Largest Contentful Paint: <2.5s
-
-**Status:** Cannot measure until deployed
-
-## Dependencies Status
-
-### Production Dependencies
-- ✅ All installed correctly
-- ✅ No security vulnerabilities (npm audit)
-- ✅ Compatible versions
-- ✅ Working as expected
-
-### Development Dependencies
-- ✅ ESLint configured and working
-- ✅ Tailwind processing correctly
-- ✅ PostCSS plugins active
-- ✅ TypeScript compiler working
-
-## Next Milestone: Production Deployment
-
-**Target:** Within 1 week
-
-**Blockers:**
-1. Need domain name
-2. Need Google Tag Manager account
-3. Need to commit current code
-4. Need to deploy to Vercel
+**Target:** Today
 
 **Success Criteria:**
-- ✅ Site live on custom domain
-- ✅ All pages loading correctly
-- ✅ All languages working
-- ✅ SEO tags verified
-- ✅ Analytics tracking
-- ✅ HTTPS enabled
-- ✅ Sitemap submitted to search engines
-
-## Long-term Goals
-
-### 3 Months
-- 1,000+ monthly visitors
-- Top 20 rankings for target keywords
-- 50+ indexed pages
-- Positive user feedback
-
-### 6 Months
-- 5,000+ monthly visitors
-- Top 10 rankings for target keywords
-- 100+ indexed pages
-- Ready to apply for AdSense
-
-### 12 Months
-- 20,000+ monthly visitors
-- Top 5 rankings for target keywords
-- AdSense approved and generating revenue
-- Recognized in Zustand community
+- ✅ Code pushed to GitHub
+- ⏳ Vercel auto-detects and deploys
+- ⏳ All pages accessible at zustand-site.vercel.app
+- ⏳ All three languages working
+- ⏳ SEO tags verified
+- ⏳ HTTPS enabled
 
 ## Conclusion
 
-The project is in excellent shape. All core functionality is complete and working. The codebase is clean, well-organized, and ready for deployment. The next major milestone is production deployment with a custom domain, which will enable SEO growth and progress toward monetization goals.
+The project is fully configured for Vercel deployment. All domain references now use the `NEXT_PUBLIC_SITE_URL` environment variable, making it easy to switch between Vercel's auto-generated domain and a custom domain. Security headers and caching are properly configured. Ready to push to GitHub for automatic deployment.
 
-**Overall Project Status: 85% Complete (for v1)**
+**Overall Project Status: 90% Complete (for v1)**
 - Core Development: ✅ 100%
-- Deployment Setup: ⏳ 0%
-- Content: ✅ 100% (v1 sufficient)
-- Analytics: 🚧 50%
-- Monetization Prep: ⏳ 0% (too early)
+- Deployment Config: ✅ 100%
+- Deployment Live: 🚧 80%
+- Analytics: ⏳ 0%
