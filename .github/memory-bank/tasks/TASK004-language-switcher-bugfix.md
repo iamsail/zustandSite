@@ -6,10 +6,13 @@
 
 ## Original Request
 
-用户报告：多语言切换有bug，在 `/zh` 页面点击中文后跳转到 `/zh/zh`，出现 404 错误。
+用户报告：
+1. 多语言切换有bug，在 `/zh` 页面点击中文后跳转到 `/zh/zh`，出现 404 错误
+2. 语言选择器显示的语言与URL不匹配（URL是 `/zh` 但选择器显示 English）
 
 ## Problem Analysis
 
+### Bug 1: 404 on Language Switch
 **Symptoms:**
 - User on `/zh` (Chinese homepage)
 - Clicks language switcher, selects Chinese
@@ -17,30 +20,28 @@
 - Results in 404 error
 
 **Root Cause:**
-The `changeLanguage` function in `components/Header.tsx` used simple string replacement:
-```tsx
-const currentPath = pathname.replace(`/${locale}`, '');
-```
+The `changeLanguage` function used simple string replacement that didn't reliably match.
 
-This approach had issues:
-1. String `replace()` doesn't guarantee matching only at path start
-2. Could fail to match if locale variable was out of sync
-3. No boundary checking for the locale pattern
+### Bug 2: Wrong Language Displayed in Selector
+**Symptoms:**
+- URL shows `/zh` (Chinese)
+- But language dropdown shows "English" as selected
+
+**Root Cause:**
+`NextIntlClientProvider` was missing the `locale` prop, so `useLocale()` couldn't determine the current locale in client components.
 
 ## Solution
 
-Changed to regex-based replacement with proper boundary matching:
+### Fix 1: Regex-based URL replacement
 ```tsx
 const localePattern = new RegExp(`^/(${['en', 'zh', 'ja'].join('|')})(?=/|$)`);
 const currentPath = pathname.replace(localePattern, '');
-window.location.href = `/${newLocale}${currentPath || ''}`;
 ```
 
-**Regex Pattern Explanation:**
-- `^/` - Must start with forward slash
-- `(en|zh|ja)` - Match any supported locale
-- `(?=/|$)` - Lookahead: must be followed by `/` or end of string
-- This ensures we only replace the locale prefix, not other path segments
+### Fix 2: Pass locale to NextIntlClientProvider
+```tsx
+<NextIntlClientProvider locale={locale} messages={messages}>
+```
 
 ## Implementation Plan
 
@@ -59,8 +60,9 @@ window.location.href = `/${newLocale}${currentPath || ''}`;
 |----|-------------|--------|---------|-------|
 | 4.1 | Analyze bug from screenshots | Complete | 2025-11-27 | Path duplication identified |
 | 4.2 | Fix changeLanguage function | Complete | 2025-11-27 | Used regex pattern |
-| 4.3 | Update Memory Bank | Complete | 2025-11-27 | All files updated |
-| 4.4 | Commit changes | Complete | 2025-11-27 | Pushed to GitHub |
+| 4.3 | Fix locale prop in Provider | Complete | 2025-11-27 | Added locale to NextIntlClientProvider |
+| 4.4 | Update Memory Bank | Complete | 2025-11-27 | All files updated |
+| 4.5 | Commit changes | Complete | 2025-11-27 | Pushed to GitHub |
 
 ## Progress Log
 
@@ -75,6 +77,7 @@ window.location.href = `/${newLocale}${currentPath || ''}`;
 ## Files Modified
 
 1. `components/Header.tsx` - Fixed changeLanguage function
+2. `app/[locale]/layout.tsx` - Added locale prop to NextIntlClientProvider
 
 ## Notes
 
