@@ -26,8 +26,10 @@ export default function Header() {
   ];
 
   const changeLanguage = (newLocale: string) => {
-    const currentPath = pathname.replace(`/${locale}`, '');
-    window.location.href = `/${newLocale}${currentPath}`;
+    // Use regex to ensure we only replace the locale prefix at the start of the path
+    const localePattern = new RegExp(`^/(${['en', 'zh', 'ja'].join('|')})(?=/|$)`);
+    const currentPath = pathname.replace(localePattern, '');
+    window.location.href = `/${newLocale}${currentPath || ''}`;
   };
 
   return (

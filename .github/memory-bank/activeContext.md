@@ -1,28 +1,31 @@
 # Active Context - Zustand Documentation Site
 
-**Last Updated:** 2025-11-25  
-**Current Phase:** Deploying to Vercel  
+**Last Updated:** 2025-11-27  
+**Current Phase:** Production on Vercel  
 **Branch:** feature/vercel
 
 ## Current Work Focus
 
-### Immediate Priority: Vercel Deployment (TASK002)
+### Recent Bug Fix: Language Switcher (2025-11-27)
 
-**Status:** In Progress
+**Status:** Completed
 
-We are deploying the Zustand documentation site to Vercel. This involves:
-1. Creating Vercel configuration file
-2. Updating domain configuration to use environment variables
-3. Preparing code for production deployment
-4. Pushing changes to GitHub for Vercel auto-deploy
+Fixed a critical bug in the language switcher where switching languages would result in a 404 error. The issue was that the URL path was being incorrectly constructed (e.g., `/zh/zh` instead of `/zh`).
 
-**What's Been Done:**
-- Created `vercel.json` with deployment configuration
-- Updated all domain references to use environment variables
-- Set default domain to `zustand-site.vercel.app`
-- Added security headers and caching rules
+**Root Cause:**
+- The original `pathname.replace()` used simple string matching
+- This didn't reliably match the locale prefix at the start of the path
+
+**Solution:**
+- Used regex pattern `^/(en|zh|ja)(?=/|$)` to precisely match locale prefix
+- Ensures only the beginning locale is replaced, not other occurrences
 
 ## Recent Changes
+
+### 2025-11-27: Language Switcher Bug Fix
+- Fixed `changeLanguage()` function in `components/Header.tsx`
+- Changed from simple string replace to regex-based replacement
+- Pattern ensures locale is only matched at path start with proper boundary
 
 ### 2025-11-25: Vercel Deployment Preparation
 - Created `vercel.json` configuration file with:
