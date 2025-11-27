@@ -31,7 +31,7 @@
 - ✅ Locale prefix always in URL (/en, /zh, /ja)
 - ✅ Translation files created for all locales
 - ✅ `getTranslations` hook works in server components
-- ✅ Language switcher in header functional (bug fixed 2025-11-27)
+- ✅ Language switcher in header functional (2 bugs fixed 2025-11-27)
 - ✅ Locale context maintained across navigation
 
 ### ✅ SEO Configuration
