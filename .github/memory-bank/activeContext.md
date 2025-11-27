@@ -6,26 +6,24 @@
 
 ## Current Work Focus
 
-### Recent Bug Fix: Language Switcher (2025-11-27)
+### Recent Bug Fixes: Language Switcher (2025-11-27)
 
 **Status:** Completed
 
-Fixed a critical bug in the language switcher where switching languages would result in a 404 error. The issue was that the URL path was being incorrectly constructed (e.g., `/zh/zh` instead of `/zh`).
+**Bug 1: 404 on language switch**
+Fixed a critical bug where switching languages resulted in a 404 error due to URL path being incorrectly constructed (e.g., `/zh/zh` instead of `/zh`).
+- Solution: Used regex pattern `^/(en|zh|ja)(?=/|$)` in `changeLanguage()`
 
-**Root Cause:**
-- The original `pathname.replace()` used simple string matching
-- This didn't reliably match the locale prefix at the start of the path
-
-**Solution:**
-- Used regex pattern `^/(en|zh|ja)(?=/|$)` to precisely match locale prefix
-- Ensures only the beginning locale is replaced, not other occurrences
+**Bug 2: Language selector showing wrong language**
+Fixed issue where the language dropdown showed "English" even when on `/zh` page.
+- Root Cause: `NextIntlClientProvider` was missing the `locale` prop
+- Solution: Added `locale={locale}` to `NextIntlClientProvider` in `app/[locale]/layout.tsx`
 
 ## Recent Changes
 
-### 2025-11-27: Language Switcher Bug Fix
-- Fixed `changeLanguage()` function in `components/Header.tsx`
-- Changed from simple string replace to regex-based replacement
-- Pattern ensures locale is only matched at path start with proper boundary
+### 2025-11-27: Language Switcher Bug Fixes
+- Fixed `changeLanguage()` function in `components/Header.tsx` (regex-based replacement)
+- Fixed `NextIntlClientProvider` missing `locale` prop in `app/[locale]/layout.tsx`
 
 ### 2025-11-25: Vercel Deployment Preparation
 - Created `vercel.json` configuration file with:

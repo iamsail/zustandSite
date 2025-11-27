@@ -44,7 +44,7 @@ export default async function LocaleLayout({
           />
         </noscript>
         
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <main className="min-h-screen">
             {children}
