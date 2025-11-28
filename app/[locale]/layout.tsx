@@ -18,6 +18,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="DMakwX8ttjV_Zyt1ISn-x8TfbFEMBC2k_v5MToalcPQ" />
+        
         {/* Google Analytics 4 */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
