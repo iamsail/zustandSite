@@ -60,25 +60,38 @@
   },
   "docs": {
     "backToDocs": "返回文档",
+    "title": "文档",
     "gettingStarted": {
       "title": "入门指南",
       "installation": "安装",
+      "installDesc": "使用 npm 或 yarn 安装 Zustand：",
       "firstStore": "你的第一个 Store",
-      "basicUsage": "基本用法"
+      "firstStoreDesc": "创建 store 非常简单。这是一个简单的计数器示例：",
+      "basicUsage": "基本用法",
+      "basicUsageDesc": "在 React 组件中使用 store："
     },
     "coreConcepts": {
       "title": "核心概念",
-      "store": "Store",
-      "state": "状态",
-      "actions": "操作",
-      "selectors": "选择器"
+      "store": "Store（存储）",
+      "storeDesc": "Store 用于保存应用程序状态。使用 create 函数创建，返回一个 React hook。",
+      "state": "State（状态）",
+      "stateDesc": "状态是 store 中保存的数据。可以是任何 JavaScript 值——对象、数组、原始类型等。",
+      "actions": "Actions（操作）",
+      "actionsDesc": "Actions 是修改状态的函数。它们使用 set 函数来更新 store。",
+      "selectors": "Selectors（选择器）",
+      "selectorsDesc": "选择器允许你订阅状态的特定部分，从而优化重新渲染。"
     },
     "advanced": {
       "title": "高级主题",
       "middleware": "中间件",
+      "middlewareDesc": "通过中间件扩展 Zustand，支持日志记录、持久化等功能。",
       "persist": "持久化状态",
+      "persistDesc": "自动将状态保存到 localStorage 或 sessionStorage。",
       "devtools": "开发工具集成",
-      "immer": "使用 Immer"
+      "devtoolsDesc": "使用 Redux DevTools 集成调试你的状态。",
+      "immer": "使用 Immer",
+      "immerDesc": "使用 Immer 更轻松地进行不可变状态更新。",
+      "learnMore": "了解更多 →"
     }
   },
   "footer": {
@@ -88,5 +101,193 @@
     "community": "社区",
     "github": "GitHub",
     "npm": "NPM 包"
+  },
+  "tutorial": {
+    "title": "Zustand 教程",
+    "overview": {
+      "title": "教程概述",
+      "description": "欢迎来到 Zustand 完整教程！本指南将带你从入门到精通，教你关于 Zustand 状态管理的一切知识。"
+    },
+    "lesson1": {
+      "title": "第一课：Zustand 介绍",
+      "intro": "Zustand 是一个轻量级的 React 状态管理库，提供：",
+      "features": {
+        "simple": "简单直观的 API",
+        "noBoilerplate": "无需样板代码",
+        "typescript": "出色的 TypeScript 支持",
+        "performance": "卓越的性能和自动优化",
+        "size": "极小的包体积（小于 1KB）"
+      },
+      "whyTitle": "为什么选择 Zustand？",
+      "whyDesc": "与 Redux 或 MobX 等其他状态管理解决方案相比，Zustand 提供了更简单的 API，更少的样板代码，同时保持强大的功能和出色的性能。"
+    },
+    "lesson2": {
+      "title": "第二课：创建你的第一个 Store",
+      "description": "让我们创建一个简单的待办事项应用："
+    },
+    "lesson3": {
+      "title": "第三课：在组件中使用 Store"
+    },
+    "lesson4": {
+      "title": "第四课：高级模式",
+      "asyncActions": "异步操作",
+      "asyncDesc": "在 store 中处理异步操作：",
+      "computed": "计算值",
+      "computedDesc": "使用选择器创建派生状态："
+    },
+    "nextSteps": {
+      "title": "下一步",
+      "description": "继续学习这些主题：",
+      "topics": {
+        "middleware": "用于持久化和开发工具的中间件",
+        "testing": "测试 Zustand store",
+        "typescript": "高级 TypeScript 模式",
+        "performance": "性能优化技术",
+        "integration": "与其他库集成"
+      }
+    }
+  },
+  "examples": {
+    "title": "Zustand 示例",
+    "description": "探索这些实用示例，学习如何在实际应用中使用 Zustand。",
+    "counter": {
+      "title": "简单计数器",
+      "description": "一个基础的计数器示例，演示状态更新和操作。"
+    },
+    "cart": {
+      "title": "购物车",
+      "description": "一个具有添加、删除和数量管理功能的购物车。"
+    },
+    "form": {
+      "title": "表单管理",
+      "description": "带验证和提交功能的表单状态管理。"
+    },
+    "async": {
+      "title": "异步数据获取",
+      "description": "处理带有加载和错误状态的 API 调用。"
+    }
+  },
+  "api": {
+    "title": "API 参考",
+    "create": {
+      "title": "create()",
+      "description": "使用给定的状态创建函数创建 store。",
+      "parameters": "参数",
+      "paramDesc": "stateCreator - 接收 set、get 和 api 的函数",
+      "returns": "返回值",
+      "returnsDesc": "一个可用于访问 store 的 React hook"
+    },
+    "set": {
+      "title": "set()",
+      "description": "更新 store 状态。可以使用部分状态对象或更新函数调用。",
+      "parameters": "参数",
+      "paramPartial": "partial - 部分状态对象或更新函数",
+      "paramReplace": "replace -（可选）替换整个状态而不是合并"
+    },
+    "get": {
+      "title": "get()",
+      "description": "获取当前状态。在操作中或 React 组件外部很有用。"
+    },
+    "subscribe": {
+      "title": "subscribe()",
+      "description": "订阅状态变化。每当状态更新时调用。"
+    },
+    "middleware": {
+      "title": "中间件",
+      "persistDesc": "将 store 状态持久化到 localStorage 或 sessionStorage。",
+      "devtoolsDesc": "启用 Redux DevTools 集成进行调试。",
+      "immerDesc": "启用 Immer 以便更轻松地进行不可变更新。"
+    },
+    "selectors": {
+      "title": "选择器",
+      "description": "选择状态的特定部分以优化重新渲染。"
+    }
+  },
+  "middlewarePage": {
+    "whatIs": {
+      "title": "什么是中间件？",
+      "description": "Zustand 中的中间件允许你扩展和自定义 store 的行为。你可以添加日志记录、持久化、开发工具集成等功能。"
+    },
+    "custom": {
+      "title": "创建自定义中间件",
+      "description": "中间件是一个包装 store 并可以拦截状态变化的函数："
+    },
+    "combining": {
+      "title": "组合多个中间件",
+      "description": "你可以通过嵌套来组合多个中间件："
+    },
+    "builtin": {
+      "title": "内置中间件",
+      "persist": "持久化状态到存储",
+      "devtools": "Redux DevTools 集成",
+      "immer": "不可变状态更新",
+      "subscribe": "订阅状态切片"
+    }
+  },
+  "persistPage": {
+    "basicUsage": {
+      "title": "基本用法",
+      "description": "persist 中间件会自动将状态保存到存储中，并在页面加载时重新水合："
+    },
+    "configOptions": {
+      "title": "配置选项"
+    },
+    "sessionStorage": {
+      "title": "使用 sessionStorage",
+      "description": "默认情况下，persist 使用 localStorage。要使用 sessionStorage："
+    },
+    "partial": {
+      "title": "部分持久化",
+      "description": "只持久化状态的特定部分："
+    },
+    "hydration": {
+      "title": "水合",
+      "description": "处理水合状态以避免 SSR 中的水合不匹配："
+    }
+  },
+  "devtoolsPage": {
+    "setup": {
+      "title": "设置",
+      "description": "Zustand 与 Redux DevTools 浏览器扩展无缝集成。首先，在浏览器中安装 Redux DevTools 扩展，然后使用 devtools 中间件："
+    },
+    "naming": {
+      "title": "命名操作",
+      "description": "为了获得更好的调试体验，给你的操作命名："
+    },
+    "configOptions": {
+      "title": "配置选项"
+    },
+    "combining": {
+      "title": "与其他中间件组合",
+      "description": "与其他中间件组合时，devtools 应该在最外层："
+    },
+    "production": {
+      "title": "生产环境注意事项",
+      "description": "在生产环境中禁用 devtools 以获得更好的性能："
+    }
+  },
+  "immerPage": {
+    "why": {
+      "title": "为什么使用 Immer？",
+      "description": "Immer 允许你编写「可变」代码来产生不可变更新。这在处理深度嵌套状态时特别有用："
+    },
+    "installation": {
+      "title": "安装"
+    },
+    "basicUsage": {
+      "title": "基本用法",
+      "description": "使用 immer 中间件在 store 中启用 Immer："
+    },
+    "nestedState": {
+      "title": "嵌套状态更新",
+      "description": "Immer 在更新深度嵌套状态时表现出色："
+    },
+    "combining": {
+      "title": "与其他中间件组合",
+      "description": "Immer 可以很好地与其他中间件配合使用："
+    },
+    "typescript": {
+      "title": "TypeScript 支持"
+    }
   }
 }

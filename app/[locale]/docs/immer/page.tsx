@@ -16,13 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function ImmerPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'docs' });
+  const i = await getTranslations({ locale, namespace: 'immerPage' });
 
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
         <nav className="mb-8">
           <Link href={`/${locale}/docs`} className="text-primary-600 hover:underline">
-            ← {t('backToDocs') || 'Back to Documentation'}
+            ← {t('backToDocs')}
           </Link>
         </nav>
 
@@ -30,10 +31,9 @@ export default async function ImmerPage({ params }: { params: Promise<{ locale: 
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Why Immer?</h2>
+            <h2 className="text-2xl font-bold mb-4">{i('why.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Immer allows you to write "mutable" code that produces immutable updates. 
-              This is especially useful when dealing with deeply nested state:
+              {i('why.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`// Without Immer - verbose and error-prone
 set((state) => ({
@@ -54,7 +54,7 @@ set((state) => {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Installation</h2>
+            <h2 className="text-2xl font-bold mb-4">{i('installation.title')}</h2>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`npm install immer
 # or
 yarn add immer
@@ -63,9 +63,9 @@ pnpm add immer`}</code></pre>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Basic Usage</h2>
+            <h2 className="text-2xl font-bold mb-4">{i('basicUsage.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Use the immer middleware to enable Immer in your store:
+              {i('basicUsage.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { immer } from 'zustand/middleware/immer'
@@ -93,9 +93,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Nested State Updates</h2>
+            <h2 className="text-2xl font-bold mb-4">{i('nestedState.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Immer shines when updating deeply nested state:
+              {i('nestedState.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`const useStore = create(
   immer((set) => ({
@@ -123,9 +123,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Combining with Other Middlewares</h2>
+            <h2 className="text-2xl font-bold mb-4">{i('combining.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Immer works well with other middlewares:
+              {i('combining.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
@@ -148,7 +148,7 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">TypeScript Support</h2>
+            <h2 className="text-2xl font-bold mb-4">{i('typescript.title')}</h2>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { immer } from 'zustand/middleware/immer'
 
