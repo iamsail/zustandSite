@@ -20,7 +20,7 @@ export default async function DocsPage({ params }: { params: Promise<{ locale: s
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Documentation</h1>
+        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
 
         {/* Getting Started */}
         <section className="mb-12">
@@ -28,7 +28,7 @@ export default async function DocsPage({ params }: { params: Promise<{ locale: s
           
           <div className="prose max-w-none">
             <h3 className="text-2xl font-semibold mb-4">{t('gettingStarted.installation')}</h3>
-            <p className="mb-4">Install Zustand using npm or yarn:</p>
+            <p className="mb-4">{t('gettingStarted.installDesc')}</p>
             <pre><code>npm install zustand
 # or
 yarn add zustand
@@ -36,7 +36,7 @@ yarn add zustand
 pnpm add zustand</code></pre>
 
             <h3 className="text-2xl font-semibold mb-4 mt-8">{t('gettingStarted.firstStore')}</h3>
-            <p className="mb-4">Creating a store is straightforward. Here's a simple counter example:</p>
+            <p className="mb-4">{t('gettingStarted.firstStoreDesc')}</p>
             <pre><code>{`import { create } from 'zustand'
 
 const useStore = create((set) => ({
@@ -47,7 +47,7 @@ const useStore = create((set) => ({
 }))`}</code></pre>
 
             <h3 className="text-2xl font-semibold mb-4 mt-8">{t('gettingStarted.basicUsage')}</h3>
-            <p className="mb-4">Use the store in your React components:</p>
+            <p className="mb-4">{t('gettingStarted.basicUsageDesc')}</p>
             <pre><code>{`function Counter() {
   const count = useStore((state) => state.count)
   const increment = useStore((state) => state.increment)
@@ -73,22 +73,22 @@ const useStore = create((set) => ({
           <div className="space-y-6">
             <div className="border-l-4 border-primary-500 pl-4">
               <h3 className="text-xl font-semibold mb-2">{t('coreConcepts.store')}</h3>
-              <p className="text-gray-700">A store holds your application state. It's created using the <code>create</code> function and returns a React hook.</p>
+              <p className="text-gray-700">{t('coreConcepts.storeDesc')}</p>
             </div>
 
             <div className="border-l-4 border-primary-500 pl-4">
               <h3 className="text-xl font-semibold mb-2">{t('coreConcepts.state')}</h3>
-              <p className="text-gray-700">The state is the data that your store holds. It can be any JavaScript value - objects, arrays, primitives, etc.</p>
+              <p className="text-gray-700">{t('coreConcepts.stateDesc')}</p>
             </div>
 
             <div className="border-l-4 border-primary-500 pl-4">
               <h3 className="text-xl font-semibold mb-2">{t('coreConcepts.actions')}</h3>
-              <p className="text-gray-700">Actions are functions that modify the state. They use the <code>set</code> function to update the store.</p>
+              <p className="text-gray-700">{t('coreConcepts.actionsDesc')}</p>
             </div>
 
             <div className="border-l-4 border-primary-500 pl-4">
               <h3 className="text-xl font-semibold mb-2">{t('coreConcepts.selectors')}</h3>
-              <p className="text-gray-700">Selectors allow you to subscribe to specific parts of the state, optimizing re-renders.</p>
+              <p className="text-gray-700">{t('coreConcepts.selectorsDesc')}</p>
             </div>
           </div>
         </section>
@@ -100,33 +100,33 @@ const useStore = create((set) => ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.middleware')}</h3>
-              <p className="text-gray-600 mb-4">Extend Zustand with middleware for logging, persistence, and more.</p>
+              <p className="text-gray-600 mb-4">{t('advanced.middlewareDesc')}</p>
               <Link href={`/${locale}/docs/middleware`} className="text-primary-600 hover:underline">
-                Learn more →
+                {t('advanced.learnMore')}
               </Link>
             </div>
 
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.persist')}</h3>
-              <p className="text-gray-600 mb-4">Save your state to localStorage or sessionStorage automatically.</p>
+              <p className="text-gray-600 mb-4">{t('advanced.persistDesc')}</p>
               <Link href={`/${locale}/docs/persist`} className="text-primary-600 hover:underline">
-                Learn more →
+                {t('advanced.learnMore')}
               </Link>
             </div>
 
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.devtools')}</h3>
-              <p className="text-gray-600 mb-4">Debug your state with Redux DevTools integration.</p>
+              <p className="text-gray-600 mb-4">{t('advanced.devtoolsDesc')}</p>
               <Link href={`/${locale}/docs/devtools`} className="text-primary-600 hover:underline">
-                Learn more →
+                {t('advanced.learnMore')}
               </Link>
             </div>
 
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.immer')}</h3>
-              <p className="text-gray-600 mb-4">Use Immer for easier immutable state updates.</p>
+              <p className="text-gray-600 mb-4">{t('advanced.immerDesc')}</p>
               <Link href={`/${locale}/docs/immer`} className="text-primary-600 hover:underline">
-                Learn more →
+                {t('advanced.learnMore')}
               </Link>
             </div>
           </div>

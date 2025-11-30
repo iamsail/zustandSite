@@ -60,25 +60,38 @@
   },
   "docs": {
     "backToDocs": "ドキュメントに戻る",
+    "title": "ドキュメント",
     "gettingStarted": {
       "title": "はじめに",
       "installation": "インストール",
+      "installDesc": "npm または yarn を使用して Zustand をインストールします：",
       "firstStore": "最初のストア",
-      "basicUsage": "基本的な使い方"
+      "firstStoreDesc": "ストアの作成は簡単です。シンプルなカウンターの例を見てみましょう：",
+      "basicUsage": "基本的な使い方",
+      "basicUsageDesc": "React コンポーネントでストアを使用します："
     },
     "coreConcepts": {
       "title": "コアコンセプト",
       "store": "ストア",
+      "storeDesc": "ストアはアプリケーションの状態を保持します。create 関数を使用して作成され、React フックを返します。",
       "state": "状態",
+      "stateDesc": "状態はストアが保持するデータです。オブジェクト、配列、プリミティブなど、任意の JavaScript 値を使用できます。",
       "actions": "アクション",
-      "selectors": "セレクター"
+      "actionsDesc": "アクションは状態を変更する関数です。set 関数を使用してストアを更新します。",
+      "selectors": "セレクター",
+      "selectorsDesc": "セレクターを使用すると、状態の特定の部分をサブスクライブでき、再レンダリングを最適化できます。"
     },
     "advanced": {
       "title": "高度なトピック",
       "middleware": "ミドルウェア",
+      "middlewareDesc": "ロギング、永続化などのミドルウェアで Zustand を拡張します。",
       "persist": "状態の永続化",
+      "persistDesc": "状態を localStorage または sessionStorage に自動的に保存します。",
       "devtools": "DevTools 統合",
-      "immer": "Immer の使用"
+      "devtoolsDesc": "Redux DevTools 統合で状態をデバッグします。",
+      "immer": "Immer の使用",
+      "immerDesc": "Immer を使用して不変状態の更新を簡単に行います。",
+      "learnMore": "詳細を見る →"
     }
   },
   "footer": {
@@ -88,5 +101,193 @@
     "community": "コミュニティ",
     "github": "GitHub",
     "npm": "NPM パッケージ"
+  },
+  "tutorial": {
+    "title": "Zustand チュートリアル",
+    "overview": {
+      "title": "チュートリアル概要",
+      "description": "Zustand の包括的なチュートリアルへようこそ！このガイドでは、Zustand による状態管理について初心者から上級者まで必要な知識をすべて学べます。"
+    },
+    "lesson1": {
+      "title": "レッスン1：Zustand の紹介",
+      "intro": "Zustand は React 向けの軽量な状態管理ライブラリで、以下を提供します：",
+      "features": {
+        "simple": "シンプルで直感的な API",
+        "noBoilerplate": "ボイラープレートコード不要",
+        "typescript": "優れた TypeScript サポート",
+        "performance": "自動最適化による優れたパフォーマンス",
+        "size": "小さなバンドルサイズ（1KB未満）"
+      },
+      "whyTitle": "なぜ Zustand を選ぶのか？",
+      "whyDesc": "Redux や MobX などの他の状態管理ソリューションと比較して、Zustand はより少ないボイラープレートでシンプルな API を提供しながら、強力な機能と優れたパフォーマンスを維持しています。"
+    },
+    "lesson2": {
+      "title": "レッスン2：最初のストアを作成する",
+      "description": "シンプルな Todo リストアプリケーションを作成しましょう："
+    },
+    "lesson3": {
+      "title": "レッスン3：コンポーネントでストアを使用する"
+    },
+    "lesson4": {
+      "title": "レッスン4：高度なパターン",
+      "asyncActions": "非同期アクション",
+      "asyncDesc": "ストアで非同期操作を処理する：",
+      "computed": "計算値",
+      "computedDesc": "セレクターで派生状態を作成する："
+    },
+    "nextSteps": {
+      "title": "次のステップ",
+      "description": "これらのトピックで学習を続けましょう：",
+      "topics": {
+        "middleware": "永続化と開発ツールのためのミドルウェア",
+        "testing": "Zustand ストアのテスト",
+        "typescript": "高度な TypeScript パターン",
+        "performance": "パフォーマンス最適化技術",
+        "integration": "他のライブラリとの統合"
+      }
+    }
+  },
+  "examples": {
+    "title": "Zustand の例",
+    "description": "これらの実用的な例を探索して、実際のアプリケーションで Zustand を使用する方法を学びましょう。",
+    "counter": {
+      "title": "シンプルなカウンター",
+      "description": "状態の更新とアクションを示す基本的なカウンターの例。"
+    },
+    "cart": {
+      "title": "ショッピングカート",
+      "description": "追加、削除、数量管理機能を持つショッピングカート。"
+    },
+    "form": {
+      "title": "フォーム管理",
+      "description": "バリデーションと送信を伴うフォーム状態の管理。"
+    },
+    "async": {
+      "title": "非同期データ取得",
+      "description": "ローディングとエラー状態を伴う API 呼び出しの処理。"
+    }
+  },
+  "api": {
+    "title": "API リファレンス",
+    "create": {
+      "title": "create()",
+      "description": "指定された状態作成関数でストアを作成します。",
+      "parameters": "パラメータ",
+      "paramDesc": "stateCreator - set、get、api を受け取る関数",
+      "returns": "戻り値",
+      "returnsDesc": "ストアにアクセスするために使用できる React フック"
+    },
+    "set": {
+      "title": "set()",
+      "description": "ストアの状態を更新します。部分的な状態オブジェクトまたは更新関数で呼び出すことができます。",
+      "parameters": "パラメータ",
+      "paramPartial": "partial - 部分的な状態オブジェクトまたは更新関数",
+      "paramReplace": "replace -（オプション）マージではなく状態全体を置換"
+    },
+    "get": {
+      "title": "get()",
+      "description": "現在の状態を取得します。アクション内または React コンポーネントの外部で便利です。"
+    },
+    "subscribe": {
+      "title": "subscribe()",
+      "description": "状態の変更をサブスクライブします。状態が更新されるたびに呼び出されます。"
+    },
+    "middleware": {
+      "title": "ミドルウェア",
+      "persistDesc": "ストアの状態を localStorage または sessionStorage に永続化します。",
+      "devtoolsDesc": "デバッグのために Redux DevTools 統合を有効にします。",
+      "immerDesc": "より簡単な不変更新のために Immer を有効にします。"
+    },
+    "selectors": {
+      "title": "セレクター",
+      "description": "再レンダリングを最適化するために状態の特定の部分を選択します。"
+    }
+  },
+  "middlewarePage": {
+    "whatIs": {
+      "title": "ミドルウェアとは？",
+      "description": "Zustand のミドルウェアを使用すると、ストアの動作を拡張およびカスタマイズできます。ロギング、永続化、開発ツールの統合などを追加できます。"
+    },
+    "custom": {
+      "title": "カスタムミドルウェアの作成",
+      "description": "ミドルウェアは、ストアをラップし、状態の変更をインターセプトできる関数です："
+    },
+    "combining": {
+      "title": "複数のミドルウェアを組み合わせる",
+      "description": "ミドルウェアをネストして組み合わせることができます："
+    },
+    "builtin": {
+      "title": "組み込みミドルウェア",
+      "persist": "ストレージに状態を永続化",
+      "devtools": "Redux DevTools 統合",
+      "immer": "不変状態の更新",
+      "subscribe": "状態スライスをサブスクライブ"
+    }
+  },
+  "persistPage": {
+    "basicUsage": {
+      "title": "基本的な使い方",
+      "description": "persist ミドルウェアは、状態を自動的にストレージに保存し、ページ読み込み時に再ハイドレートします："
+    },
+    "configOptions": {
+      "title": "設定オプション"
+    },
+    "sessionStorage": {
+      "title": "sessionStorage の使用",
+      "description": "デフォルトでは、persist は localStorage を使用します。sessionStorage を使用するには："
+    },
+    "partial": {
+      "title": "部分的な永続化",
+      "description": "状態の特定の部分のみを永続化します："
+    },
+    "hydration": {
+      "title": "ハイドレーション",
+      "description": "SSR でのハイドレーションの不一致を避けるためにハイドレーション状態を処理します："
+    }
+  },
+  "devtoolsPage": {
+    "setup": {
+      "title": "セットアップ",
+      "description": "Zustand は Redux DevTools ブラウザ拡張機能とシームレスに統合されます。まず、ブラウザに Redux DevTools 拡張機能をインストールし、devtools ミドルウェアを使用します："
+    },
+    "naming": {
+      "title": "アクションの命名",
+      "description": "より良いデバッグ体験のために、アクションに名前を付けます："
+    },
+    "configOptions": {
+      "title": "設定オプション"
+    },
+    "combining": {
+      "title": "他のミドルウェアとの組み合わせ",
+      "description": "他のミドルウェアと組み合わせる場合、devtools は最も外側にする必要があります："
+    },
+    "production": {
+      "title": "本番環境での考慮事項",
+      "description": "パフォーマンス向上のために、本番環境では devtools を無効にします："
+    }
+  },
+  "immerPage": {
+    "why": {
+      "title": "なぜ Immer を使うのか？",
+      "description": "Immer を使用すると、不変更新を生成する「可変」コードを記述できます。これは、深くネストされた状態を扱う場合に特に便利です："
+    },
+    "installation": {
+      "title": "インストール"
+    },
+    "basicUsage": {
+      "title": "基本的な使い方",
+      "description": "immer ミドルウェアを使用してストアで Immer を有効にします："
+    },
+    "nestedState": {
+      "title": "ネストされた状態の更新",
+      "description": "Immer は深くネストされた状態を更新する際に真価を発揮します："
+    },
+    "combining": {
+      "title": "他のミドルウェアとの組み合わせ",
+      "description": "Immer は他のミドルウェアとうまく連携します："
+    },
+    "typescript": {
+      "title": "TypeScript サポート"
+    }
   }
 }

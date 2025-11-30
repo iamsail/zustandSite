@@ -12,22 +12,25 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function ExamplesPage() {
+export default async function ExamplesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'examples' });
+
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Zustand Examples</h1>
+        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
         
         <p className="text-lg text-gray-600 mb-12">
-          Explore these practical examples to learn how to use Zustand in real-world applications.
+          {t('description')}
         </p>
 
         <div className="space-y-8">
           {/* Counter Example */}
           <section className="border border-gray-200 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Simple Counter</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('counter.title')}</h2>
             <p className="text-gray-600 mb-4">
-              A basic counter example demonstrating state updates and actions.
+              {t('counter.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 
@@ -53,9 +56,9 @@ function Counter() {
 
           {/* Shopping Cart Example */}
           <section className="border border-gray-200 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('cart.title')}</h2>
             <p className="text-gray-600 mb-4">
-              A shopping cart with add, remove, and quantity management.
+              {t('cart.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 
@@ -103,9 +106,9 @@ const useCartStore = create((set) => ({
 
           {/* Form Management Example */}
           <section className="border border-gray-200 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Form Management</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('form.title')}</h2>
             <p className="text-gray-600 mb-4">
-              Managing form state with validation and submission.
+              {t('form.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 
@@ -154,9 +157,9 @@ const useFormStore = create<FormState & {
 
           {/* Async Data Fetching Example */}
           <section className="border border-gray-200 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Async Data Fetching</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('async.title')}</h2>
             <p className="text-gray-600 mb-4">
-              Handling API calls with loading and error states.
+              {t('async.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 
