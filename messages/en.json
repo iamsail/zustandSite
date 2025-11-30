@@ -59,6 +59,7 @@
     }
   },
   "docs": {
+    "backToDocs": "Back to Documentation",
     "gettingStarted": {
       "title": "Getting Started",
       "installation": "Installation",
