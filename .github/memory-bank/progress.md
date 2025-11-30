@@ -1,7 +1,7 @@
 # Progress - Zustand Documentation Site
 
-**Last Updated:** 2025-11-27  
-**Project Status:** Production on Vercel
+**Last Updated:** 2025-11-30  
+**Project Status:** Production Live at https://zustand.site
 
 ## What Works
 
@@ -31,42 +31,39 @@
 - ✅ Locale prefix always in URL (/en, /zh, /ja)
 - ✅ Translation files created for all locales
 - ✅ `getTranslations` hook works in server components
-- ✅ Language switcher in header functional (2 bugs fixed 2025-11-27)
+- ✅ Language switcher in header functional
 - ✅ Locale context maintained across navigation
 
-### ✅ SEO Configuration
+### ✅ SEO & Analytics
 
 **Metadata & Tags**
 - ✅ Dynamic metadata generation per page
 - ✅ Page-specific titles, descriptions, keywords
 - ✅ Open Graph tags for social sharing
 - ✅ Twitter Card tags configured
-- ✅ Canonical URL support with environment variables
+- ✅ Canonical URL support
 - ✅ Language alternate tags for i18n
-- ✅ Metadata base URL uses environment variable
 
-**Search Engine Files**
-- ✅ XML sitemap generated at `/sitemap.xml`
-- ✅ Sitemap uses environment variable for base URL
-- ✅ robots.txt uses environment variable for sitemap URL
-- ✅ All files use `NEXT_PUBLIC_SITE_URL` environment variable
+**Analytics & Search**
+- ✅ Google Analytics 4 integrated (G-SP514GWMMH)
+- ✅ Google Search Console verified
+- ✅ Sitemap submitted and indexed
+- ✅ XML sitemap at `/sitemap.xml` (27 URLs)
+- ✅ robots.txt configured
 
-### ✅ Deployment Configuration
+### ✅ Deployment
 
-**Vercel Setup**
-- ✅ vercel.json created with proper configuration
-- ✅ Framework: Next.js (auto-detected)
-- ✅ Region: Tokyo (hnd1) for Asia optimization
-- ✅ Security headers configured:
-  - X-Content-Type-Options: nosniff
-  - X-Frame-Options: DENY
-  - X-XSS-Protection: 1; mode=block
-- ✅ Caching headers for sitemap.xml and robots.txt
-- ✅ Environment variable based domain configuration
-- ✅ Default domain: zustand-site.vercel.app
+**Vercel Production**
+- ✅ Live at https://zustand.site
+- ✅ Custom domain configured
+- ✅ HTTPS enabled
+- ✅ Auto-deploy from GitHub
+- ✅ Region: Tokyo (hnd1)
+- ✅ Security headers configured
 
 ### ✅ Page Components
 
+**Main Pages**
 - ✅ Homepage with hero, features, quick start, CTA
 - ✅ Documentation page with getting started, core concepts, advanced
 - ✅ Tutorial page with step-by-step learning path
@@ -74,18 +71,17 @@
 - ✅ API reference page with full documentation
 - ✅ Header and Footer components
 
+**Documentation Subpages (Added 2025-11-30)**
+- ✅ `/docs/middleware` - Middleware overview and custom middleware
+- ✅ `/docs/persist` - State persistence documentation
+- ✅ `/docs/devtools` - Redux DevTools integration guide
+- ✅ `/docs/immer` - Immer integration for immutable updates
+
 ### ✅ Memory Bank Documentation
 
-- ✅ memory-bank.instructions.md - AI development guide
-- ✅ projectbrief.md - Project overview and goals
-- ✅ productContext.md - Product vision and UX
-- ✅ systemPatterns.md - Architecture and patterns
-- ✅ techContext.md - Technology stack
-- ✅ activeContext.md - Current work focus
-- ✅ progress.md - This file
-- ✅ tasks/_index.md - Task tracking
-- ✅ TASK001 completed - Memory Bank setup
-- ✅ TASK002 in progress - Vercel deployment
+- ✅ All core Memory Bank files maintained
+- ✅ Task tracking system active
+- ✅ Progress and context documented
 
 ## What's Left to Build
 
