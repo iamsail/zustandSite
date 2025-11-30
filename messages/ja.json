@@ -59,6 +59,7 @@
     }
   },
   "docs": {
+    "backToDocs": "ドキュメントに戻る",
     "gettingStarted": {
       "title": "はじめに",
       "installation": "インストール",

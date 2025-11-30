@@ -59,6 +59,7 @@
     }
   },
   "docs": {
+    "backToDocs": "返回文档",
     "gettingStarted": {
       "title": "入门指南",
       "installation": "安装",
