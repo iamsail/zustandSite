@@ -60,25 +60,38 @@
   },
   "docs": {
     "backToDocs": "Back to Documentation",
+    "title": "Documentation",
     "gettingStarted": {
       "title": "Getting Started",
       "installation": "Installation",
+      "installDesc": "Install Zustand using npm or yarn:",
       "firstStore": "Your First Store",
-      "basicUsage": "Basic Usage"
+      "firstStoreDesc": "Creating a store is straightforward. Here's a simple counter example:",
+      "basicUsage": "Basic Usage",
+      "basicUsageDesc": "Use the store in your React components:"
     },
     "coreConcepts": {
       "title": "Core Concepts",
       "store": "Store",
+      "storeDesc": "A store holds your application state. It's created using the create function and returns a React hook.",
       "state": "State",
+      "stateDesc": "The state is the data that your store holds. It can be any JavaScript value - objects, arrays, primitives, etc.",
       "actions": "Actions",
-      "selectors": "Selectors"
+      "actionsDesc": "Actions are functions that modify the state. They use the set function to update the store.",
+      "selectors": "Selectors",
+      "selectorsDesc": "Selectors allow you to subscribe to specific parts of the state, optimizing re-renders."
     },
     "advanced": {
       "title": "Advanced Topics",
       "middleware": "Middleware",
+      "middlewareDesc": "Extend Zustand with middleware for logging, persistence, and more.",
       "persist": "Persisting State",
+      "persistDesc": "Save your state to localStorage or sessionStorage automatically.",
       "devtools": "DevTools Integration",
-      "immer": "Using Immer"
+      "devtoolsDesc": "Debug your state with Redux DevTools integration.",
+      "immer": "Using Immer",
+      "immerDesc": "Use Immer for easier immutable state updates.",
+      "learnMore": "Learn more →"
     }
   },
   "footer": {
@@ -88,5 +101,193 @@
     "community": "Community",
     "github": "GitHub",
     "npm": "NPM Package"
+  },
+  "tutorial": {
+    "title": "Zustand Tutorial",
+    "overview": {
+      "title": "Tutorial Overview",
+      "description": "Welcome to the comprehensive Zustand tutorial! This guide will take you from beginner to advanced, teaching you everything you need to know about state management with Zustand."
+    },
+    "lesson1": {
+      "title": "Lesson 1: Introduction to Zustand",
+      "intro": "Zustand is a lightweight state management library for React that provides:",
+      "features": {
+        "simple": "Simple and intuitive API",
+        "noBoilerplate": "No boilerplate code required",
+        "typescript": "Great TypeScript support",
+        "performance": "Excellent performance with automatic optimization",
+        "size": "Small bundle size (less than 1KB)"
+      },
+      "whyTitle": "Why Choose Zustand?",
+      "whyDesc": "Compared to other state management solutions like Redux or MobX, Zustand offers a simpler API with less boilerplate while maintaining powerful features and excellent performance."
+    },
+    "lesson2": {
+      "title": "Lesson 2: Creating Your First Store",
+      "description": "Let's create a simple todo list application:"
+    },
+    "lesson3": {
+      "title": "Lesson 3: Using the Store in Components"
+    },
+    "lesson4": {
+      "title": "Lesson 4: Advanced Patterns",
+      "asyncActions": "Async Actions",
+      "asyncDesc": "Handle asynchronous operations in your store:",
+      "computed": "Computed Values",
+      "computedDesc": "Create derived state with selectors:"
+    },
+    "nextSteps": {
+      "title": "Next Steps",
+      "description": "Continue learning with these topics:",
+      "topics": {
+        "middleware": "Middleware for persistence and devtools",
+        "testing": "Testing Zustand stores",
+        "typescript": "Advanced TypeScript patterns",
+        "performance": "Performance optimization techniques",
+        "integration": "Integration with other libraries"
+      }
+    }
+  },
+  "examples": {
+    "title": "Zustand Examples",
+    "description": "Explore these practical examples to learn how to use Zustand in real-world applications.",
+    "counter": {
+      "title": "Simple Counter",
+      "description": "A basic counter example demonstrating state updates and actions."
+    },
+    "cart": {
+      "title": "Shopping Cart",
+      "description": "A shopping cart with add, remove, and quantity management."
+    },
+    "form": {
+      "title": "Form Management",
+      "description": "Managing form state with validation and submission."
+    },
+    "async": {
+      "title": "Async Data Fetching",
+      "description": "Handling API calls with loading and error states."
+    }
+  },
+  "api": {
+    "title": "API Reference",
+    "create": {
+      "title": "create()",
+      "description": "Creates a store with the given state creator function.",
+      "parameters": "Parameters",
+      "paramDesc": "stateCreator - Function that receives set, get, and api",
+      "returns": "Returns",
+      "returnsDesc": "A React hook that can be used to access the store"
+    },
+    "set": {
+      "title": "set()",
+      "description": "Updates the store state. Can be called with a partial state object or an updater function.",
+      "parameters": "Parameters",
+      "paramPartial": "partial - Partial state object or updater function",
+      "paramReplace": "replace - (optional) Replace entire state instead of merging"
+    },
+    "get": {
+      "title": "get()",
+      "description": "Gets the current state. Useful in actions or outside of React components."
+    },
+    "subscribe": {
+      "title": "subscribe()",
+      "description": "Subscribe to state changes. Called whenever the state updates."
+    },
+    "middleware": {
+      "title": "Middleware",
+      "persistDesc": "Persists store state to localStorage or sessionStorage.",
+      "devtoolsDesc": "Enables Redux DevTools integration for debugging.",
+      "immerDesc": "Enables Immer for easier immutable updates."
+    },
+    "selectors": {
+      "title": "Selectors",
+      "description": "Select specific parts of state to optimize re-renders."
+    }
+  },
+  "middlewarePage": {
+    "whatIs": {
+      "title": "What is Middleware?",
+      "description": "Middleware in Zustand allows you to extend and customize your store's behavior. You can add logging, persistence, devtools integration, and more."
+    },
+    "custom": {
+      "title": "Creating Custom Middleware",
+      "description": "A middleware is a function that wraps the store and can intercept state changes:"
+    },
+    "combining": {
+      "title": "Combining Multiple Middlewares",
+      "description": "You can combine multiple middlewares by nesting them:"
+    },
+    "builtin": {
+      "title": "Built-in Middlewares",
+      "persist": "Persist state to storage",
+      "devtools": "Redux DevTools integration",
+      "immer": "Immutable state updates",
+      "subscribe": "Subscribe to state slices"
+    }
+  },
+  "persistPage": {
+    "basicUsage": {
+      "title": "Basic Usage",
+      "description": "The persist middleware automatically saves your state to storage and rehydrates it on page load:"
+    },
+    "configOptions": {
+      "title": "Configuration Options"
+    },
+    "sessionStorage": {
+      "title": "Using sessionStorage",
+      "description": "By default, persist uses localStorage. To use sessionStorage:"
+    },
+    "partial": {
+      "title": "Partial Persistence",
+      "description": "Only persist specific parts of your state:"
+    },
+    "hydration": {
+      "title": "Hydration",
+      "description": "Handle the hydration state to avoid hydration mismatches in SSR:"
+    }
+  },
+  "devtoolsPage": {
+    "setup": {
+      "title": "Setup",
+      "description": "Zustand integrates seamlessly with Redux DevTools browser extension. First, install the Redux DevTools extension in your browser, then use the devtools middleware:"
+    },
+    "naming": {
+      "title": "Naming Actions",
+      "description": "For better debugging experience, name your actions:"
+    },
+    "configOptions": {
+      "title": "Configuration Options"
+    },
+    "combining": {
+      "title": "Combining with Other Middlewares",
+      "description": "When combining with other middlewares, devtools should be the outermost:"
+    },
+    "production": {
+      "title": "Production Considerations",
+      "description": "Disable devtools in production for better performance:"
+    }
+  },
+  "immerPage": {
+    "why": {
+      "title": "Why Immer?",
+      "description": "Immer allows you to write \"mutable\" code that produces immutable updates. This is especially useful when dealing with deeply nested state:"
+    },
+    "installation": {
+      "title": "Installation"
+    },
+    "basicUsage": {
+      "title": "Basic Usage",
+      "description": "Use the immer middleware to enable Immer in your store:"
+    },
+    "nestedState": {
+      "title": "Nested State Updates",
+      "description": "Immer shines when updating deeply nested state:"
+    },
+    "combining": {
+      "title": "Combining with Other Middlewares",
+      "description": "Immer works well with other middlewares:"
+    },
+    "typescript": {
+      "title": "TypeScript Support"
+    }
   }
 }

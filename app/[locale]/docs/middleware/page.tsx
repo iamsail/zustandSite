@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function MiddlewarePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'docs' });
+  const m = await getTranslations({ locale, namespace: 'middlewarePage' });
 
   return (
     <div className="container-custom py-12">
@@ -30,17 +31,16 @@ export default async function MiddlewarePage({ params }: { params: Promise<{ loc
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">What is Middleware?</h2>
+            <h2 className="text-2xl font-bold mb-4">{m('whatIs.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Middleware in Zustand allows you to extend and customize your store's behavior. 
-              You can add logging, persistence, devtools integration, and more.
+              {m('whatIs.description')}
             </p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Creating Custom Middleware</h2>
+            <h2 className="text-2xl font-bold mb-4">{m('custom.title')}</h2>
             <p className="text-gray-700 mb-4">
-              A middleware is a function that wraps the store and can intercept state changes:
+              {m('custom.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`// Logger middleware
 const logger = (config) => (set, get, api) =>
@@ -64,9 +64,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Combining Multiple Middlewares</h2>
+            <h2 className="text-2xl font-bold mb-4">{m('combining.title')}</h2>
             <p className="text-gray-700 mb-4">
-              You can combine multiple middlewares by nesting them:
+              {m('combining.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
@@ -85,23 +85,23 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Built-in Middlewares</h2>
+            <h2 className="text-2xl font-bold mb-4">{m('builtin.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Link href={`/${locale}/docs/persist`} className="block p-4 border rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-primary-600">persist</h3>
-                <p className="text-gray-600 text-sm">Persist state to storage</p>
+                <p className="text-gray-600 text-sm">{m('builtin.persist')}</p>
               </Link>
               <Link href={`/${locale}/docs/devtools`} className="block p-4 border rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-primary-600">devtools</h3>
-                <p className="text-gray-600 text-sm">Redux DevTools integration</p>
+                <p className="text-gray-600 text-sm">{m('builtin.devtools')}</p>
               </Link>
               <Link href={`/${locale}/docs/immer`} className="block p-4 border rounded-lg hover:shadow-md transition-shadow">
                 <h3 className="font-semibold text-primary-600">immer</h3>
-                <p className="text-gray-600 text-sm">Immutable state updates</p>
+                <p className="text-gray-600 text-sm">{m('builtin.immer')}</p>
               </Link>
               <div className="block p-4 border rounded-lg">
                 <h3 className="font-semibold text-gray-700">subscribeWithSelector</h3>
-                <p className="text-gray-600 text-sm">Subscribe to state slices</p>
+                <p className="text-gray-600 text-sm">{m('builtin.subscribe')}</p>
               </div>
             </div>
           </section>

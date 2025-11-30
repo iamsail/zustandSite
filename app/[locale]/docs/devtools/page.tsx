@@ -16,13 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function DevtoolsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'docs' });
+  const d = await getTranslations({ locale, namespace: 'devtoolsPage' });
 
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
         <nav className="mb-8">
           <Link href={`/${locale}/docs`} className="text-primary-600 hover:underline">
-            ← {t('backToDocs') || 'Back to Documentation'}
+            ← {t('backToDocs')}
           </Link>
         </nav>
 
@@ -30,10 +31,9 @@ export default async function DevtoolsPage({ params }: { params: Promise<{ local
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Setup</h2>
+            <h2 className="text-2xl font-bold mb-4">{d('setup.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Zustand integrates seamlessly with Redux DevTools browser extension. 
-              First, install the Redux DevTools extension in your browser, then use the devtools middleware:
+              {d('setup.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
@@ -54,9 +54,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Naming Actions</h2>
+            <h2 className="text-2xl font-bold mb-4">{d('naming.title')}</h2>
             <p className="text-gray-700 mb-4">
-              For better debugging experience, name your actions:
+              {d('naming.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`const useStore = create(
   devtools(
@@ -80,7 +80,7 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Configuration Options</h2>
+            <h2 className="text-2xl font-bold mb-4">{d('configOptions.title')}</h2>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`devtools(
   (set) => ({ ... }),
   {
@@ -98,9 +98,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Combining with Other Middlewares</h2>
+            <h2 className="text-2xl font-bold mb-4">{d('combining.title')}</h2>
             <p className="text-gray-700 mb-4">
-              When combining with other middlewares, devtools should be the outermost:
+              {d('combining.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
@@ -124,9 +124,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Production Considerations</h2>
+            <h2 className="text-2xl font-bold mb-4">{d('production.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Disable devtools in production for better performance:
+              {d('production.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`const useStore = create(
   devtools(

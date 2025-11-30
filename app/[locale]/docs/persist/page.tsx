@@ -16,13 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function PersistPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'docs' });
+  const p = await getTranslations({ locale, namespace: 'persistPage' });
 
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
         <nav className="mb-8">
           <Link href={`/${locale}/docs`} className="text-primary-600 hover:underline">
-            ← {t('backToDocs') || 'Back to Documentation'}
+            ← {t('backToDocs')}
           </Link>
         </nav>
 
@@ -30,9 +31,9 @@ export default async function PersistPage({ params }: { params: Promise<{ locale
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Basic Usage</h2>
+            <h2 className="text-2xl font-bold mb-4">{p('basicUsage.title')}</h2>
             <p className="text-gray-700 mb-4">
-              The persist middleware automatically saves your state to storage and rehydrates it on page load:
+              {p('basicUsage.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
@@ -51,7 +52,7 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Configuration Options</h2>
+            <h2 className="text-2xl font-bold mb-4">{p('configOptions.title')}</h2>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`persist(
   (set) => ({ ... }),
   {
@@ -68,9 +69,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Using sessionStorage</h2>
+            <h2 className="text-2xl font-bold mb-4">{p('sessionStorage.title')}</h2>
             <p className="text-gray-700 mb-4">
-              By default, persist uses localStorage. To use sessionStorage:
+              {p('sessionStorage.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
@@ -90,9 +91,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Partial Persistence</h2>
+            <h2 className="text-2xl font-bold mb-4">{p('partial.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Only persist specific parts of your state:
+              {p('partial.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`const useStore = create(
   persist(
@@ -114,9 +115,9 @@ const useStore = create(
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Hydration</h2>
+            <h2 className="text-2xl font-bold mb-4">{p('hydration.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Handle the hydration state to avoid hydration mismatches in SSR:
+              {p('hydration.description')}
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>{`const useStore = create(
   persist(
