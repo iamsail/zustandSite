@@ -325,7 +325,17 @@
       "description": "获取最新的 Zustand 技巧和教程。",
       "placeholder": "输入你的邮箱",
       "button": "订阅"
-    }
+    },
+    "backToBlog": "返回博客",
+    "shareArticle": "分享这篇文章",
+    "relatedPosts": "相关文章"
+  },
+  "blogContent": {
+    "zustand-vs-context": "<h2>简介</h2><p>在构建 React 应用时，状态管理是最关键的决策之一。两个流行的选择是 Zustand 和 React Context。但什么时候应该使用哪个呢？</p><h2>React Context：内置解决方案</h2><p>React Context 内置于 React 中，非常适合：</p><ul><li>主题切换</li><li>用户认证状态</li><li>语言/地区偏好</li><li>状态有限的中小型应用</li></ul><h2>Zustand：轻量级强者</h2><p>当你需要以下功能时，Zustand 表现出色：</p><ul><li>频繁的状态更新而不触发重渲染</li><li>包含多个 store 的复杂状态逻辑</li><li>用于调试的 DevTools 集成</li><li>持久化和中间件支持</li></ul><h2>性能对比</h2><p>React Context 在任何值变化时都会导致所有消费者重新渲染。Zustand 使用选择器来防止不必要的重渲染，使其对于频繁变化的状态更加高效。</p><h2>结论</h2><p>对于简单、很少变化的全局状态，使用 Context。对于复杂、频繁更新且需要细粒度订阅的状态，使用 Zustand。</p>",
+    "performance-optimization": "<h2>为什么性能很重要</h2><p>状态管理可能成为 React 应用的性能瓶颈。让我们探讨如何优化 Zustand 以获得最佳性能。</p><h2>明智地使用选择器</h2><p>最重要的优化是使用选择器只订阅你需要的状态：</p><pre><code>// ❌ 错误：任何状态变化都会重渲染\nconst state = useStore();\n\n// ✅ 正确：只在 count 变化时重渲染\nconst count = useStore(state => state.count);</code></pre><h2>浅比较</h2><p>选择对象时，使用浅比较：</p><pre><code>import { shallow } from 'zustand/shallow';\n\nconst { name, age } = useStore(\n  state => ({ name: state.name, age: state.age }),\n  shallow\n);</code></pre><h2>避免在选择器中创建对象</h2><p>在选择器中创建新对象会导致不必要的重渲染。提取原始值或使用浅比较。</p><h2>拆分你的 Store</h2><p>考虑将大型 store 拆分为更小、更专注的 store，以最小化订阅范围。</p>",
+    "typescript-patterns": "<h2>TypeScript + Zustand = ❤️</h2><p>Zustand 有出色的 TypeScript 支持。让我们探索类型安全状态管理的高级模式。</p><h2>为你的 Store 添加类型</h2><p>显式定义你的状态接口：</p><pre><code>interface BearState {\n  bears: number;\n  increase: (by: number) => void;\n}\n\nconst useStore = create<BearState>()((set) => ({\n  bears: 0,\n  increase: (by) => set((state) => ({ bears: state.bears + by })),\n}));</code></pre><h2>泛型 Store</h2><p>使用泛型创建可复用的 store 模式：</p><pre><code>function createEntityStore<T>() {\n  return create<EntityStore<T>>()((set) => ({\n    entities: {},\n    add: (id, entity) => set(state => ({\n      entities: { ...state.entities, [id]: entity }\n    })),\n  }));\n}</code></pre><h2>中间件类型</h2><p>正确地为你的中间件添加类型，以在整个应用中实现完整的类型安全。</p>",
+    "testing-zustand": "<h2>测试至关重要</h2><p>良好测试的 store 会带来可靠的应用。以下是如何有效测试 Zustand store。</p><h2>Store 单元测试</h2><p>独立测试你的 store 逻辑：</p><pre><code>import { useStore } from './store';\n\nbeforeEach(() => {\n  useStore.setState({ count: 0 });\n});\n\ntest('increment increases count', () => {\n  useStore.getState().increment();\n  expect(useStore.getState().count).toBe(1);\n});</code></pre><h2>使用 React Testing Library 进行集成测试</h2><p>测试使用你的 store 的组件：</p><pre><code>import { render, screen, fireEvent } from '@testing-library/react';\nimport Counter from './Counter';\n\ntest('counter increments on click', () => {\n  render(<Counter />);\n  fireEvent.click(screen.getByRole('button'));\n  expect(screen.getByText('1')).toBeInTheDocument();\n});</code></pre><h2>Mock Store</h2><p>创建 mock store 以独立测试组件。</p>",
+    "server-side-rendering": "<h2>SSR 挑战</h2><p>服务端渲染与状态管理需要特别考虑，以避免 hydration 不匹配。</p><h2>Hydration 问题</h2><p>使用 SSR 时，服务器使用初始状态渲染，但客户端可能有不同的状态（例如来自 localStorage）。这会导致 hydration 不匹配。</p><h2>解决方案：跳过 Hydration</h2><p>使用 persist 中间件的 skipHydration 选项：</p><pre><code>const useStore = create(\n  persist(\n    (set) => ({ ... }),\n    {\n      name: 'store',\n      skipHydration: true,\n    }\n  )\n);\n\n// 在你的应用中\nuseEffect(() => {\n  useStore.persist.rehydrate();\n}, []);</code></pre><h2>Next.js App Router</h2><p>使用 Next.js App Router 时，考虑只在标记为 'use client' 的客户端组件中使用 Zustand。</p><h2>最佳实践</h2><ul><li>将 SSR 关键状态保留在服务器组件中</li><li>使用 Zustand 处理客户端交互</li><li>优雅地处理 hydration</li></ul>"
   },
   "faq": {
     "title": "常见问题",

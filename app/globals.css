@@ -141,3 +141,41 @@ pre code {
 .border-theme-dark { border-color: var(--border-color-dark); }
 .shadow-theme-sm { box-shadow: var(--shadow-sm); }
 .shadow-theme-md { box-shadow: var(--shadow-md); }
+
+/* Blog content styling */
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.blog-content h2:first-child {
+  margin-top: 0;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.blog-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.blog-content pre {
+  margin: 1.5rem 0;
+}
+
+.blog-content code {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+}

@@ -322,10 +322,20 @@
     },
     "newsletter": {
       "title": "ニュースレターを購読",
-      "description": "最新の Zustand のヒントとチュートリアルをメールで受け取りましょう。",
+      "description": "最新の Zustand のヒントとチュートリアルをお届けします。",
       "placeholder": "メールアドレスを入力",
       "button": "購読する"
-    }
+    },
+    "backToBlog": "ブログに戻る",
+    "shareArticle": "この記事をシェア",
+    "relatedPosts": "関連記事"
+  },
+  "blogContent": {
+    "zustand-vs-context": "<h2>はじめに</h2><p>React アプリケーションを構築する際、状態管理は最も重要な決定の一つです。人気のある選択肢として Zustand と React Context があります。どちらをいつ使うべきでしょうか？</p><h2>React Context：組み込みソリューション</h2><p>React Context は React に組み込まれており、以下に最適です：</p><ul><li>テーマの切り替え</li><li>ユーザー認証状態</li><li>ロケール/言語設定</li><li>状態が限られた小〜中規模アプリ</li></ul><h2>Zustand：軽量パワーハウス</h2><p>以下が必要な場合、Zustand が優れています：</p><ul><li>再レンダリングなしの頻繁な状態更新</li><li>複数のストアを持つ複雑な状態ロジック</li><li>デバッグ用の DevTools 統合</li><li>永続化とミドルウェアサポート</li></ul><h2>パフォーマンス比較</h2><p>React Context は任意の値が変更されるとすべてのコンシューマーが再レンダリングされます。Zustand はセレクターを使用して不要な再レンダリングを防ぎ、頻繁に変化する状態に対してより高性能です。</p><h2>結論</h2><p>シンプルでめったに変化しないグローバル状態には Context を使用。複雑で頻繁に更新され、細かいサブスクリプションが必要な状態には Zustand を使用。</p>",
+    "performance-optimization": "<h2>パフォーマンスが重要な理由</h2><p>状態管理は React アプリのパフォーマンスボトルネックになる可能性があります。最大のパフォーマンスを得るための Zustand の最適化方法を探りましょう。</p><h2>セレクターを賢く使う</h2><p>最も重要な最適化は、必要な状態のみをサブスクライブするセレクターの使用です：</p><pre><code>// ❌ 悪い例：任意の状態変更で再レンダリング\nconst state = useStore();\n\n// ✅ 良い例：count が変更された時のみ再レンダリング\nconst count = useStore(state => state.count);</code></pre><h2>浅い比較</h2><p>オブジェクトを選択する際は、浅い比較を使用：</p><pre><code>import { shallow } from 'zustand/shallow';\n\nconst { name, age } = useStore(\n  state => ({ name: state.name, age: state.age }),\n  shallow\n);</code></pre><h2>セレクター内でオブジェクトを作成しない</h2><p>セレクター内で新しいオブジェクトを作成すると不要な再レンダリングが発生します。プリミティブを抽出するか、浅い比較を使用してください。</p><h2>ストアを分割する</h2><p>大きなストアをより小さく焦点を絞ったストアに分割して、サブスクリプションの範囲を最小化することを検討してください。</p>",
+    "typescript-patterns": "<h2>TypeScript + Zustand = ❤️</h2><p>Zustand は優れた TypeScript サポートを備えています。型安全な状態管理の高度なパターンを探りましょう。</p><h2>ストアの型付け</h2><p>状態インターフェースを明示的に定義：</p><pre><code>interface BearState {\n  bears: number;\n  increase: (by: number) => void;\n}\n\nconst useStore = create<BearState>()((set) => ({\n  bears: 0,\n  increase: (by) => set((state) => ({ bears: state.bears + by })),\n}));</code></pre><h2>ジェネリックストア</h2><p>ジェネリクスで再利用可能なストアパターンを作成：</p><pre><code>function createEntityStore<T>() {\n  return create<EntityStore<T>>()((set) => ({\n    entities: {},\n    add: (id, entity) => set(state => ({\n      entities: { ...state.entities, [id]: entity }\n    })),\n  }));\n}</code></pre><h2>ミドルウェアの型付け</h2><p>アプリケーション全体で完全な型安全性を得るために、ミドルウェアを適切に型付けしてください。</p>",
+    "testing-zustand": "<h2>テストは不可欠</h2><p>しっかりテストされたストアは信頼性の高いアプリケーションにつながります。Zustand ストアを効果的にテストする方法を紹介します。</p><h2>ストアの単体テスト</h2><p>ストアロジックを個別にテスト：</p><pre><code>import { useStore } from './store';\n\nbeforeEach(() => {\n  useStore.setState({ count: 0 });\n});\n\ntest('increment increases count', () => {\n  useStore.getState().increment();\n  expect(useStore.getState().count).toBe(1);\n});</code></pre><h2>React Testing Library での統合テスト</h2><p>ストアを使用するコンポーネントをテスト：</p><pre><code>import { render, screen, fireEvent } from '@testing-library/react';\nimport Counter from './Counter';\n\ntest('counter increments on click', () => {\n  render(<Counter />);\n  fireEvent.click(screen.getByRole('button'));\n  expect(screen.getByText('1')).toBeInTheDocument();\n});</code></pre><h2>ストアのモック</h2><p>コンポーネントを個別にテストするためのモックストアを作成。</p>",
+    "server-side-rendering": "<h2>SSR の課題</h2><p>状態管理を使用したサーバーサイドレンダリングには、ハイドレーションの不一致を避けるための特別な考慮が必要です。</p><h2>ハイドレーション問題</h2><p>SSR を使用する場合、サーバーは初期状態でレンダリングしますが、クライアントは異なる状態（例：localStorage から）を持っている可能性があります。これによりハイドレーションの不一致が発生します。</p><h2>解決策：ハイドレーションをスキップ</h2><p>persist ミドルウェアの skipHydration オプションを使用：</p><pre><code>const useStore = create(\n  persist(\n    (set) => ({ ... }),\n    {\n      name: 'store',\n      skipHydration: true,\n    }\n  )\n);\n\n// アプリ内で\nuseEffect(() => {\n  useStore.persist.rehydrate();\n}, []);</code></pre><h2>Next.js App Router</h2><p>Next.js App Router では、'use client' でマークされたクライアントコンポーネントでのみ Zustand を使用することを検討してください。</p><h2>ベストプラクティス</h2><ul><li>SSR に重要な状態はサーバーコンポーネントに保持</li><li>クライアントサイドのインタラクティビティには Zustand を使用</li><li>ハイドレーションを適切に処理</li></ul>"
   },
   "faq": {
     "title": "よくある質問",

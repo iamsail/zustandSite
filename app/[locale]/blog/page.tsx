@@ -90,22 +90,6 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
             </article>
           ))}
         </div>
-
-        {/* Newsletter Signup */}
-        <div className="mt-16 p-8 rounded-lg bg-theme-secondary border border-theme text-center">
-          <h2 className="text-2xl font-bold mb-4">{t('newsletter.title')}</h2>
-          <p className="text-theme-secondary mb-6">{t('newsletter.description')}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder={t('newsletter.placeholder')}
-              className="flex-1 px-4 py-2 rounded-lg border border-theme bg-theme-primary text-theme-primary focus:outline-none focus:ring-2"
-            />
-            <button className="btn-primary">
-              {t('newsletter.button')}
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );

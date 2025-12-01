@@ -16,9 +16,17 @@ The Zustand documentation site is now live at https://zustand.site with:
 - Google Search Console verified
 - All documentation pages working
 - Dark Mode support
-- Blog, FAQ, and Compare pages
+- Blog (with article detail pages), FAQ, and Compare pages
 
 ## Recent Changes
+
+### 2025-12-01: Blog Detail Pages & Fixes
+- Created blog article dynamic route `/blog/[slug]/page.tsx`
+- Added full article content for all 5 blog posts in all 3 languages
+- Fixed HTML content rendering using `getMessages()` instead of translation function
+- Added blog content styling in globals.css
+- Added share buttons (Twitter, LinkedIn) and related posts section
+- Removed newsletter signup section from blog listing page
 
 ### 2025-12-01: Dark Mode & Content Expansion
 - Added Dark Mode support with CSS variables and ThemeProvider
