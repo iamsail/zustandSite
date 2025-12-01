@@ -1,6 +1,6 @@
 # Active Context - Zustand Documentation Site
 
-**Last Updated:** 2025-11-30  
+**Last Updated:** 2025-12-01  
 **Current Phase:** Production Live on Vercel  
 **Branch:** feature/vercel
 
@@ -15,8 +15,20 @@ The Zustand documentation site is now live at https://zustand.site with:
 - Google Analytics 4 tracking
 - Google Search Console verified
 - All documentation pages working
+- Dark Mode support
+- Blog, FAQ, and Compare pages
 
 ## Recent Changes
+
+### 2025-12-01: Dark Mode & Content Expansion
+- Added Dark Mode support with CSS variables and ThemeProvider
+- Created `/blog` page with article listings
+- Created `/faq` page with expandable Q&A sections
+- Created `/compare` page comparing Zustand vs Redux vs MobX
+- Added 3 new examples: Authentication, Theme Store, Notifications
+- Updated all translations (en, zh, ja) for new pages
+- Updated sitemap to include 3 new pages (now 36 URLs total)
+- Added theme toggle button to header navigation
 
 ### 2025-11-30: Documentation Subpages
 - Created `/docs/middleware` page - Middleware overview and custom middleware

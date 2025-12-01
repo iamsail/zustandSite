@@ -9,7 +9,10 @@
     "docs": "Documentation",
     "tutorial": "Tutorial",
     "examples": "Examples",
-    "api": "API Reference"
+    "api": "API Reference",
+    "blog": "Blog",
+    "compare": "Compare",
+    "faq": "FAQ"
   },
   "home": {
     "hero": {
@@ -288,6 +291,327 @@
     },
     "typescript": {
       "title": "TypeScript Support"
+    }
+  },
+  "blog": {
+    "title": "Zustand Blog",
+    "description": "Latest articles, tutorials, and tips about Zustand state management for React applications.",
+    "minRead": "min read",
+    "readMore": "Read more",
+    "posts": {
+      "zustand-vs-context": {
+        "title": "Zustand vs React Context: When to Use Which?",
+        "excerpt": "A deep dive into when you should use Zustand over React Context and vice versa. Learn the trade-offs and make informed decisions."
+      },
+      "performance-optimization": {
+        "title": "Performance Optimization Tips for Zustand",
+        "excerpt": "Learn how to optimize your Zustand stores for maximum performance. Covers selectors, shallow comparisons, and avoiding common pitfalls."
+      },
+      "typescript-patterns": {
+        "title": "Advanced TypeScript Patterns with Zustand",
+        "excerpt": "Master TypeScript with Zustand. Learn about type inference, generic stores, and creating type-safe middleware."
+      },
+      "testing-zustand": {
+        "title": "Testing Zustand Stores: A Complete Guide",
+        "excerpt": "Everything you need to know about testing Zustand stores. From unit tests to integration tests with React Testing Library."
+      },
+      "server-side-rendering": {
+        "title": "Zustand and Server-Side Rendering",
+        "excerpt": "How to use Zustand with Next.js and other SSR frameworks. Handle hydration and avoid common SSR pitfalls."
+      }
+    },
+    "newsletter": {
+      "title": "Subscribe to Our Newsletter",
+      "description": "Get the latest Zustand tips and tutorials delivered to your inbox.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to the most common questions about Zustand state management.",
+    "categories": {
+      "general": "General Questions",
+      "usage": "Usage & Patterns",
+      "advanced": "Advanced Topics",
+      "troubleshooting": "Troubleshooting"
+    },
+    "questions": {
+      "what-is-zustand": {
+        "q": "What is Zustand?",
+        "a": "Zustand is a small, fast, and scalable state management solution for React. It uses hooks and doesn't require providers or context, making it simpler to use than many alternatives."
+      },
+      "why-use-zustand": {
+        "q": "Why should I use Zustand over other state management libraries?",
+        "a": "Zustand offers a minimal API with no boilerplate, excellent TypeScript support, great performance out of the box, and a tiny bundle size (~1KB). It's perfect for projects of any size."
+      },
+      "zustand-vs-redux": {
+        "q": "How does Zustand compare to Redux?",
+        "a": "Zustand is much simpler than Redux with no reducers, action types, or dispatch. It has a smaller bundle size and requires less code. However, Redux has a larger ecosystem and may be better for very large teams."
+      },
+      "bundle-size": {
+        "q": "What is Zustand's bundle size?",
+        "a": "Zustand is incredibly lightweight at around 1KB gzipped. This makes it one of the smallest state management libraries available."
+      },
+      "create-store": {
+        "q": "How do I create a Zustand store?",
+        "a": "Creating a store is simple using the create function. The store is just a hook that you can use directly in your components."
+      },
+      "update-state": {
+        "q": "How do I update state in Zustand?",
+        "a": "Use the set function provided to your store. You can pass a partial state object or an updater function."
+      },
+      "async-actions": {
+        "q": "How do I handle async actions?",
+        "a": "Async actions work naturally in Zustand. Just make your action function async and call set when data is ready."
+      },
+      "selectors": {
+        "q": "How do I use selectors to optimize re-renders?",
+        "a": "Pass a selector function to your store hook to subscribe to specific parts of state. Use shallow comparison for object selections."
+      },
+      "middleware": {
+        "q": "What middleware is available?",
+        "a": "Zustand provides built-in middleware for persistence (persist), DevTools integration (devtools), Immer support (immer), and more. You can also create custom middleware."
+      },
+      "persist-state": {
+        "q": "How do I persist state to localStorage?",
+        "a": "Use the persist middleware to automatically save and restore state from localStorage or sessionStorage."
+      },
+      "devtools": {
+        "q": "Does Zustand support Redux DevTools?",
+        "a": "Yes! Use the devtools middleware to enable Redux DevTools support for debugging your stores."
+      },
+      "typescript": {
+        "q": "How well does Zustand work with TypeScript?",
+        "a": "Zustand has excellent TypeScript support with full type inference. You can type your store state and actions for a great developer experience."
+      },
+      "rerender-issues": {
+        "q": "Why is my component re-rendering too often?",
+        "a": "Make sure you're using selectors to subscribe to only the state you need. Use shallow comparison when selecting objects or arrays."
+      },
+      "state-not-updating": {
+        "q": "Why isn't my state updating?",
+        "a": "Check that you're using the set function correctly. Remember that set merges state by default - use set(state, true) to replace the entire state."
+      },
+      "ssr-issues": {
+        "q": "How do I handle SSR with Zustand?",
+        "a": "For SSR, make sure to handle hydration properly. Use the persist middleware's onRehydrateStorage callback or skip hydration on the server."
+      },
+      "memory-leaks": {
+        "q": "How do I prevent memory leaks?",
+        "a": "Zustand handles cleanup automatically when components unmount. For manual subscriptions with subscribe(), make sure to call the returned unsubscribe function."
+      }
+    },
+    "stillHaveQuestions": {
+      "title": "Still Have Questions?",
+      "description": "Can't find the answer you're looking for? Join our community!",
+      "github": "GitHub Discussions",
+      "discord": "Discord Community"
+    }
+  },
+  "compare": {
+    "title": "State Management Comparison",
+    "description": "Compare Zustand with other popular React state management libraries to find the best fit for your project.",
+    "recommended": "Recommended",
+    "quickSummary": {
+      "title": "Quick Summary"
+    },
+    "libraries": {
+      "zustand": {
+        "name": "Zustand",
+        "icon": "🐻",
+        "summary": "Simple, fast, and scalable. Perfect for most React projects with minimal boilerplate.",
+        "bundleSize": "~1KB",
+        "stars": "40k+"
+      },
+      "redux": {
+        "name": "Redux Toolkit",
+        "icon": "🔄",
+        "summary": "Industry standard with large ecosystem. Best for very large teams and complex apps.",
+        "bundleSize": "~11KB",
+        "stars": "60k+"
+      },
+      "mobx": {
+        "name": "MobX",
+        "icon": "🔮",
+        "summary": "Reactive programming with automatic tracking. Great for complex derived state.",
+        "bundleSize": "~16KB",
+        "stars": "27k+"
+      },
+      "jotai": {
+        "name": "Jotai",
+        "icon": "👻",
+        "summary": "Primitive and flexible atomic state. Similar philosophy to Zustand from the same team.",
+        "bundleSize": "~2KB",
+        "stars": "15k+"
+      },
+      "recoil": {
+        "name": "Recoil",
+        "icon": "⚛️",
+        "summary": "Facebook's atomic state library. Good for complex async data dependencies.",
+        "bundleSize": "~22KB",
+        "stars": "19k+"
+      }
+    },
+    "metrics": {
+      "bundleSize": "Bundle Size",
+      "stars": "GitHub Stars"
+    },
+    "comparisonTable": {
+      "title": "Feature Comparison",
+      "feature": "Feature"
+    },
+    "features": {
+      "bundleSize": "Bundle Size",
+      "boilerplate": "Boilerplate",
+      "learningCurve": "Learning Curve",
+      "typescript": "TypeScript",
+      "devtools": "DevTools",
+      "middleware": "Middleware",
+      "ssr": "SSR Support",
+      "reactNative": "React Native",
+      "persistence": "Persistence",
+      "performance": "Performance"
+    },
+    "ratings": {
+      "zustand": {
+        "bundleSize": "⭐⭐⭐⭐⭐",
+        "boilerplate": "⭐⭐⭐⭐⭐",
+        "learningCurve": "⭐⭐⭐⭐⭐",
+        "typescript": "⭐⭐⭐⭐⭐",
+        "devtools": "⭐⭐⭐⭐",
+        "middleware": "⭐⭐⭐⭐",
+        "ssr": "⭐⭐⭐⭐",
+        "reactNative": "⭐⭐⭐⭐⭐",
+        "persistence": "⭐⭐⭐⭐⭐",
+        "performance": "⭐⭐⭐⭐⭐"
+      },
+      "redux": {
+        "bundleSize": "⭐⭐⭐",
+        "boilerplate": "⭐⭐⭐",
+        "learningCurve": "⭐⭐⭐",
+        "typescript": "⭐⭐⭐⭐",
+        "devtools": "⭐⭐⭐⭐⭐",
+        "middleware": "⭐⭐⭐⭐⭐",
+        "ssr": "⭐⭐⭐⭐",
+        "reactNative": "⭐⭐⭐⭐",
+        "persistence": "⭐⭐⭐⭐",
+        "performance": "⭐⭐⭐⭐"
+      },
+      "mobx": {
+        "bundleSize": "⭐⭐",
+        "boilerplate": "⭐⭐⭐⭐",
+        "learningCurve": "⭐⭐⭐",
+        "typescript": "⭐⭐⭐⭐",
+        "devtools": "⭐⭐⭐⭐",
+        "middleware": "⭐⭐⭐",
+        "ssr": "⭐⭐⭐",
+        "reactNative": "⭐⭐⭐⭐",
+        "persistence": "⭐⭐⭐",
+        "performance": "⭐⭐⭐⭐"
+      },
+      "jotai": {
+        "bundleSize": "⭐⭐⭐⭐⭐",
+        "boilerplate": "⭐⭐⭐⭐⭐",
+        "learningCurve": "⭐⭐⭐⭐",
+        "typescript": "⭐⭐⭐⭐⭐",
+        "devtools": "⭐⭐⭐⭐",
+        "middleware": "⭐⭐⭐⭐",
+        "ssr": "⭐⭐⭐⭐",
+        "reactNative": "⭐⭐⭐⭐⭐",
+        "persistence": "⭐⭐⭐⭐",
+        "performance": "⭐⭐⭐⭐⭐"
+      },
+      "recoil": {
+        "bundleSize": "⭐⭐",
+        "boilerplate": "⭐⭐⭐⭐",
+        "learningCurve": "⭐⭐⭐",
+        "typescript": "⭐⭐⭐⭐",
+        "devtools": "⭐⭐⭐",
+        "middleware": "⭐⭐⭐",
+        "ssr": "⭐⭐⭐",
+        "reactNative": "⭐⭐⭐",
+        "persistence": "⭐⭐⭐",
+        "performance": "⭐⭐⭐⭐"
+      }
+    },
+    "detailed": {
+      "title": "Detailed Comparison",
+      "zustandAdvantages": "Zustand Advantages",
+      "reduxAdvantages": "Redux Advantages",
+      "mobxAdvantages": "MobX Advantages",
+      "codeComparison": "Code Comparison",
+      "zustandVsRedux": {
+        "title": "Zustand vs Redux",
+        "zustand1": "No boilerplate - create stores with minimal code",
+        "zustand2": "No providers needed - use stores anywhere",
+        "zustand3": "Smaller bundle size (~1KB vs ~11KB)",
+        "redux1": "Larger ecosystem and community",
+        "redux2": "Time-travel debugging out of the box",
+        "redux3": "Better for very large teams with strict patterns"
+      },
+      "zustandVsMobx": {
+        "title": "Zustand vs MobX",
+        "zustand1": "Simpler mental model - explicit state updates",
+        "zustand2": "No decorators or observables required",
+        "zustand3": "Better tree-shaking and smaller bundle",
+        "mobx1": "Automatic dependency tracking",
+        "mobx2": "Great for complex derived state",
+        "mobx3": "More familiar for OOP developers"
+      }
+    },
+    "whenToUse": {
+      "title": "When to Use Each",
+      "useZustand": {
+        "title": "Use Zustand When",
+        "reason1": "You want minimal boilerplate and setup",
+        "reason2": "You're building a small to medium project",
+        "reason3": "You prefer a simple, hook-based API",
+        "reason4": "Bundle size is important to you"
+      },
+      "useOthers": {
+        "title": "Consider Alternatives When",
+        "reason1": "You need extensive Redux ecosystem tools",
+        "reason2": "Your team is already familiar with MobX",
+        "reason3": "You need atomic state management (Jotai)"
+      }
+    },
+    "cta": {
+      "title": "Ready to Try Zustand?",
+      "description": "Get started with our comprehensive documentation and tutorials.",
+      "button": "Get Started"
+    }
+  },
+  "examples": {
+    "title": "Zustand Examples",
+    "description": "Explore these practical examples to learn how to use Zustand in real-world applications.",
+    "counter": {
+      "title": "Simple Counter",
+      "description": "A basic counter example demonstrating state updates and actions."
+    },
+    "cart": {
+      "title": "Shopping Cart",
+      "description": "A shopping cart with add, remove, and quantity management."
+    },
+    "form": {
+      "title": "Form Management",
+      "description": "Managing form state with validation and submission."
+    },
+    "async": {
+      "title": "Async Data Fetching",
+      "description": "Handling API calls with loading and error states."
+    },
+    "auth": {
+      "title": "Authentication Store",
+      "description": "Complete authentication flow with login, logout, and token persistence."
+    },
+    "theme": {
+      "title": "Theme Store",
+      "description": "Dark/light theme management with system preference detection."
+    },
+    "notifications": {
+      "title": "Notification System",
+      "description": "Toast notification system with auto-dismiss and different types."
     }
   }
 }
