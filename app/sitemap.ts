@@ -3,7 +3,20 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zustand.site';
   const locales = ['en', 'zh', 'ja'];
-  const pages = ['', '/docs', '/tutorial', '/examples', '/api', '/docs/middleware', '/docs/persist', '/docs/devtools', '/docs/immer'];
+  const pages = [
+    '',
+    '/docs',
+    '/tutorial',
+    '/examples',
+    '/api',
+    '/docs/middleware',
+    '/docs/persist',
+    '/docs/devtools',
+    '/docs/immer',
+    '/blog',
+    '/faq',
+    '/compare'
+  ];
 
   const sitemap: MetadataRoute.Sitemap = [];
 
