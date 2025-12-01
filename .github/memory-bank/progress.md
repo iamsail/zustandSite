@@ -1,6 +1,6 @@
 # Progress - Zustand Documentation Site
 
-**Last Updated:** 2025-11-30  
+**Last Updated:** 2025-12-01  
 **Project Status:** Production Live at https://zustand.site
 
 ## What Works
@@ -76,6 +76,17 @@
 - ✅ `/docs/persist` - State persistence documentation
 - ✅ `/docs/devtools` - Redux DevTools integration guide
 - ✅ `/docs/immer` - Immer integration for immutable updates
+
+**Content Expansion (Added 2025-12-01)**
+- ✅ Dark Mode support with CSS variables and ThemeProvider
+- ✅ Theme toggle in header with localStorage persistence
+- ✅ `/blog` - Blog listing page with 5 articles
+- ✅ `/blog/[slug]` - Individual blog article pages with full content
+- ✅ `/faq` - FAQ page with 16 Q&A in 4 categories
+- ✅ `/compare` - Comparison page (Zustand vs Redux vs MobX vs Jotai vs Recoil)
+- ✅ 3 new examples: Auth Store, Theme Store, Notifications
+- ✅ All translations updated for new content (en, zh, ja)
+- ✅ Sitemap updated to 41 URLs (including blog article pages)
 
 ### ✅ Memory Bank Documentation
 
