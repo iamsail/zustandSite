@@ -14,6 +14,7 @@ export default function Header() {
   const navigation = [
     { name: t('home'), href: `/${locale}` },
     { name: t('docs'), href: `/${locale}/docs` },
+    { name: t('guides'), href: `/${locale}/guides` },
     { name: t('tutorial'), href: `/${locale}/tutorial` },
     { name: t('examples'), href: `/${locale}/examples` },
     { name: t('api'), href: `/${locale}/api` },
