@@ -22,18 +22,18 @@ export default async function NextJsGuidePage({ params }: { params: Promise<{ lo
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Does Zustand work with Next.js App Router?',
+        name: t('faq.workWithAppRouter.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, Zustand works with the App Router. However, since stores are global, you need to be careful when using them in Server Components to avoid sharing state between requests. The recommended approach is to create a store per request using a Context Provider.',
+          text: t('faq.workWithAppRouter.answer'),
         },
       },
       {
         '@type': 'Question',
-        name: 'How to use Zustand in Server Components?',
+        name: t('faq.serverComponents.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You cannot use Zustand hooks directly in Server Components. Instead, you should fetch data in the Server Component and pass it as props to a Client Component, or initialize a store in a Client Component provider.',
+          text: t('faq.serverComponents.answer'),
         },
       },
     ],
@@ -47,35 +47,33 @@ export default async function NextJsGuidePage({ params }: { params: Promise<{ lo
       />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-          Using Zustand with Next.js App Router
+          {t('h1')}
         </h1>
         <p className="text-xl text-gray-600 mb-12">
-          A complete guide to Server Components, SSR, and avoiding global state pollution.
+          {t('subtitle')}
         </p>
 
         {/* The Problem */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">The Challenge: Global State vs. SSR</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('challenge.title')}</h2>
           <p className="text-gray-700 mb-4">
-            In a Single Page Application (SPA), a global store variable is fine. But in Next.js (SSR), 
-            global variables are shared across all requests on the server. This means one user's data could 
-            accidentally leak to another user if you aren't careful.
+            {t('challenge.description')}
           </p>
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4">
             <p className="font-medium text-yellow-900">
-              Warning: Do not define a global store using `create()` if you plan to initialize it with data from the server.
+              {t('challenge.warning')}
             </p>
           </div>
         </section>
 
         {/* The Solution */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">The Solution: Store Provider Pattern</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('solution.title')}</h2>
           <p className="text-gray-700 mb-6">
-            To ensure isolation, we create a new store instance for each request (or component tree) using React Context.
+            {t('solution.description')}
           </p>
 
-          <h3 className="text-2xl font-semibold mb-4">1. Create the Store Factory</h3>
+          <h3 className="text-2xl font-semibold mb-4">{t('solution.step1')}</h3>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`// src/stores/counter-store.ts
 import { createStore } from 'zustand/vanilla'
@@ -104,7 +102,7 @@ export const createCounterStore = (initState: CounterState = defaultInitState) =
 }`}</code>
           </pre>
 
-          <h3 className="text-2xl font-semibold mb-4">2. Create the Provider</h3>
+          <h3 className="text-2xl font-semibold mb-4">{t('solution.step2')}</h3>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`// src/providers/counter-store-provider.tsx
 'use client'
@@ -151,7 +149,7 @@ export const useCounterStore = <T,>(
 }`}</code>
           </pre>
 
-          <h3 className="text-2xl font-semibold mb-4">3. Use in Layout or Page</h3>
+          <h3 className="text-2xl font-semibold mb-4">{t('solution.step3')}</h3>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`// app/layout.tsx
 import { CounterStoreProvider } from '@/providers/counter-store-provider'

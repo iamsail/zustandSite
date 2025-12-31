@@ -3,51 +3,52 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'tutorial.meta' });
 
   return {
-    title: 'Tutorial - ' + t('title'),
-    description: 'Step-by-step tutorial to learn Zustand state management from basics to advanced concepts.',
+    title: t('title'),
+    description: t('description'),
     keywords: t('keywords'),
   };
 }
 
-export default function TutorialPage() {
+export default async function TutorialPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'tutorial' });
+
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Zustand Tutorial</h1>
+        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">Tutorial Overview</h2>
+            <h2 className="text-3xl font-bold mb-6">{t('overview.title')}</h2>
             <p className="text-lg mb-4">
-              Welcome to the comprehensive Zustand tutorial! This guide will take you from beginner to advanced,
-              teaching you everything you need to know about state management with Zustand.
+              {t('overview.description')}
             </p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">Lesson 1: Introduction to Zustand</h2>
-            <p className="mb-4">Zustand is a lightweight state management library for React that provides:</p>
+            <h2 className="text-3xl font-bold mb-6">{t('lesson1.title')}</h2>
+            <p className="mb-4">{t('lesson1.description')}</p>
             <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>Simple and intuitive API</li>
-              <li>No boilerplate code required</li>
-              <li>Great TypeScript support</li>
-              <li>Excellent performance with automatic optimization</li>
-              <li>Small bundle size (less than 1KB)</li>
+              <li>{t('lesson1.features.simple')}</li>
+              <li>{t('lesson1.features.boilerplate')}</li>
+              <li>{t('lesson1.features.typescript')}</li>
+              <li>{t('lesson1.features.performance')}</li>
+              <li>{t('lesson1.features.size')}</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold mb-4 mt-6">Why Choose Zustand?</h3>
+            <h3 className="text-2xl font-semibold mb-4 mt-6">{t('lesson1.why.title')}</h3>
             <p className="mb-4">
-              Compared to other state management solutions like Redux or MobX, Zustand offers a simpler API
-              with less boilerplate while maintaining powerful features and excellent performance.
+              {t('lesson1.why.description')}
             </p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">Lesson 2: Creating Your First Store</h2>
-            <p className="mb-4">Let's create a simple todo list application:</p>
+            <h2 className="text-3xl font-bold mb-6">{t('lesson2.title')}</h2>
+            <p className="mb-4">{t('lesson2.description')}</p>
             
             <pre><code>{`import { create } from 'zustand'
 
@@ -139,10 +140,10 @@ const useTodoStore = create<TodoStore>((set) => ({
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">Lesson 4: Advanced Patterns</h2>
+            <h2 className="text-3xl font-bold mb-6">{t('lesson4.title')}</h2>
             
-            <h3 className="text-2xl font-semibold mb-4">Async Actions</h3>
-            <p className="mb-4">Handle asynchronous operations in your store:</p>
+            <h3 className="text-2xl font-semibold mb-4">{t('lesson4.async.title')}</h3>
+            <p className="mb-4">{t('lesson4.async.description')}</p>
             <pre><code>{`const useStore = create((set) => ({
   data: null,
   loading: false,
@@ -159,8 +160,8 @@ const useTodoStore = create<TodoStore>((set) => ({
   }
 }))`}</code></pre>
 
-            <h3 className="text-2xl font-semibold mb-4 mt-6">Computed Values</h3>
-            <p className="mb-4">Create derived state with selectors:</p>
+            <h3 className="text-2xl font-semibold mb-4 mt-6">{t('lesson4.computed.title')}</h3>
+            <p className="mb-4">{t('lesson4.computed.description')}</p>
             <pre><code>{`const useStore = create((set) => ({
   todos: [],
   // ... actions
@@ -174,14 +175,14 @@ const totalCount = useStore((state) => state.todos.length)`}</code></pre>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">Next Steps</h2>
-            <p className="mb-4">Continue learning with these topics:</p>
+            <h2 className="text-3xl font-bold mb-6">{t('nextSteps.title')}</h2>
+            <p className="mb-4">{t('nextSteps.description')}</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Middleware for persistence and devtools</li>
-              <li>Testing Zustand stores</li>
-              <li>Advanced TypeScript patterns</li>
-              <li>Performance optimization techniques</li>
-              <li>Integration with other libraries</li>
+              <li>{t('nextSteps.topics.middleware')}</li>
+              <li>{t('nextSteps.topics.testing')}</li>
+              <li>{t('nextSteps.topics.typescript')}</li>
+              <li>{t('nextSteps.topics.performance')}</li>
+              <li>{t('nextSteps.topics.integration')}</li>
             </ul>
           </section>
         </div>

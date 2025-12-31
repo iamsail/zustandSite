@@ -3,27 +3,30 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'apiPage.meta' });
 
   return {
-    title: 'API Reference - ' + t('title'),
-    description: 'Complete Zustand API reference including create, set, get, and middleware functions.',
-    keywords: t('keywords'),
+    title: t('title'),
+    description: t('description'),
+    keywords: (await getTranslations({ locale, namespace: 'meta' }))('keywords'),
   };
 }
 
-export default function ApiPage() {
+export default async function ApiPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'apiPage' });
+
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">API Reference</h1>
+        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
 
         <div className="space-y-12">
           {/* create */}
           <section>
-            <h2 className="text-3xl font-bold mb-4">create()</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('create.title')}</h2>
             <p className="text-gray-600 mb-4">
-              Creates a store with the given state creator function.
+              {t('create.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 
@@ -36,23 +39,23 @@ const useStore = create((set, get, api) => ({
             
             <div className="mt-6 space-y-4">
               <div className="bg-gray-50 p-4 rounded">
-                <h3 className="font-semibold mb-2">Parameters</h3>
+                <h3 className="font-semibold mb-2">{t('create.parameters.title')}</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><code>stateCreator</code> - Function that receives set, get, and api</li>
+                  <li><code>stateCreator</code> - {t('create.parameters.stateCreator')}</li>
                 </ul>
               </div>
               <div className="bg-gray-50 p-4 rounded">
-                <h3 className="font-semibold mb-2">Returns</h3>
-                <p>A React hook that can be used to access the store</p>
+                <h3 className="font-semibold mb-2">{t('create.returns.title')}</h3>
+                <p>{t('create.returns.description')}</p>
               </div>
             </div>
           </section>
 
           {/* set */}
           <section>
-            <h2 className="text-3xl font-bold mb-4">set()</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('set.title')}</h2>
             <p className="text-gray-600 mb-4">
-              Updates the store state. Can be called with a partial state object or an updater function.
+              {t('set.description')}
             </p>
             <pre><code>{`// Partial update
 set({ count: 1 })
@@ -65,10 +68,10 @@ set({ count: 0 }, true)`}</code></pre>
             
             <div className="mt-6 space-y-4">
               <div className="bg-gray-50 p-4 rounded">
-                <h3 className="font-semibold mb-2">Parameters</h3>
+                <h3 className="font-semibold mb-2">{t('set.parameters.title')}</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><code>partial</code> - Partial state object or updater function</li>
-                  <li><code>replace</code> - (optional) Replace entire state instead of merging</li>
+                  <li><code>partial</code> - {t('set.parameters.partial')}</li>
+                  <li><code>replace</code> - {t('set.parameters.replace')}</li>
                 </ul>
               </div>
             </div>
@@ -76,9 +79,9 @@ set({ count: 0 }, true)`}</code></pre>
 
           {/* get */}
           <section>
-            <h2 className="text-3xl font-bold mb-4">get()</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('get.title')}</h2>
             <p className="text-gray-600 mb-4">
-              Gets the current state. Useful in actions or outside of React components.
+              {t('get.description')}
             </p>
             <pre><code>{`const useStore = create((set, get) => ({
   count: 0,
@@ -91,9 +94,9 @@ set({ count: 0 }, true)`}</code></pre>
 
           {/* subscribe */}
           <section>
-            <h2 className="text-3xl font-bold mb-4">subscribe()</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('subscribe.title')}</h2>
             <p className="text-gray-600 mb-4">
-              Subscribe to state changes. Called whenever the state updates.
+              {t('subscribe.description')}
             </p>
             <pre><code>{`const unsubscribe = useStore.subscribe(
   (state) => console.log('State changed:', state)
@@ -105,11 +108,11 @@ unsubscribe()`}</code></pre>
 
           {/* Middleware */}
           <section>
-            <h2 className="text-3xl font-bold mb-4">Middleware</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('middleware.title')}</h2>
             
-            <h3 className="text-2xl font-semibold mb-4 mt-6">persist()</h3>
+            <h3 className="text-2xl font-semibold mb-4 mt-6">{t('middleware.persist.title')}</h3>
             <p className="text-gray-600 mb-4">
-              Persists store state to localStorage or sessionStorage.
+              {t('middleware.persist.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
@@ -126,9 +129,9 @@ const useStore = create(
   )
 )`}</code></pre>
 
-            <h3 className="text-2xl font-semibold mb-4 mt-8">devtools()</h3>
+            <h3 className="text-2xl font-semibold mb-4 mt-8">{t('middleware.devtools.title')}</h3>
             <p className="text-gray-600 mb-4">
-              Enables Redux DevTools integration for debugging.
+              {t('middleware.devtools.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
@@ -140,9 +143,9 @@ const useStore = create(
   }))
 )`}</code></pre>
 
-            <h3 className="text-2xl font-semibold mb-4 mt-8">immer()</h3>
+            <h3 className="text-2xl font-semibold mb-4 mt-8">{t('middleware.immer.title')}</h3>
             <p className="text-gray-600 mb-4">
-              Enables Immer for easier immutable updates.
+              {t('middleware.immer.description')}
             </p>
             <pre><code>{`import { create } from 'zustand'
 import { immer } from 'zustand/middleware/immer'
@@ -160,9 +163,9 @@ const useStore = create(
 
           {/* Selectors */}
           <section>
-            <h2 className="text-3xl font-bold mb-4">Selectors</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('selectors.title')}</h2>
             <p className="text-gray-600 mb-4">
-              Select specific parts of state to optimize re-renders.
+              {t('selectors.description')}
             </p>
             <pre><code>{`// Select entire state
 const state = useStore()

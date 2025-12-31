@@ -60,18 +60,30 @@
     }
   },
   "docs": {
+    "meta": {
+      "title": "ドキュメント",
+      "description": "入門ガイド、コアコンセプト、高度なトピックを含む完全な Zustand ドキュメント。"
+    },
+    "title": "ドキュメント",
     "gettingStarted": {
       "title": "はじめに",
       "installation": "インストール",
+      "installationText": "npm または yarn を使用して Zustand をインストールします：",
       "firstStore": "最初のストア",
-      "basicUsage": "基本的な使い方"
+      "firstStoreText": "Store の作成は簡単です。これはシンプルなカウンターの例です：",
+      "basicUsage": "基本的な使い方",
+      "basicUsageText": "React コンポーネントで store を使用します："
     },
     "coreConcepts": {
       "title": "コアコンセプト",
       "store": "ストア",
+      "storeDesc": "Store はアプリケーションの状態を保持します。`create` 関数を使用して作成され、React フックを返します。",
       "state": "状態",
+      "stateDesc": "状態は store が保持するデータです。オブジェクト、配列、プリミティブなど、任意の JavaScript 値を使用できます。",
       "actions": "アクション",
-      "selectors": "セレクター"
+      "actionsDesc": "アクションは状態を変更する関数です。`set` 関数を使用して store を更新します。",
+      "selectors": "セレクター",
+      "selectorsDesc": "セレクターを使用すると、状態の特定の部分を購読して、再レンダリングを最適化できます。"
     },
     "advanced": {
       "title": "高度なトピック",
@@ -83,34 +95,323 @@
   },
   "comparison": {
     "reduxVsZustand": {
-      "title": "Zustand vs Redux in 2026",
-      "description": "Why 70% of developers are switching from Redux to Zustand. A comprehensive comparison of performance, boilerplate, and developer experience.",
-      "keywords": "zustand vs redux, redux alternative, react state management comparison, zustand performance"
+      "title": "2026年 Zustand vs Redux 比較",
+      "description": "なぜ70%の開発者がReduxからZustandに移行しているのか。パフォーマンス、ボイラープレート、開発者体験の包括的な比較。",
+      "keywords": "zustand vs redux, redux 代替, react 状態管理 比較, zustand パフォーマンス",
+      "h1": "2026年 Zustand vs Redux: なぜ開発者は移行しているのか",
+      "subtitle": "ボイラープレート、パフォーマンス、開発者体験の包括的な比較。",
+      "atAGlance": {
+        "title": "一目でわかる比較",
+        "table": {
+          "feature": "機能",
+          "zustand": "Zustand",
+          "redux": "Redux Toolkit",
+          "bundleSize": "バンドルサイズ",
+          "bundleSizeZustand": "~1.1kB (圧縮後)",
+          "bundleSizeRedux": "~10kB+ (RTK + React-Redux)",
+          "boilerplate": "ボイラープレート",
+          "boilerplateZustand": "最小限 (作成して使用)",
+          "boilerplateRedux": "多い (Slices, Reducers, Providers)",
+          "contextProvider": "Context Provider",
+          "contextProviderZustand": "不要",
+          "contextProviderRedux": "必要",
+          "stateModel": "状態モデル",
+          "stateModelZustand": "Fluxライク (簡略化)",
+          "stateModelRedux": "Flux (厳格)",
+          "learningCurve": "学習曲線",
+          "learningCurveZustand": "低い",
+          "learningCurveRedux": "中/高"
+        }
+      },
+      "codeComparison": {
+        "title": "コード比較",
+        "description": "インクリメントとデクリメント機能を持つシンプルなカウンターを実装してみましょう。",
+        "zustand": "Zustand",
+        "simple": "シンプル",
+        "redux": "Redux Toolkit",
+        "verbose": "冗長"
+      },
+      "performance": {
+        "title": "パフォーマンスと再レンダリング",
+        "description": "Zustandは「ゾンビチャイルド」問題と不要な再レンダリングを即座に解決します。セレクターを使用することで、コンポーネントはリッスンしている特定の状態スライスが変更された場合にのみ再レンダリングされます。",
+        "quote": "「ZustandはアプリケーションをContext Providerでラップする必要がないため、Context APIの再レンダリング伝播問題を回避でき、大幅に高速です。」"
+      },
+      "conclusion": {
+        "title": "結論：いつ移行すべきか？",
+        "chooseZustand": "<strong>Zustandを選ぶべき場合：</strong> シンプルで高速、かつ意見を押し付けないソリューションが必要な場合。ProviderよりもHooksを好む場合。ボイラープレートを減らしたい場合。",
+        "stickWithRedux": "<strong>Reduxを使い続けるべき場合：</strong> Reduxエコシステムに深く投資している大規模なエンタープライズコードベースがある場合、またはReduxによって強制されるFluxアーキテクチャが厳密に必要な場合。"
+      },
+      "faq": {
+        "better": {
+          "question": "ZustandはReduxより優れていますか？",
+          "answer": "ほとんどのアプリケーションにおいて、ZustandはReduxよりも優れていると考えられています。必要なボイラープレートコードが大幅に少なく、バンドルサイズが小さく（1.1kB vs Redux Toolkit）、アプリをProviderでラップする必要がないシンプルなAPIを提供するためです。"
+        },
+        "replace": {
+          "question": "ReduxをZustandに置き換えることはできますか？",
+          "answer": "はい、ReduxをZustandに簡単に置き換えることができます。ZustandはRedux DevToolsをサポートしており、移行期間中にReduxと共存させることも可能です。"
+        }
+      }
     }
   },
   "guides": {
     "nextjs": {
-      "title": "Zustand with Next.js App Router",
-      "description": "Complete guide to using Zustand with Next.js 14/15 App Router, Server Components, and SSR.",
-      "keywords": "zustand nextjs, zustand app router, zustand server components, nextjs state management"
+      "title": "Zustand と Next.js App Router",
+      "description": "Next.js 14/15 App Router、Server Components、SSR で Zustand を使用するための完全ガイド。",
+      "keywords": "zustand nextjs, zustand app router, zustand server components, nextjs 状態管理",
+      "h1": "Next.js App Router で Zustand を使用する",
+      "subtitle": "Server Components、SSR、およびグローバル状態汚染の回避に関する完全ガイド。",
+      "challenge": {
+        "title": "課題：グローバル状態 vs SSR",
+        "description": "シングルページアプリケーション (SPA) では、グローバルな store 変数で問題ありません。しかし、Next.js (SSR) では、グローバル変数はサーバー上のすべてのリクエスト間で共有されます。つまり、注意しないと、あるユーザーのデータが誤って別のユーザーに漏洩する可能性があります。",
+        "warning": "警告：サーバーからのデータで store を初期化する予定がある場合は、`create()` を使用してグローバル store を定義しないでください。"
+      },
+      "solution": {
+        "title": "解決策：Store Provider パターン",
+        "description": "分離を確実にするために、React Context を使用してリクエスト（またはコンポーネントツリー）ごとに新しい store インスタンスを作成します。",
+        "step1": "1. Store ファクトリーを作成",
+        "step2": "2. Provider を作成",
+        "step3": "3. Layout または Page で使用"
+      },
+      "faq": {
+        "workWithAppRouter": {
+          "question": "Zustand は Next.js App Router で動作しますか？",
+          "answer": "はい、Zustand は App Router で動作します。ただし、store はグローバルであるため、Server Components で使用する場合は、リクエスト間で状態を共有しないように注意する必要があります。推奨されるアプローチは、Context Provider を使用してリクエストごとに store を作成することです。"
+        },
+        "serverComponents": {
+          "question": "Server Components で Zustand を使用するには？",
+          "answer": "Server Components で直接 Zustand フックを使用することはできません。代わりに、Server Component でデータを取得し、それを Props として Client Component に渡すか、Client Component プロバイダーで store を初期化する必要があります。"
+        }
+      }
     },
     "middleware": {
-      "title": "Mastering Middleware & Persistence",
-      "description": "Deep dive into Zustand middleware, persistence with localStorage/IndexedDB, and custom storage engines.",
-      "keywords": "zustand middleware, zustand persist, zustand localstorage, zustand indexeddb"
+      "title": "ミドルウェアと永続化をマスターする",
+      "description": "Zustand ミドルウェア、localStorage/IndexedDB による永続化、カスタムストレージエンジンの詳細。",
+      "keywords": "zustand ミドルウェア, zustand 永続化, zustand localstorage, zustand indexeddb",
+      "h1": "ミドルウェアと永続化をマスターする",
+      "subtitle": "LocalStorage、IndexedDB への状態の保存方法と、カスタムミドルウェアの作成方法を学びます。",
+      "basicPersistence": {
+        "title": "基本的な永続化",
+        "description": "`persist` ミドルウェアを使用すると、状態をストレージ（localStorage、AsyncStorage、IndexedDB など）に保存できるため、ユーザーがページをリロードしても状態が保持されます。"
+      },
+      "hydration": {
+        "title": "ハイドレーションエラーの処理",
+        "description": "Next.js では、サーバーが初期状態（クマ 0 匹）をレンダリングするのに対し、クライアントは永続化された状態（クマ 5 匹）でハイドレーションを行うため、ハイドレーションエラーが発生する可能性があります。",
+        "solution": "解決策：カスタムフック"
+      },
+      "faq": {
+        "persistState": {
+          "question": "Zustand の状態を永続化するにはどうすればよいですか？",
+          "answer": "組み込みの `persist` ミドルウェアを使用できます。これにより、状態が localStorage（デフォルト）、sessionStorage、または AsyncStorage や IndexedDB などのカスタムストレージエンジンに自動的に保存されます。"
+        },
+        "fixHydration": {
+          "question": "persist によるハイドレーションエラーを修正するには？",
+          "answer": "ハイドレーションエラーは、サーバーの HTML がクライアントの HTML（永続化された状態がロードされている）と異なる場合に発生します。これを修正するには、コンポーネントがクライアントにマウントされた後にのみ状態を返すカスタムフックを使用できます。"
+        }
+      }
     },
     "typescript": {
-      "title": "TypeScript Best Practices",
-      "description": "The ultimate guide to using Zustand with TypeScript. Type-safe stores, actions, and selectors.",
-      "keywords": "zustand typescript, typed zustand, zustand hooks typescript"
+      "title": "TypeScript ベストプラクティス",
+      "description": "TypeScript で Zustand を使用するための究極のガイド。型安全なストア、アクション、セレクター。",
+      "keywords": "zustand typescript, 型付き zustand, zustand hooks typescript",
+      "h1": "TypeScript ベストプラクティス",
+      "subtitle": "Zustand による型安全な状態管理の究極のガイド。",
+      "basicTyping": {
+        "title": "基本的な型定義",
+        "description": "ストアに型を付ける最も一般的な方法は、状態とアクションの両方を含むインターフェースを定義することです。"
+      },
+      "combine": {
+        "title": " `combine` の使用（型推論）",
+        "description": "インターフェースを手動で記述したくない場合は、`combine` ミドルウェアを使用して初期状態から型を推論できます。"
+      },
+      "slices": {
+        "title": "TypeScript によるスライスパターン",
+        "description": "ストアをスライスに分割する場合、StateCreator 型を適切に定義する必要があります。"
+      },
+      "faq": {
+        "useWithTs": {
+          "question": "TypeScript で Zustand を使用するには？",
+          "answer": "状態とアクションのインターフェースを定義し、そのインターフェースを `create` 関数に渡すことで、TypeScript で Zustand を使用できます：`create'<MyState>'()(...)`。"
+        },
+        "typeActions": {
+          "question": "Zustand でアクションに型を付けるには？",
+          "answer": "アクションはストアインターフェースの一部として定義する必要があります。例：`increment: () => void`。実装内部では、TypeScript が `set` と `get` の型を自動的に推論します。"
+        }
+      }
     }
+  },
+  "tutorial": {
+    "meta": {
+      "title": "チュートリアル",
+      "description": "基礎から高度な概念まで、Zustand の状態管理を学ぶためのステップバイステップのチュートリアル。"
+    },
+    "title": "Zustand チュートリアル",
+    "overview": {
+      "title": "チュートリアルの概要",
+      "description": "包括的な Zustand チュートリアルへようこそ！このガイドでは、初心者から上級者まで、Zustand による状態管理について知っておくべきすべてのことを教えます。"
+    },
+    "lesson1": {
+      "title": "レッスン 1: Zustand の紹介",
+      "description": "Zustand は、以下を提供する React 用の軽量な状態管理ライブラリです：",
+      "features": {
+        "simple": "シンプルで直感的な API",
+        "boilerplate": "ボイラープレートコード不要",
+        "typescript": "優れた TypeScript サポート",
+        "performance": "自動最適化による優れたパフォーマンス",
+        "size": "小さなバンドルサイズ（1KB 未満）"
+      },
+      "why": {
+        "title": "なぜ Zustand を選ぶのか？",
+        "description": "Redux や MobX などの他の状態管理ソリューションと比較して、Zustand は強力な機能と優れたパフォーマンスを維持しながら、ボイラープレートの少ないシンプルな API を提供します。"
+      }
+    },
+    "lesson2": {
+      "title": "レッスン 2: 最初のストアを作成する",
+      "description": "シンプルな ToDo リストアプリケーションを作成しましょう："
+    },
+    "lesson3": {
+      "title": "レッスン 3: コンポーネントでストアを使用する"
+    },
+    "lesson4": {
+      "title": "レッスン 4: 非同期アクションと高度なパターン",
+      "async": {
+        "title": "非同期アクション",
+        "description": "Zustand での非同期アクションの処理は簡単です - アクションを async にするだけです！"
+      },
+      "computed": {
+        "title": "計算された値",
+        "description": "セレクターを使用して派生状態を作成します："
+      }
+    },
+    "nextSteps": {
+      "title": "次のステップ",
+      "description": "これらのトピックで学習を続けましょう：",
+      "topics": {
+        "middleware": "永続化と DevTools のためのミドルウェア",
+        "testing": "Zustand ストアのテスト",
+        "typescript": "高度な TypeScript パターン",
+        "performance": "パフォーマンス最適化テクニック",
+        "integration": "他のライブラリとの統合"
+      }
+    }
+  },
+  "examples": {
+    "meta": {
+      "title": "例",
+      "description": "カウンター、ToDo リスト、非同期データ取得を含む Zustand の例のコレクション。"
+    },
+    "title": "例",
+    "counter": {
+      "title": "カウンター",
+      "description": "基本的な状態更新を示すシンプルなカウンターの例。"
+    },
+    "todo": {
+      "title": "ToDo リスト",
+      "description": "配列と複雑な状態更新を処理する方法を示す ToDo リストアプリケーション。"
+    },
+    "async": {
+      "title": "非同期アクション",
+      "description": "データ取得などの非同期アクションを処理する例。"
+    }
+  },
+  "examplesPage": {
+    "meta": {
+      "title": "例",
+      "description": "ToDo アプリ、ショッピングカートなど、Zustand 状態管理の実例。"
+    },
+    "title": "Zustand の例",
+    "description": "これらの実用的な例を探索して、実際のアプリケーションで Zustand を使用する方法を学びましょう。",
+    "counter": {
+      "title": "シンプルなカウンター",
+      "description": "状態の更新とアクションを示す基本的なカウンターの例。"
+    },
+    "cart": {
+      "title": "ショッピングカート",
+      "description": "追加、削除、数量管理を備えたショッピングカート。"
+    },
+    "form": {
+      "title": "フォーム管理",
+      "description": "バリデーションと送信を伴うフォーム状態の管理。"
+    },
+    "async": {
+      "title": "非同期データ取得",
+      "description": "読み込み状態とエラー状態を伴う API 呼び出しの処理。"
+    }
+  },
+  "apiPage": {
+    "meta": {
+      "title": "API リファレンス",
+      "description": "create、set、get、ミドルウェア関数を含む完全な Zustand API リファレンス。"
+    },
+    "title": "API リファレンス",
+    "create": {
+      "title": "create()",
+      "description": "指定された状態作成関数でストアを作成します。",
+      "parameters": {
+        "title": "パラメータ",
+        "stateCreator": "set、get、api を受け取る関数"
+      },
+      "returns": {
+        "title": "戻り値",
+        "description": "ストアにアクセスするために使用できる React フック"
+      }
+    },
+    "set": {
+      "title": "set()",
+      "description": "ストアの状態を更新します。部分的な状態オブジェクトまたは更新関数で呼び出すことができます。",
+      "parameters": {
+        "title": "パラメータ",
+        "partial": "部分的な状態オブジェクトまたは更新関数",
+        "replace": "（オプション）マージする代わりに状態全体を置き換える"
+      }
+    },
+    "get": {
+      "title": "get()",
+      "description": "現在の状態を取得します。アクション内や React コンポーネントの外部で役立ちます。"
+    },
+    "subscribe": {
+      "title": "subscribe()",
+      "description": "状態の変更を購読します。状態が更新されるたびに呼び出されます。"
+    },
+    "middleware": {
+      "title": "ミドルウェア",
+      "persist": {
+        "title": "persist()",
+        "description": "ストアの状態を localStorage または sessionStorage に永続化します。"
+      },
+      "devtools": {
+        "title": "devtools()",
+        "description": "デバッグ用の Redux DevTools 統合を有効にします。"
+      },
+      "immer": {
+        "title": "immer()",
+        "description": "より簡単な不変更新のために Immer を有効にします。"
+      }
+    },
+    "selectors": {
+      "title": "セレクタ",
+      "description": "再レンダリングを最適化するために状態の特定の部分を選択します。"
+    }
+  },
+  "guidesPage": {
+    "meta": {
+      "title": "ガイド",
+      "description": "Zustand の詳細ガイド: Next.js 統合、TypeScript のベストプラクティス、ミドルウェア、Redux との比較。"
+    },
+    "title": "ガイドとリソース",
+    "description": "高度なトピック、統合、比較についての詳細な解説。",
+    "readGuide": "ガイドを読む"
   },
   "footer": {
     "description": "Zustand を学ぶ - React の状態管理の包括的なガイド",
     "documentation": "ドキュメント",
+    "gettingStarted": "はじめに",
+    "tutorial": "チュートリアル",
+    "examples": "例",
+    "api": "API リファレンス",
     "resources": "リソース",
     "community": "コミュニティ",
     "github": "GitHub",
-    "npm": "NPM パッケージ"
+    "npm": "NPM パッケージ",
+    "copyright": "© {year} Zustand チュートリアル。全著作権所有。"
   }
 }

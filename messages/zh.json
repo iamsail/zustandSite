@@ -60,18 +60,30 @@
     }
   },
   "docs": {
+    "meta": {
+      "title": "文档",
+      "description": "完整的 Zustand 文档，包括入门指南、核心概念和高级主题。"
+    },
+    "title": "文档",
     "gettingStarted": {
       "title": "入门指南",
       "installation": "安装",
+      "installationText": "使用 npm 或 yarn 安装 Zustand：",
       "firstStore": "你的第一个 Store",
-      "basicUsage": "基本用法"
+      "firstStoreText": "创建一个 store 非常简单。这是一个简单的计数器示例：",
+      "basicUsage": "基本用法",
+      "basicUsageText": "在你的 React 组件中使用 store："
     },
     "coreConcepts": {
       "title": "核心概念",
       "store": "Store",
+      "storeDesc": "Store 保存你的应用程序状态。它是使用 `create` 函数创建的，并返回一个 React hook。",
       "state": "状态",
+      "stateDesc": "状态是你的 store 保存的数据。它可以是任何 JavaScript 值 - 对象、数组、基本类型等。",
       "actions": "操作",
-      "selectors": "选择器"
+      "actionsDesc": "操作是修改状态的函数。它们使用 `set` 函数来更新 store。",
+      "selectors": "选择器",
+      "selectorsDesc": "选择器允许你订阅状态的特定部分，从而优化重新渲染。"
     },
     "advanced": {
       "title": "高级主题",
@@ -83,34 +95,323 @@
   },
   "comparison": {
     "reduxVsZustand": {
-      "title": "Zustand vs Redux in 2026",
-      "description": "Why 70% of developers are switching from Redux to Zustand. A comprehensive comparison of performance, boilerplate, and developer experience.",
-      "keywords": "zustand vs redux, redux alternative, react state management comparison, zustand performance"
+      "title": "2026年 Zustand vs Redux 对比",
+      "description": "为什么 70% 的开发者从 Redux 转向 Zustand。关于性能、样板代码和开发体验的全面对比。",
+      "keywords": "zustand vs redux, redux 替代品, react 状态管理对比, zustand 性能",
+      "h1": "2026年 Zustand vs Redux: 为什么开发者正在迁移",
+      "subtitle": "关于样板代码、性能和开发体验的全面对比。",
+      "atAGlance": {
+        "title": "概览",
+        "table": {
+          "feature": "特性",
+          "zustand": "Zustand",
+          "redux": "Redux Toolkit",
+          "bundleSize": "包体积",
+          "bundleSizeZustand": "~1.1kB (压缩后)",
+          "bundleSizeRedux": "~10kB+ (RTK + React-Redux)",
+          "boilerplate": "样板代码",
+          "boilerplateZustand": "极少 (创建即用)",
+          "boilerplateRedux": "多 (Slices, Reducers, Providers)",
+          "contextProvider": "Context Provider",
+          "contextProviderZustand": "不需要",
+          "contextProviderRedux": "需要",
+          "stateModel": "状态模型",
+          "stateModelZustand": "类 Flux (简化版)",
+          "stateModelRedux": "Flux (严格版)",
+          "learningCurve": "学习曲线",
+          "learningCurveZustand": "低",
+          "learningCurveRedux": "中/高"
+        }
+      },
+      "codeComparison": {
+        "title": "代码对比",
+        "description": "让我们实现一个简单的计数器，包含增加和减少功能。",
+        "zustand": "Zustand",
+        "simple": "简单",
+        "redux": "Redux Toolkit",
+        "verbose": "繁琐"
+      },
+      "performance": {
+        "title": "性能与重新渲染",
+        "description": "Zustand 开箱即用地解决了“僵尸子组件”问题和不必要的重新渲染。通过使用选择器，组件仅在它们监听的特定状态切片发生变化时才会重新渲染。",
+        "quote": "“Zustand 明显更快，因为它不需要将应用程序包裹在 Context Provider 中，从而避免了 Context API 的重新渲染传播问题。”"
+      },
+      "conclusion": {
+        "title": "结论：何时切换？",
+        "chooseZustand": "<strong>选择 Zustand 如果：</strong> 你想要一个简单、快速且无偏见的解决方案。你更喜欢 Hooks 而不是 Providers。你想减少样板代码。",
+        "stickWithRedux": "<strong>坚持使用 Redux 如果：</strong> 你有一个庞大的企业级代码库，已经深度依赖 Redux 生态系统，或者你严格需要 Redux 强制执行的 Flux 架构。"
+      },
+      "faq": {
+        "better": {
+          "question": "Zustand 比 Redux 更好吗？",
+          "answer": "对于大多数应用程序，Zustand 被认为比 Redux 更好，因为它需要的样板代码明显更少，包体积更小（1.1kB vs Redux Toolkit），并且提供了更简单的 API，无需将应用程序包裹在 Providers 中。"
+        },
+        "replace": {
+          "question": "我可以用 Zustand 替换 Redux 吗？",
+          "answer": "是的，你可以轻松地用 Zustand 替换 Redux。Zustand 支持 Redux DevTools，甚至可以在迁移期间与 Redux 并存。"
+        }
+      }
     }
   },
   "guides": {
     "nextjs": {
-      "title": "Zustand with Next.js App Router",
-      "description": "Complete guide to using Zustand with Next.js 14/15 App Router, Server Components, and SSR.",
-      "keywords": "zustand nextjs, zustand app router, zustand server components, nextjs state management"
+      "title": "Zustand 与 Next.js App Router",
+      "description": "在 Next.js 14/15 App Router、Server Components 和 SSR 中使用 Zustand 的完整指南。",
+      "keywords": "zustand nextjs, zustand app router, zustand server components, nextjs 状态管理",
+      "h1": "在 Next.js App Router 中使用 Zustand",
+      "subtitle": "关于 Server Components、SSR 以及避免全局状态污染的完整指南。",
+      "challenge": {
+        "title": "挑战：全局状态 vs SSR",
+        "description": "在单页应用 (SPA) 中，全局 store 变量没问题。但在 Next.js (SSR) 中，全局变量在服务器上的所有请求之间共享。这意味着如果不小心，一个用户的数据可能会意外泄漏给另一个用户。",
+        "warning": "警告：如果你计划用服务器数据初始化 store，请勿使用 `create()` 定义全局 store。"
+      },
+      "solution": {
+        "title": "解决方案：Store Provider 模式",
+        "description": "为了确保隔离，我们使用 React Context 为每个请求（或组件树）创建一个新的 store 实例。",
+        "step1": "1. 创建 Store 工厂",
+        "step2": "2. 创建 Provider",
+        "step3": "3. 在 Layout 或 Page 中使用"
+      },
+      "faq": {
+        "workWithAppRouter": {
+          "question": "Zustand 支持 Next.js App Router 吗？",
+          "answer": "是的，Zustand 支持 App Router。但是，由于 store 是全局的，在 Server Components 中使用时需要小心，以避免在请求之间共享状态。推荐的方法是使用 Context Provider 为每个请求创建一个 store。"
+        },
+        "serverComponents": {
+          "question": "如何在 Server Components 中使用 Zustand？",
+          "answer": "你不能在 Server Components 中直接使用 Zustand hooks。相反，你应该在 Server Component 中获取数据并将其作为 props 传递给 Client Component，或者在 Client Component provider 中初始化 store。"
+        }
+      }
     },
     "middleware": {
-      "title": "Mastering Middleware & Persistence",
-      "description": "Deep dive into Zustand middleware, persistence with localStorage/IndexedDB, and custom storage engines.",
-      "keywords": "zustand middleware, zustand persist, zustand localstorage, zustand indexeddb"
+      "title": "掌握中间件与持久化",
+      "description": "深入了解 Zustand 中间件、使用 localStorage/IndexedDB 进行持久化以及自定义存储引擎。",
+      "keywords": "zustand 中间件, zustand 持久化, zustand localstorage, zustand indexeddb",
+      "h1": "掌握中间件与持久化",
+      "subtitle": "学习如何将状态保存到 LocalStorage、IndexedDB 以及创建自定义中间件。",
+      "basicPersistence": {
+        "title": "基础持久化",
+        "description": "`persist` 中间件允许你将状态存储在存储器中（例如 localStorage、AsyncStorage、IndexedDB 等），这样当用户刷新页面时，状态得以保留。"
+      },
+      "hydration": {
+        "title": "处理 Hydration 错误",
+        "description": "在 Next.js 中，你可能会遇到 hydration 错误，因为服务器渲染初始状态（0 只熊），但客户端使用持久化状态（5 只熊）进行 hydration。",
+        "solution": "解决方案：自定义 Hook"
+      },
+      "faq": {
+        "persistState": {
+          "question": "如何持久化 Zustand 状态？",
+          "answer": "你可以使用内置的 `persist` 中间件。它会自动将你的状态保存到 localStorage（默认）、sessionStorage 或任何自定义存储引擎（如 AsyncStorage 或 IndexedDB）。"
+        },
+        "fixHydration": {
+          "question": "如何修复持久化的 hydration 错误？",
+          "answer": "当服务器 HTML 与客户端 HTML（已加载持久化状态）不同时，会发生 hydration 错误。要修复此问题，你可以使用自定义 hook，仅在组件在客户端挂载后返回状态。"
+        }
+      }
     },
     "typescript": {
-      "title": "TypeScript Best Practices",
-      "description": "The ultimate guide to using Zustand with TypeScript. Type-safe stores, actions, and selectors.",
-      "keywords": "zustand typescript, typed zustand, zustand hooks typescript"
+      "title": "TypeScript 最佳实践",
+      "description": "使用 TypeScript 和 Zustand 的终极指南。类型安全的 store、actions 和 selectors。",
+      "keywords": "zustand typescript, 类型化 zustand, zustand hooks typescript",
+      "h1": "TypeScript 最佳实践",
+      "subtitle": "使用 Zustand 进行类型安全状态管理的终极指南。",
+      "basicTyping": {
+        "title": "基础类型定义",
+        "description": "为 store 定义类型的最常见方法是定义一个包含状态和操作的接口。"
+      },
+      "combine": {
+        "title": "使用 `combine` (推断类型)",
+        "description": "如果你不想手动编写接口，可以使用 `combine` 中间件从初始状态推断类型。"
+      },
+      "slices": {
+        "title": "TypeScript 下的切片模式",
+        "description": "当将 store 拆分为切片时，你需要正确定义 StateCreator 类型。"
+      },
+      "faq": {
+        "useWithTs": {
+          "question": "如何在 TypeScript 中使用 Zustand？",
+          "answer": "你可以通过为状态和操作定义接口，然后将该接口传递给 `create` 函数来在 TypeScript 中使用 Zustand：`create'<MyState>'()(...)`。"
+        },
+        "typeActions": {
+          "question": "如何在 Zustand 中为 actions 定义类型？",
+          "answer": "Actions 应该定义为 store 接口的一部分。例如：`increment: () => void`。在实现内部，TypeScript 会自动推断 `set` 和 `get` 的类型。"
+        }
+      }
     }
+  },
+  "tutorial": {
+    "meta": {
+      "title": "教程",
+      "description": "逐步学习 Zustand 状态管理的教程，从基础到高级概念。"
+    },
+    "title": "Zustand 教程",
+    "overview": {
+      "title": "教程概览",
+      "description": "欢迎来到全面的 Zustand 教程！本指南将带你从入门到精通，教你关于 Zustand 状态管理的一切。"
+    },
+    "lesson1": {
+      "title": "第 1 课：Zustand 简介",
+      "description": "Zustand 是一个轻量级的 React 状态管理库，它提供：",
+      "features": {
+        "simple": "简单直观的 API",
+        "boilerplate": "无需样板代码",
+        "typescript": "出色的 TypeScript 支持",
+        "performance": "卓越的性能和自动优化",
+        "size": "小巧的包体积（小于 1KB）"
+      },
+      "why": {
+        "title": "为什么选择 Zustand？",
+        "description": "与其他状态管理解决方案（如 Redux 或 MobX）相比，Zustand 提供了更简单的 API 和更少的样板代码，同时保持了强大的功能和卓越的性能。"
+      }
+    },
+    "lesson2": {
+      "title": "第 2 课：创建你的第一个 Store",
+      "description": "让我们创建一个简单的待办事项列表应用程序："
+    },
+    "lesson3": {
+      "title": "第 3 课：在组件中使用 Store"
+    },
+    "lesson4": {
+      "title": "第 4 课：异步操作和高级模式",
+      "async": {
+        "title": "异步操作",
+        "description": "在 Zustand 中处理异步操作非常简单 - 只需将你的操作设为 async！"
+      },
+      "computed": {
+        "title": "计算属性",
+        "description": "使用选择器创建派生状态："
+      }
+    },
+    "nextSteps": {
+      "title": "下一步",
+      "description": "继续学习以下主题：",
+      "topics": {
+        "middleware": "用于持久化和开发工具的中间件",
+        "testing": "测试 Zustand store",
+        "typescript": "高级 TypeScript 模式",
+        "performance": "性能优化技巧",
+        "integration": "与其他库集成"
+      }
+    }
+  },
+  "examples": {
+    "meta": {
+      "title": "示例",
+      "description": "Zustand 示例集合，包括计数器、待办事项列表和异步数据获取。"
+    },
+    "title": "示例",
+    "counter": {
+      "title": "计数器",
+      "description": "演示基本状态更新的简单计数器示例。"
+    },
+    "todo": {
+      "title": "待办事项列表",
+      "description": "展示如何处理数组和复杂状态更新的待办事项列表应用程序。"
+    },
+    "async": {
+      "title": "异步操作",
+      "description": "处理异步操作（如数据获取）的示例。"
+    }
+  },
+  "examplesPage": {
+    "meta": {
+      "title": "示例",
+      "description": "Zustand 状态管理的实际示例，包括待办事项应用、购物车等。"
+    },
+    "title": "Zustand 示例",
+    "description": "探索这些实用示例，学习如何在实际应用中使用 Zustand。",
+    "counter": {
+      "title": "简单计数器",
+      "description": "演示状态更新和操作的基本计数器示例。"
+    },
+    "cart": {
+      "title": "购物车",
+      "description": "具有添加、删除和数量管理的购物车。"
+    },
+    "form": {
+      "title": "表单管理",
+      "description": "管理带有验证和提交的表单状态。"
+    },
+    "async": {
+      "title": "异步数据获取",
+      "description": "处理带有加载和错误状态的 API 调用。"
+    }
+  },
+  "apiPage": {
+    "meta": {
+      "title": "API 参考",
+      "description": "完整的 Zustand API 参考，包括 create、set、get 和中间件函数。"
+    },
+    "title": "API 参考",
+    "create": {
+      "title": "create()",
+      "description": "使用给定的状态创建函数创建一个 store。",
+      "parameters": {
+        "title": "参数",
+        "stateCreator": "接收 set、get 和 api 的函数"
+      },
+      "returns": {
+        "title": "返回值",
+        "description": "一个可用于访问 store 的 React hook"
+      }
+    },
+    "set": {
+      "title": "set()",
+      "description": "更新 store 状态。可以使用部分状态对象或更新函数调用。",
+      "parameters": {
+        "title": "参数",
+        "partial": "部分状态对象或更新函数",
+        "replace": "（可选）替换整个状态而不是合并"
+      }
+    },
+    "get": {
+      "title": "get()",
+      "description": "获取当前状态。在操作中或 React 组件外部很有用。"
+    },
+    "subscribe": {
+      "title": "subscribe()",
+      "description": "订阅状态更改。每当状态更新时调用。"
+    },
+    "middleware": {
+      "title": "中间件",
+      "persist": {
+        "title": "persist()",
+        "description": "将 store 状态持久化到 localStorage 或 sessionStorage。"
+      },
+      "devtools": {
+        "title": "devtools()",
+        "description": "启用 Redux DevTools 集成以进行调试。"
+      },
+      "immer": {
+        "title": "immer()",
+        "description": "启用 Immer 以更轻松地进行不可变更新。"
+      }
+    },
+    "selectors": {
+      "title": "选择器",
+      "description": "选择状态的特定部分以优化重新渲染。"
+    }
+  },
+  "guidesPage": {
+    "meta": {
+      "title": "指南",
+      "description": "Zustand 深度指南：Next.js 集成、TypeScript 最佳实践、中间件以及与 Redux 的比较。"
+    },
+    "title": "指南与资源",
+    "description": "深入探讨高级主题、集成和比较。",
+    "readGuide": "阅读指南"
   },
   "footer": {
     "description": "学习 Zustand - React 状态管理的全面指南",
     "documentation": "文档",
+    "gettingStarted": "快速开始",
+    "tutorial": "教程",
+    "examples": "示例",
+    "api": "API 参考",
     "resources": "资源",
     "community": "社区",
     "github": "GitHub",
-    "npm": "NPM 包"
+    "npm": "NPM 包",
+    "copyright": "© {year} Zustand 教程。保留所有权利。"
   }
 }
