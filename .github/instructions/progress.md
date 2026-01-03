@@ -17,6 +17,7 @@
 - Language switching (Fixed issue with `NextIntlClientProvider`)
 - Internationalization (Fixed missing keys and parsing errors)
 - Project Documentation (`ROUTES.md` created)
+- Security (Updated Next.js to fix CVE-2025-66478)
 
 ## Known Issues
 - None currently identified.

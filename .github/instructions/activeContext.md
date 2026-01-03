@@ -11,6 +11,7 @@ Internationalization (i18n) of the entire site. We have just completed migrating
   - Added missing translations for `guides.typescript` and `guides.middleware` in `zh.json` and `ja.json`.
   - Added missing `docs.meta.keywords` in all translation files.
   - Escaped special characters (e.g., `<MyState>`) in translation files to prevent `next-intl` parsing errors.
+  - **Security Fix**: Updated `next` to latest version to resolve CVE-2025-66478 (Vercel deployment error).
 - **Guides**: Internationalized `nextjs-app-router`, `persistence-and-middleware`, `typescript-best-practices`, and the main `guides` page.
 - **Docs**: Internationalized `docs/page.tsx`.
 - **Tutorial**: Internationalized `tutorial/page.tsx`.
