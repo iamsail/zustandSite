@@ -4,6 +4,7 @@
 - **Project Setup:** Complete.
 - **Basic Pages:** Home, Docs, Examples, Tutorial exist.
 - **i18n:** Configured.
+- **DevOps:** Vercel deployment configured to ignore feature branches.
 
 ## What's Left to Build (SEO Focus)
 - [x] Comparison Page (Zustand vs Redux).
