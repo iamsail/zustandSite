@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
+  "git": {
+    "ignoreCommand": "bash build-ignore.sh"
+  },
   "regions": ["hnd1"],
   "headers": [
     {
