@@ -62,7 +62,8 @@
   "docs": {
     "meta": {
       "title": "ドキュメント",
-      "description": "入門ガイド、コアコンセプト、高度なトピックを含む完全な Zustand ドキュメント。"
+      "description": "入門ガイド、コアコンセプト、高度なトピックを含む完全な Zustand ドキュメント。",
+      "keywords": "zustand ドキュメント, react 状態管理 ドキュメント, zustand ガイド"
     },
     "title": "ドキュメント",
     "gettingStarted": {

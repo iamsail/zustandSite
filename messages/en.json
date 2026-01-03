@@ -62,7 +62,8 @@
   "docs": {
     "meta": {
       "title": "Documentation",
-      "description": "Complete Zustand documentation including getting started guide, core concepts, and advanced topics."
+      "description": "Complete Zustand documentation including getting started guide, core concepts, and advanced topics.",
+      "keywords": "zustand documentation, react state management docs, zustand guide"
     },
     "title": "Documentation",
     "gettingStarted": {

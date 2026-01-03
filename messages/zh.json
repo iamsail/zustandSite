@@ -62,7 +62,8 @@
   "docs": {
     "meta": {
       "title": "文档",
-      "description": "完整的 Zustand 文档，包括入门指南、核心概念和高级主题。"
+      "description": "完整的 Zustand 文档，包括入门指南、核心概念和高级主题。",
+      "keywords": "zustand 文档, react 状态管理文档, zustand 指南"
     },
     "title": "文档",
     "gettingStarted": {

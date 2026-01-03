@@ -9,6 +9,7 @@ Internationalization (i18n) of the entire site. We have just completed migrating
 - **Bug Fixes**:
   - Fixed `NextIntlClientProvider` in `layout.tsx` to explicitly pass `locale` prop, resolving language switcher issues.
   - Added missing translations for `guides.typescript` and `guides.middleware` in `zh.json` and `ja.json`.
+  - Added missing `docs.meta.keywords` in all translation files.
   - Escaped special characters (e.g., `<MyState>`) in translation files to prevent `next-intl` parsing errors.
 - **Guides**: Internationalized `nextjs-app-router`, `persistence-and-middleware`, `typescript-best-practices`, and the main `guides` page.
 - **Docs**: Internationalized `docs/page.tsx`.
