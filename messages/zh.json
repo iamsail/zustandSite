@@ -7,6 +7,7 @@
   "nav": {
     "home": "首页",
     "docs": "文档",
+    "guides": "指南",
     "tutorial": "教程",
     "examples": "示例",
     "api": "API 参考",
@@ -95,6 +96,30 @@
       "immer": "使用 Immer",
       "immerDesc": "使用 Immer 更轻松地进行不可变状态更新。",
       "learnMore": "了解更多 →"
+    }
+  },
+  "comparison": {
+    "reduxVsZustand": {
+      "title": "Zustand vs Redux in 2026",
+      "description": "Why 70% of developers are switching from Redux to Zustand. A comprehensive comparison of performance, boilerplate, and developer experience.",
+      "keywords": "zustand vs redux, redux alternative, react state management comparison, zustand performance"
+    }
+  },
+  "guides": {
+    "nextjs": {
+      "title": "Zustand with Next.js App Router",
+      "description": "Complete guide to using Zustand with Next.js 14/15 App Router, Server Components, and SSR.",
+      "keywords": "zustand nextjs, zustand app router, zustand server components, nextjs state management"
+    },
+    "middleware": {
+      "title": "Mastering Middleware & Persistence",
+      "description": "Deep dive into Zustand middleware, persistence with localStorage/IndexedDB, and custom storage engines.",
+      "keywords": "zustand middleware, zustand persist, zustand localstorage, zustand indexeddb"
+    },
+    "typescript": {
+      "title": "TypeScript Best Practices",
+      "description": "The ultimate guide to using Zustand with TypeScript. Type-safe stores, actions, and selectors.",
+      "keywords": "zustand typescript, typed zustand, zustand hooks typescript"
     }
   },
   "footer": {
