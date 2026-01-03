@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'tutorial.meta' });
 
   return {
-    title: 'Tutorial - ' + t('title'),
-    description: 'Step-by-step tutorial to learn Zustand state management from basics to advanced concepts.',
+    title: t('title'),
+    description: t('description'),
     keywords: t('keywords'),
   };
 }
@@ -31,18 +31,18 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
 
           <section className="mb-12">
             <h2 className="text-3xl font-bold mb-6">{t('lesson1.title')}</h2>
-            <p className="mb-4">{t('lesson1.intro')}</p>
+            <p className="mb-4">{t('lesson1.description')}</p>
             <ul className="list-disc pl-6 mb-4 space-y-2">
               <li>{t('lesson1.features.simple')}</li>
-              <li>{t('lesson1.features.noBoilerplate')}</li>
+              <li>{t('lesson1.features.boilerplate')}</li>
               <li>{t('lesson1.features.typescript')}</li>
               <li>{t('lesson1.features.performance')}</li>
               <li>{t('lesson1.features.size')}</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold mb-4 mt-6">{t('lesson1.whyTitle')}</h3>
+            <h3 className="text-2xl font-semibold mb-4 mt-6">{t('lesson1.why.title')}</h3>
             <p className="mb-4">
-              {t('lesson1.whyDesc')}
+              {t('lesson1.why.description')}
             </p>
           </section>
 
@@ -90,7 +90,7 @@ const useTodoStore = create<TodoStore>((set) => ({
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">{t('lesson3.title')}</h2>
+            <h2 className="text-3xl font-bold mb-6">Lesson 3: Using the Store in Components</h2>
             <pre><code>{`function TodoList() {
   const todos = useTodoStore((state) => state.todos)
   const addTodo = useTodoStore((state) => state.addTodo)
@@ -142,8 +142,8 @@ const useTodoStore = create<TodoStore>((set) => ({
           <section className="mb-12">
             <h2 className="text-3xl font-bold mb-6">{t('lesson4.title')}</h2>
             
-            <h3 className="text-2xl font-semibold mb-4">{t('lesson4.asyncActions')}</h3>
-            <p className="mb-4">{t('lesson4.asyncDesc')}</p>
+            <h3 className="text-2xl font-semibold mb-4">{t('lesson4.async.title')}</h3>
+            <p className="mb-4">{t('lesson4.async.description')}</p>
             <pre><code>{`const useStore = create((set) => ({
   data: null,
   loading: false,
@@ -160,8 +160,8 @@ const useTodoStore = create<TodoStore>((set) => ({
   }
 }))`}</code></pre>
 
-            <h3 className="text-2xl font-semibold mb-4 mt-6">{t('lesson4.computed')}</h3>
-            <p className="mb-4">{t('lesson4.computedDesc')}</p>
+            <h3 className="text-2xl font-semibold mb-4 mt-6">{t('lesson4.computed.title')}</h3>
+            <p className="mb-4">{t('lesson4.computed.description')}</p>
             <pre><code>{`const useStore = create((set) => ({
   todos: [],
   // ... actions

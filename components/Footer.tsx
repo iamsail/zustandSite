@@ -49,22 +49,22 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href={`/${locale}/docs`} className="hover:text-white transition-colors">
-                  Getting Started
+                  {t('gettingStarted')}
                 </Link>
               </li>
               <li>
                 <Link href={`/${locale}/tutorial`} className="hover:text-white transition-colors">
-                  Tutorial
+                  {t('tutorial')}
                 </Link>
               </li>
               <li>
                 <Link href={`/${locale}/examples`} className="hover:text-white transition-colors">
-                  Examples
+                  {t('examples')}
                 </Link>
               </li>
               <li>
                 <Link href={`/${locale}/api`} className="hover:text-white transition-colors">
-                  API Reference
+                  {t('api')}
                 </Link>
               </li>
             </ul>
@@ -90,7 +90,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          <p>© {new Date().getFullYear()} Zustand Tutorial. All rights reserved.</p>
+          <p>{t('copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>

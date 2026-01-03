@@ -1,10 +1,19 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import { GA_MEASUREMENT_ID } from '@/lib/gtm';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+import '../globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zustand-site.vercel.app';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+};
 
 export default async function LocaleLayout({
   children,
@@ -14,7 +23,14 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  // Validate that the incoming `locale` parameter is valid
+  if (!['en', 'zh', 'ja'].includes(locale)) {
+    notFound();
+  }
+
   const messages = await getMessages();
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -59,8 +75,20 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        {GTM_ID && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        )}
+        
         <ThemeProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
             <Header />
             <main className="min-h-screen">
               {children}

@@ -4,11 +4,11 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'docs.meta' });
 
   return {
-    title: 'Documentation - ' + t('title'),
-    description: 'Complete Zustand documentation including getting started guide, core concepts, and advanced topics.',
+    title: t('title'),
+    description: t('description'),
     keywords: t('keywords'),
   };
 }
@@ -28,7 +28,7 @@ export default async function DocsPage({ params }: { params: Promise<{ locale: s
           
           <div className="prose max-w-none">
             <h3 className="text-2xl font-semibold mb-4">{t('gettingStarted.installation')}</h3>
-            <p className="mb-4">{t('gettingStarted.installDesc')}</p>
+            <p className="mb-4">{t('gettingStarted.installationText')}</p>
             <pre><code>npm install zustand
 # or
 yarn add zustand
@@ -36,7 +36,7 @@ yarn add zustand
 pnpm add zustand</code></pre>
 
             <h3 className="text-2xl font-semibold mb-4 mt-8">{t('gettingStarted.firstStore')}</h3>
-            <p className="mb-4">{t('gettingStarted.firstStoreDesc')}</p>
+            <p className="mb-4">{t('gettingStarted.firstStoreText')}</p>
             <pre><code>{`import { create } from 'zustand'
 
 const useStore = create((set) => ({
@@ -47,7 +47,7 @@ const useStore = create((set) => ({
 }))`}</code></pre>
 
             <h3 className="text-2xl font-semibold mb-4 mt-8">{t('gettingStarted.basicUsage')}</h3>
-            <p className="mb-4">{t('gettingStarted.basicUsageDesc')}</p>
+            <p className="mb-4">{t('gettingStarted.basicUsageText')}</p>
             <pre><code>{`function Counter() {
   const count = useStore((state) => state.count)
   const increment = useStore((state) => state.increment)
@@ -100,33 +100,33 @@ const useStore = create((set) => ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.middleware')}</h3>
-              <p className="text-gray-600 mb-4">{t('advanced.middlewareDesc')}</p>
+              <p className="text-gray-600 mb-4">Extend Zustand with middleware for logging, persistence, and more.</p>
               <Link href={`/${locale}/docs/middleware`} className="text-primary-600 hover:underline">
-                {t('advanced.learnMore')}
+                Learn more →
               </Link>
             </div>
 
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.persist')}</h3>
-              <p className="text-gray-600 mb-4">{t('advanced.persistDesc')}</p>
+              <p className="text-gray-600 mb-4">Save your state to localStorage or sessionStorage automatically.</p>
               <Link href={`/${locale}/docs/persist`} className="text-primary-600 hover:underline">
-                {t('advanced.learnMore')}
+                Learn more →
               </Link>
             </div>
 
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.devtools')}</h3>
-              <p className="text-gray-600 mb-4">{t('advanced.devtoolsDesc')}</p>
+              <p className="text-gray-600 mb-4">Debug your state with Redux DevTools integration.</p>
               <Link href={`/${locale}/docs/devtools`} className="text-primary-600 hover:underline">
-                {t('advanced.learnMore')}
+                Learn more →
               </Link>
             </div>
 
             <div className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-2">{t('advanced.immer')}</h3>
-              <p className="text-gray-600 mb-4">{t('advanced.immerDesc')}</p>
+              <p className="text-gray-600 mb-4">Use Immer for easier immutable state updates.</p>
               <Link href={`/${locale}/docs/immer`} className="text-primary-600 hover:underline">
-                {t('advanced.learnMore')}
+                Learn more →
               </Link>
             </div>
           </div>

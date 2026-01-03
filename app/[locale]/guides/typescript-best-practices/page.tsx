@@ -22,18 +22,18 @@ export default async function TypeScriptGuidePage({ params }: { params: Promise<
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How to use Zustand with TypeScript?',
+        name: t('faq.useWithTs.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can use Zustand with TypeScript by defining an interface for your state and actions, and then passing that interface to the `create` function: `create<MyState>()(...)`.',
+          text: t('faq.useWithTs.answer'),
         },
       },
       {
         '@type': 'Question',
-        name: 'How to type actions in Zustand?',
+        name: t('faq.typeActions.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Actions should be defined as part of your store interface. For example: `increment: () => void`. Inside the implementation, TypeScript will automatically infer the types of `set` and `get`.',
+          text: t('faq.typeActions.answer'),
         },
       },
     ],
@@ -47,17 +47,17 @@ export default async function TypeScriptGuidePage({ params }: { params: Promise<
       />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-          TypeScript Best Practices
+          {t('h1')}
         </h1>
         <p className="text-xl text-gray-600 mb-12">
-          The ultimate guide to type-safe state management with Zustand.
+          {t('subtitle')}
         </p>
 
         {/* Basic Typing */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Basic Typing</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('basicTyping.title')}</h2>
           <p className="text-gray-700 mb-4">
-            The most common way to type a store is to define an interface that includes both state and actions.
+            {t('basicTyping.description')}
           </p>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`import { create } from 'zustand'
@@ -76,9 +76,9 @@ const useBearStore = create<BearState>()((set) => ({
 
         {/* Combine Middleware */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Using `combine` (Inferred Types)</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('combine.title')}</h2>
           <p className="text-gray-700 mb-4">
-            If you prefer not to write interfaces manually, you can use the `combine` middleware to infer types from your initial state.
+            {t('combine.description')}
           </p>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`import { create } from 'zustand'
@@ -95,9 +95,9 @@ const useBearStore = create(
 
         {/* Slices Pattern */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Slices Pattern with TypeScript</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('slices.title')}</h2>
           <p className="text-gray-700 mb-4">
-            When splitting your store into slices, you need to define the StateCreator type properly.
+            {t('slices.description')}
           </p>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`import { create, StateCreator } from 'zustand'

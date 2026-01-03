@@ -22,18 +22,18 @@ export default async function MiddlewareGuidePage({ params }: { params: Promise<
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How do I persist Zustand state?',
+        name: t('faq.persistState.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can use the built-in `persist` middleware. It automatically saves your state to localStorage (default), sessionStorage, or any custom storage engine like AsyncStorage or IndexedDB.',
+          text: t('faq.persistState.answer'),
         },
       },
       {
         '@type': 'Question',
-        name: 'How to fix hydration errors with persist?',
+        name: t('faq.fixHydration.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Hydration errors occur when the server HTML differs from the client HTML (which has loaded persisted state). To fix this, you can use a custom hook to only return the state after the component has mounted on the client.',
+          text: t('faq.fixHydration.answer'),
         },
       },
     ],
@@ -47,18 +47,17 @@ export default async function MiddlewareGuidePage({ params }: { params: Promise<
       />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-          Mastering Middleware & Persistence
+          {t('h1')}
         </h1>
         <p className="text-xl text-gray-600 mb-12">
-          Learn how to save state to LocalStorage, IndexedDB, and create custom middleware.
+          {t('subtitle')}
         </p>
 
         {/* Basic Persistence */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Basic Persistence</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('basicPersistence.title')}</h2>
           <p className="text-gray-700 mb-4">
-            The `persist` middleware enables you to store your state in a storage (e.g., localStorage, AsyncStorage, IndexedDB, etc.), 
-            so that when the user reloads the page, the state is preserved.
+            {t('basicPersistence.description')}
           </p>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`import { create } from 'zustand'
@@ -81,12 +80,11 @@ export const useBearStore = create(
 
         {/* Handling Hydration */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Handling Hydration Errors</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('hydration.title')}</h2>
           <p className="text-gray-700 mb-4">
-            In Next.js, you might encounter hydration errors because the server renders the initial state (0 bears), 
-            but the client hydrates with the persisted state (5 bears).
+            {t('hydration.description')}
           </p>
-          <h3 className="text-2xl font-semibold mb-4">Solution: Custom Hook</h3>
+          <h3 className="text-2xl font-semibold mb-4">{t('hydration.solution')}</h3>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto">
             <code>{`import { useState, useEffect } from 'react'
 
