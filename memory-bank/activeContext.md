@@ -9,6 +9,7 @@ Executing the approved SEO optimization plan (Phase 1-3).
 ## Recent Changes
 - Initial project setup with Next.js 16, Tailwind CSS 4, and `next-intl`.
 - Defined comprehensive SEO strategy based on traffic analysis.
+- Configured Vercel deployment triggers to ignore feature branches (only `main` and `dev` trigger builds).
 
 ## Next Steps
 1.  Create directories: `/comparison`, `/guides`.
