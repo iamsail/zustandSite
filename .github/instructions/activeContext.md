@@ -4,6 +4,8 @@
 Internationalization (i18n) of the entire site. We have just completed migrating all hardcoded text to `messages/*.json` files and updating components to use `next-intl` hooks.
 
 ## Recent Changes
+- **Documentation**: Created `ROUTES.md` to document all available page routes and their file paths.
+- **Verification**: Verified project startup (`npm run dev`) and confirmed no critical errors.
 - **Bug Fixes**:
   - Fixed `NextIntlClientProvider` in `layout.tsx` to explicitly pass `locale` prop, resolving language switcher issues.
   - Added missing translations for `guides.typescript` and `guides.middleware` in `zh.json` and `ja.json`.

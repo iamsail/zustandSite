@@ -16,6 +16,7 @@
 - Header and Footer
 - Language switching (Fixed issue with `NextIntlClientProvider`)
 - Internationalization (Fixed missing keys and parsing errors)
+- Project Documentation (`ROUTES.md` created)
 
 ## Known Issues
 - None currently identified.
