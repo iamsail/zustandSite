@@ -1,8 +1,54 @@
 @import "tailwindcss";
 
+/* Theme CSS Variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --border-color: #e5e7eb;
+  --border-color-dark: #d1d5db;
+  --primary-600: #dc2626;
+  --primary-700: #b91c1c;
+  --primary-50: #fef2f2;
+  --code-bg: #f3f4f6;
+  --code-text: #dc2626;
+  --pre-bg: #111827;
+  --pre-text: #f3f4f6;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border-color: #334155;
+  --border-color-dark: #475569;
+  --primary-600: #ef4444;
+  --primary-700: #dc2626;
+  --primary-50: rgba(239, 68, 68, 0.1);
+  --code-bg: #1e293b;
+  --code-text: #f87171;
+  --pre-bg: #0f172a;
+  --pre-text: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+  --header-bg: #1e293b;
+  --card-bg: #1e293b;
+}
+
 body {
-  background-color: white;
-  color: #111827;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container-custom {
@@ -28,7 +74,7 @@ body {
 }
 
 .btn-primary {
-  background-color: #dc2626;
+  background-color: var(--primary-600);
   color: white;
   font-weight: 600;
   padding: 0.5rem 1.5rem;
@@ -37,12 +83,12 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #b91c1c;
+  background-color: var(--primary-700);
 }
 
 .btn-secondary {
-  background-color: #e5e7eb;
-  color: #111827;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
   font-weight: 600;
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
@@ -50,23 +96,24 @@ body {
 }
 
 .btn-secondary:hover {
-  background-color: #d1d5db;
+  background-color: var(--border-color-dark);
 }
 
 /* Code block styling */
 pre {
-  background-color: #111827;
-  color: #f3f4f6;
+  background-color: var(--pre-bg);
+  color: var(--pre-text);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
 }
 
 code {
-  background-color: #f3f4f6;
-  color: #dc2626;
+  background-color: var(--code-bg);
+  color: var(--code-text);
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   padding-top: 0.125rem;
@@ -77,6 +124,58 @@ code {
 
 pre code {
   background-color: transparent;
-  color: #f3f4f6;
+  color: var(--pre-text);
   padding: 0;
+}
+
+/* Theme-aware utilities */
+.bg-theme-primary { background-color: var(--bg-primary); }
+.bg-theme-secondary { background-color: var(--bg-secondary); }
+.bg-theme-tertiary { background-color: var(--bg-tertiary); }
+.bg-theme-card { background-color: var(--card-bg); }
+.bg-theme-header { background-color: var(--header-bg); }
+.text-theme-primary { color: var(--text-primary); }
+.text-theme-secondary { color: var(--text-secondary); }
+.text-theme-tertiary { color: var(--text-tertiary); }
+.border-theme { border-color: var(--border-color); }
+.border-theme-dark { border-color: var(--border-color-dark); }
+.shadow-theme-sm { box-shadow: var(--shadow-sm); }
+.shadow-theme-md { box-shadow: var(--shadow-md); }
+
+/* Blog content styling */
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.blog-content h2:first-child {
+  margin-top: 0;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.blog-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.blog-content pre {
+  margin: 1.5rem 0;
+}
+
+.blog-content code {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 }

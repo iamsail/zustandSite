@@ -1,90 +1,62 @@
 # Active Context - Zustand Documentation Site
 
-**Last Updated:** 2025-11-25  
-**Current Phase:** Deploying to Vercel  
+**Last Updated:** 2025-12-01  
+**Current Phase:** Production Live on Vercel  
 **Branch:** feature/vercel
 
 ## Current Work Focus
 
-### Immediate Priority: Vercel Deployment (TASK002)
+### Site is Live and Fully Functional
 
-**Status:** In Progress
+**Status:** Production ✅
 
-We are deploying the Zustand documentation site to Vercel. This involves:
-1. Creating Vercel configuration file
-2. Updating domain configuration to use environment variables
-3. Preparing code for production deployment
-4. Pushing changes to GitHub for Vercel auto-deploy
-
-**What's Been Done:**
-- Created `vercel.json` with deployment configuration
-- Updated all domain references to use environment variables
-- Set default domain to `zustand-site.vercel.app`
-- Added security headers and caching rules
+The Zustand documentation site is now live at https://zustand.site with:
+- Full multi-language support (en, zh, ja)
+- Google Analytics 4 tracking
+- Google Search Console verified
+- All documentation pages working
+- Dark Mode support
+- Blog (with article detail pages), FAQ, and Compare pages
 
 ## Recent Changes
 
-### 2025-11-25: Vercel Deployment Preparation
-- Created `vercel.json` configuration file with:
-  - Next.js framework detection
-  - Security headers (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection)
-  - Caching headers for sitemap.xml and robots.txt
-  - Region set to Tokyo (hnd1) for Asia optimization
-- Updated `lib/seo-config.ts` to use `NEXT_PUBLIC_SITE_URL` environment variable
-- Updated `app/sitemap.ts` to use environment variable for base URL
-- Updated `app/robots.ts` to use environment variable for sitemap URL
-- Updated `app/layout.tsx` to use environment variable for metadataBase
-- Updated `.env.example` with default Vercel domain
+### 2025-12-01: Blog Detail Pages & Fixes
+- Created blog article dynamic route `/blog/[slug]/page.tsx`
+- Added full article content for all 5 blog posts in all 3 languages
+- Fixed HTML content rendering using `getMessages()` instead of translation function
+- Added blog content styling in globals.css
+- Added share buttons (Twitter, LinkedIn) and related posts section
+- Removed newsletter signup section from blog listing page
 
-### 2025-11-20: Memory Bank Setup (TASK001 - Completed)
-- Added Memory Bank documentation system
-- Created all 6 core Memory Bank files
-- Established task management structure
-- Committed and pushed to GitHub
+### 2025-12-01: Dark Mode & Content Expansion
+- Added Dark Mode support with CSS variables and ThemeProvider
+- Created `/blog` page with article listings
+- Created `/faq` page with expandable Q&A sections
+- Created `/compare` page comparing Zustand vs Redux vs MobX
+- Added 3 new examples: Authentication, Theme Store, Notifications
+- Updated all translations (en, zh, ja) for new pages
+- Updated sitemap to include 3 new pages (now 36 URLs total)
+- Added theme toggle button to header navigation
 
-## Current State
+### 2025-11-30: Documentation Subpages
+- Created `/docs/middleware` page - Middleware overview and custom middleware
+- Created `/docs/persist` page - State persistence to localStorage/sessionStorage
+- Created `/docs/devtools` page - Redux DevTools integration
+- Created `/docs/immer` page - Immer integration for immutable updates
+- Updated sitemap to include 4 new pages (now 27 URLs total)
+- Added `backToDocs` translation for all locales
+- Fixed 404 errors when clicking "Learn more" links in Advanced Topics
 
-### ✅ Completed Components
+### 2025-11-28: Google Search Console
+- Added Google Search Console verification meta tag
+- Verification code: DMakwX8ttjV_Zyt1ISn-x8TfbFEMBC2k_v5MToalcPQ
+- Sitemap submitted to Search Console
 
-**Project Infrastructure:**
-- ✅ Next.js 16 with App Router
-- ✅ TypeScript strict mode
-- ✅ Tailwind CSS v4
-- ✅ Multi-language support (en, zh, ja)
-- ✅ SEO configuration
-- ✅ Memory Bank documentation
+### 2025-11-27: Google Analytics 4
+- Integrated GA4 directly (replaced GTM)
+- Measurement ID: G-SP514GWMMH
+- Updated layout.tsx with GA4 script tags
 
-**Deployment Configuration:**
-- ✅ vercel.json created
-- ✅ Environment variable based domain config
-- ✅ Security headers configured
-- ✅ Caching headers for static files
-
-### 🚧 In Progress
-
-**TASK002: Vercel Deployment**
-- ✅ Created vercel.json
-- ✅ Updated domain configuration
-- ⏳ Commit and push to GitHub
-- ⏳ Vercel auto-deploy
-
-## Environment Variables for Vercel
-
-```
-NEXT_PUBLIC_SITE_URL=https://zustand-site.vercel.app
-NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX  (optional)
-```
-
-## Next Steps
-
-1. ✅ Create vercel.json configuration
-2. ✅ Update domain configuration  
-3. ⏳ Commit all changes
-4. ⏳ Push to GitHub
-5. Import project in Vercel dashboard
-6. Configure environment variables
-7. Verify deployment
-
-## Summary
-
-The project is now fully configured for Vercel deployment. All domain references use environment variables for easy configuration. After pushing to GitHub, Vercel will automatically deploy the Next.js application.
+### 2025-11-27: Language Switcher Bug Fixes
+- Fixed `changeLanguage()` function with regex pattern
+- Fixed `NextIntlClientProvider` missing `locale` prop
