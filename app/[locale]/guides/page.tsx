@@ -4,17 +4,18 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'guidesPage.meta' });
 
   return {
-    title: 'Guides - ' + t('title'),
-    description: 'In-depth guides for Zustand: Next.js integration, TypeScript best practices, Middleware, and Comparison with Redux.',
+    title: t('title'),
+    description: t('description'),
   };
 }
 
 export default async function GuidesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'guides' });
+  const tPage = await getTranslations({ locale, namespace: 'guidesPage' });
   const tComparison = await getTranslations({ locale, namespace: 'comparison' });
 
   const guides = [
@@ -47,9 +48,9 @@ export default async function GuidesPage({ params }: { params: Promise<{ locale:
   return (
     <div className="container-custom py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-gray-900">Guides & Resources</h1>
+        <h1 className="text-4xl font-bold mb-8 text-gray-900">{tPage('title')}</h1>
         <p className="text-xl text-gray-600 mb-12">
-          Deep dives into advanced topics, integrations, and comparisons.
+          {tPage('description')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -71,7 +72,7 @@ export default async function GuidesPage({ params }: { params: Promise<{ locale:
                 </div>
                 <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
                   <span className="text-primary-600 font-medium flex items-center">
-                    Read Guide
+                    {tPage('readGuide')}
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

@@ -10,10 +10,7 @@
     "guides": "Guides",
     "tutorial": "Tutorial",
     "examples": "Examples",
-    "api": "API Reference",
-    "blog": "Blog",
-    "compare": "Compare",
-    "faq": "FAQ"
+    "api": "API Reference"
   },
   "home": {
     "hero": {
@@ -63,74 +60,191 @@
     }
   },
   "docs": {
-    "backToDocs": "Back to Documentation",
+    "meta": {
+      "title": "Documentation",
+      "description": "Complete Zustand documentation including getting started guide, core concepts, and advanced topics.",
+      "keywords": "zustand documentation, react state management docs, zustand guide"
+    },
     "title": "Documentation",
     "gettingStarted": {
       "title": "Getting Started",
       "installation": "Installation",
-      "installDesc": "Install Zustand using npm or yarn:",
+      "installationText": "Install Zustand using npm or yarn:",
       "firstStore": "Your First Store",
-      "firstStoreDesc": "Creating a store is straightforward. Here's a simple counter example:",
+      "firstStoreText": "Creating a store is straightforward. Here's a simple counter example:",
       "basicUsage": "Basic Usage",
-      "basicUsageDesc": "Use the store in your React components:"
+      "basicUsageText": "Use the store in your React components:"
     },
     "coreConcepts": {
       "title": "Core Concepts",
       "store": "Store",
-      "storeDesc": "A store holds your application state. It's created using the create function and returns a React hook.",
+      "storeDesc": "A store holds your application state. It's created using the `create` function and returns a React hook.",
       "state": "State",
       "stateDesc": "The state is the data that your store holds. It can be any JavaScript value - objects, arrays, primitives, etc.",
       "actions": "Actions",
-      "actionsDesc": "Actions are functions that modify the state. They use the set function to update the store.",
+      "actionsDesc": "Actions are functions that modify the state. They use the `set` function to update the store.",
       "selectors": "Selectors",
       "selectorsDesc": "Selectors allow you to subscribe to specific parts of the state, optimizing re-renders."
     },
     "advanced": {
       "title": "Advanced Topics",
       "middleware": "Middleware",
-      "middlewareDesc": "Extend Zustand with middleware for logging, persistence, and more.",
       "persist": "Persisting State",
-      "persistDesc": "Save your state to localStorage or sessionStorage automatically.",
       "devtools": "DevTools Integration",
-      "devtoolsDesc": "Debug your state with Redux DevTools integration.",
-      "immer": "Using Immer",
-      "immerDesc": "Use Immer for easier immutable state updates.",
-      "learnMore": "Learn more →"
+      "immer": "Using Immer"
     }
   },
   "comparison": {
     "reduxVsZustand": {
       "title": "Zustand vs Redux in 2026",
       "description": "Why 70% of developers are switching from Redux to Zustand. A comprehensive comparison of performance, boilerplate, and developer experience.",
-      "keywords": "zustand vs redux, redux alternative, react state management comparison, zustand performance"
+      "keywords": "zustand vs redux, redux alternative, react state management comparison, zustand performance",
+      "h1": "Zustand vs Redux in 2026: Why Developers Are Switching",
+      "subtitle": "A comprehensive comparison of boilerplate, performance, and developer experience.",
+      "atAGlance": {
+        "title": "At a Glance",
+        "table": {
+          "feature": "Feature",
+          "zustand": "Zustand",
+          "redux": "Redux Toolkit",
+          "bundleSize": "Bundle Size",
+          "bundleSizeZustand": "~1.1kB (Minified + Gzipped)",
+          "bundleSizeRedux": "~10kB+ (RTK + React-Redux)",
+          "boilerplate": "Boilerplate",
+          "boilerplateZustand": "Minimal (Create & Use)",
+          "boilerplateRedux": "High (Slices, Reducers, Providers)",
+          "contextProvider": "Context Provider",
+          "contextProviderZustand": "Not Required",
+          "contextProviderRedux": "Required",
+          "stateModel": "State Model",
+          "stateModelZustand": "Flux-like (Simplified)",
+          "stateModelRedux": "Flux (Strict)",
+          "learningCurve": "Learning Curve",
+          "learningCurveZustand": "Low",
+          "learningCurveRedux": "Medium/High"
+        }
+      },
+      "codeComparison": {
+        "title": "Code Comparison",
+        "description": "Let's implement a simple counter with increment and decrement functionality.",
+        "zustand": "Zustand",
+        "simple": "Simple",
+        "redux": "Redux Toolkit",
+        "verbose": "Verbose"
+      },
+      "performance": {
+        "title": "Performance & Re-renders",
+        "description": "Zustand solves the \"zombie child\" problem and unnecessary re-renders out of the box. By using selectors, components only re-render when the specific slice of state they are listening to changes.",
+        "quote": "\"Zustand is significantly faster because it doesn't wrap your application in a Context Provider, avoiding the Context API's re-render propagation issues.\""
+      },
+      "conclusion": {
+        "title": "Conclusion: When to Switch?",
+        "chooseZustand": "<strong>Choose Zustand if:</strong> You want a simple, fast, and unopinionated solution. You prefer hooks over providers. You want to reduce boilerplate.",
+        "stickWithRedux": "<strong>Stick with Redux if:</strong> You have a massive enterprise codebase already heavily invested in the Redux ecosystem, or you strictly need the Flux architecture enforced by Redux."
+      },
+      "faq": {
+        "better": {
+          "question": "Is Zustand better than Redux?",
+          "answer": "For most applications, Zustand is considered better than Redux because it requires significantly less boilerplate code, has a smaller bundle size (1.1kB vs Redux Toolkit), and offers a simpler API without needing to wrap your app in providers."
+        },
+        "replace": {
+          "question": "Can I replace Redux with Zustand?",
+          "answer": "Yes, you can easily replace Redux with Zustand. Zustand supports Redux DevTools and can even work alongside Redux during a migration period."
+        }
+      }
     }
   },
   "guides": {
     "nextjs": {
       "title": "Zustand with Next.js App Router",
       "description": "Complete guide to using Zustand with Next.js 14/15 App Router, Server Components, and SSR.",
-      "keywords": "zustand nextjs, zustand app router, zustand server components, nextjs state management"
+      "keywords": "zustand nextjs, zustand app router, zustand server components, nextjs state management",
+      "h1": "Using Zustand with Next.js App Router",
+      "subtitle": "A complete guide to Server Components, SSR, and avoiding global state pollution.",
+      "challenge": {
+        "title": "The Challenge: Global State vs. SSR",
+        "description": "In a Single Page Application (SPA), a global store variable is fine. But in Next.js (SSR), global variables are shared across all requests on the server. This means one user's data could accidentally leak to another user if you aren't careful.",
+        "warning": "Warning: Do not define a global store using `create()` if you plan to initialize it with data from the server."
+      },
+      "solution": {
+        "title": "The Solution: Store Provider Pattern",
+        "description": "To ensure isolation, we create a new store instance for each request (or component tree) using React Context.",
+        "step1": "1. Create the Store Factory",
+        "step2": "2. Create the Provider",
+        "step3": "3. Use in Layout or Page"
+      },
+      "faq": {
+        "workWithAppRouter": {
+          "question": "Does Zustand work with Next.js App Router?",
+          "answer": "Yes, Zustand works with the App Router. However, since stores are global, you need to be careful when using them in Server Components to avoid sharing state between requests. The recommended approach is to create a store per request using a Context Provider."
+        },
+        "serverComponents": {
+          "question": "How to use Zustand in Server Components?",
+          "answer": "You cannot use Zustand hooks directly in Server Components. Instead, you should fetch data in the Server Component and pass it as props to a Client Component, or initialize a store in a Client Component provider."
+        }
+      }
     },
     "middleware": {
       "title": "Mastering Middleware & Persistence",
       "description": "Deep dive into Zustand middleware, persistence with localStorage/IndexedDB, and custom storage engines.",
-      "keywords": "zustand middleware, zustand persist, zustand localstorage, zustand indexeddb"
+      "keywords": "zustand middleware, zustand persist, zustand localstorage, zustand indexeddb",
+      "h1": "Mastering Middleware & Persistence",
+      "subtitle": "Learn how to save state to LocalStorage, IndexedDB, and create custom middleware.",
+      "basicPersistence": {
+        "title": "Basic Persistence",
+        "description": "The `persist` middleware enables you to store your state in a storage (e.g., localStorage, AsyncStorage, IndexedDB, etc.), so that when the user reloads the page, the state is preserved."
+      },
+      "hydration": {
+        "title": "Handling Hydration Errors",
+        "description": "In Next.js, you might encounter hydration errors because the server renders the initial state (0 bears), but the client hydrates with the persisted state (5 bears).",
+        "solution": "Solution: Custom Hook"
+      },
+      "faq": {
+        "persistState": {
+          "question": "How do I persist Zustand state?",
+          "answer": "You can use the built-in `persist` middleware. It automatically saves your state to localStorage (default), sessionStorage, or any custom storage engine like AsyncStorage or IndexedDB."
+        },
+        "fixHydration": {
+          "question": "How to fix hydration errors with persist?",
+          "answer": "Hydration errors occur when the server HTML differs from the client HTML (which has loaded persisted state). To fix this, you can use a custom hook to only return the state after the component has mounted on the client."
+        }
+      }
     },
     "typescript": {
       "title": "TypeScript Best Practices",
       "description": "The ultimate guide to using Zustand with TypeScript. Type-safe stores, actions, and selectors.",
-      "keywords": "zustand typescript, typed zustand, zustand hooks typescript"
+      "keywords": "zustand typescript, typed zustand, zustand hooks typescript",
+      "h1": "TypeScript Best Practices",
+      "subtitle": "The ultimate guide to type-safe state management with Zustand.",
+      "basicTyping": {
+        "title": "Basic Typing",
+        "description": "The most common way to type a store is to define an interface that includes both state and actions."
+      },
+      "combine": {
+        "title": "Using `combine` (Inferred Types)",
+        "description": "If you prefer not to write interfaces manually, you can use the `combine` middleware to infer types from your initial state."
+      },
+      "slices": {
+        "title": "Slices Pattern with TypeScript",
+        "description": "When splitting your store into slices, you need to define the StateCreator type properly."
+      },
+      "faq": {
+        "useWithTs": {
+          "question": "How to use Zustand with TypeScript?",
+          "answer": "You can use Zustand with TypeScript by defining an interface for your state and actions, and then passing that interface to the `create` function: `create'<MyState>'()(...)`."
+        },
+        "typeActions": {
+          "question": "How to type actions in Zustand?",
+          "answer": "Actions should be defined as part of your store interface. For example: `increment: () => void`. Inside the implementation, TypeScript will automatically infer the types of `set` and `get`."
+        }
+      }
     }
   },
-  "footer": {
-    "description": "Learn Zustand - A comprehensive guide to state management in React",
-    "documentation": "Documentation",
-    "resources": "Resources",
-    "community": "Community",
-    "github": "GitHub",
-    "npm": "NPM Package"
-  },
   "tutorial": {
+    "meta": {
+      "title": "Tutorial",
+      "description": "Step-by-step tutorial to learn Zustand state management from basics to advanced concepts."
+    },
     "title": "Zustand Tutorial",
     "overview": {
       "title": "Tutorial Overview",
@@ -138,16 +252,18 @@
     },
     "lesson1": {
       "title": "Lesson 1: Introduction to Zustand",
-      "intro": "Zustand is a lightweight state management library for React that provides:",
+      "description": "Zustand is a lightweight state management library for React that provides:",
       "features": {
         "simple": "Simple and intuitive API",
-        "noBoilerplate": "No boilerplate code required",
+        "boilerplate": "No boilerplate code required",
         "typescript": "Great TypeScript support",
         "performance": "Excellent performance with automatic optimization",
         "size": "Small bundle size (less than 1KB)"
       },
-      "whyTitle": "Why Choose Zustand?",
-      "whyDesc": "Compared to other state management solutions like Redux or MobX, Zustand offers a simpler API with less boilerplate while maintaining powerful features and excellent performance."
+      "why": {
+        "title": "Why Choose Zustand?",
+        "description": "Compared to other state management solutions like Redux or MobX, Zustand offers a simpler API with less boilerplate while maintaining powerful features and excellent performance."
+      }
     },
     "lesson2": {
       "title": "Lesson 2: Creating Your First Store",
@@ -157,11 +273,15 @@
       "title": "Lesson 3: Using the Store in Components"
     },
     "lesson4": {
-      "title": "Lesson 4: Advanced Patterns",
-      "asyncActions": "Async Actions",
-      "asyncDesc": "Handle asynchronous operations in your store:",
-      "computed": "Computed Values",
-      "computedDesc": "Create derived state with selectors:"
+      "title": "Lesson 4: Async Actions & Advanced Patterns",
+      "async": {
+        "title": "Async Actions",
+        "description": "Handling async actions in Zustand is simple - just make your action async!"
+      },
+      "computed": {
+        "title": "Computed Values",
+        "description": "Create derived state with selectors:"
+      }
     },
     "nextSteps": {
       "title": "Next Steps",
@@ -176,6 +296,29 @@
     }
   },
   "examples": {
+    "meta": {
+      "title": "Examples",
+      "description": "Collection of Zustand examples including counter, todo list, and async data fetching."
+    },
+    "title": "Examples",
+    "counter": {
+      "title": "Counter",
+      "description": "A simple counter example demonstrating basic state updates."
+    },
+    "todo": {
+      "title": "Todo List",
+      "description": "A todo list application showing how to handle arrays and complex state updates."
+    },
+    "async": {
+      "title": "Async Actions",
+      "description": "Example of handling asynchronous actions like data fetching."
+    }
+  },
+  "examplesPage": {
+    "meta": {
+      "title": "Examples",
+      "description": "Real-world examples of Zustand state management including todo apps, shopping carts, and more."
+    },
     "title": "Zustand Examples",
     "description": "Explore these practical examples to learn how to use Zustand in real-world applications.",
     "counter": {
@@ -195,22 +338,32 @@
       "description": "Handling API calls with loading and error states."
     }
   },
-  "api": {
+  "apiPage": {
+    "meta": {
+      "title": "API Reference",
+      "description": "Complete Zustand API reference including create, set, get, and middleware functions."
+    },
     "title": "API Reference",
     "create": {
       "title": "create()",
       "description": "Creates a store with the given state creator function.",
-      "parameters": "Parameters",
-      "paramDesc": "stateCreator - Function that receives set, get, and api",
-      "returns": "Returns",
-      "returnsDesc": "A React hook that can be used to access the store"
+      "parameters": {
+        "title": "Parameters",
+        "stateCreator": "Function that receives set, get, and api"
+      },
+      "returns": {
+        "title": "Returns",
+        "description": "A React hook that can be used to access the store"
+      }
     },
     "set": {
       "title": "set()",
       "description": "Updates the store state. Can be called with a partial state object or an updater function.",
-      "parameters": "Parameters",
-      "paramPartial": "partial - Partial state object or updater function",
-      "paramReplace": "replace - (optional) Replace entire state instead of merging"
+      "parameters": {
+        "title": "Parameters",
+        "partial": "Partial state object or updater function",
+        "replace": "(optional) Replace entire state instead of merging"
+      }
     },
     "get": {
       "title": "get()",
@@ -222,431 +375,43 @@
     },
     "middleware": {
       "title": "Middleware",
-      "persistDesc": "Persists store state to localStorage or sessionStorage.",
-      "devtoolsDesc": "Enables Redux DevTools integration for debugging.",
-      "immerDesc": "Enables Immer for easier immutable updates."
+      "persist": {
+        "title": "persist()",
+        "description": "Persists store state to localStorage or sessionStorage."
+      },
+      "devtools": {
+        "title": "devtools()",
+        "description": "Enables Redux DevTools integration for debugging."
+      },
+      "immer": {
+        "title": "immer()",
+        "description": "Enables Immer for easier immutable updates."
+      }
     },
     "selectors": {
       "title": "Selectors",
       "description": "Select specific parts of state to optimize re-renders."
     }
   },
-  "middlewarePage": {
-    "whatIs": {
-      "title": "What is Middleware?",
-      "description": "Middleware in Zustand allows you to extend and customize your store's behavior. You can add logging, persistence, devtools integration, and more."
+  "guidesPage": {
+    "meta": {
+      "title": "Guides",
+      "description": "In-depth guides for Zustand: Next.js integration, TypeScript best practices, Middleware, and Comparison with Redux."
     },
-    "custom": {
-      "title": "Creating Custom Middleware",
-      "description": "A middleware is a function that wraps the store and can intercept state changes:"
-    },
-    "combining": {
-      "title": "Combining Multiple Middlewares",
-      "description": "You can combine multiple middlewares by nesting them:"
-    },
-    "builtin": {
-      "title": "Built-in Middlewares",
-      "persist": "Persist state to storage",
-      "devtools": "Redux DevTools integration",
-      "immer": "Immutable state updates",
-      "subscribe": "Subscribe to state slices"
-    }
+    "title": "Guides & Resources",
+    "description": "Deep dives into advanced topics, integrations, and comparisons.",
+    "readGuide": "Read Guide"
   },
-  "persistPage": {
-    "basicUsage": {
-      "title": "Basic Usage",
-      "description": "The persist middleware automatically saves your state to storage and rehydrates it on page load:"
-    },
-    "configOptions": {
-      "title": "Configuration Options"
-    },
-    "sessionStorage": {
-      "title": "Using sessionStorage",
-      "description": "By default, persist uses localStorage. To use sessionStorage:"
-    },
-    "partial": {
-      "title": "Partial Persistence",
-      "description": "Only persist specific parts of your state:"
-    },
-    "hydration": {
-      "title": "Hydration",
-      "description": "Handle the hydration state to avoid hydration mismatches in SSR:"
-    }
-  },
-  "devtoolsPage": {
-    "setup": {
-      "title": "Setup",
-      "description": "Zustand integrates seamlessly with Redux DevTools browser extension. First, install the Redux DevTools extension in your browser, then use the devtools middleware:"
-    },
-    "naming": {
-      "title": "Naming Actions",
-      "description": "For better debugging experience, name your actions:"
-    },
-    "configOptions": {
-      "title": "Configuration Options"
-    },
-    "combining": {
-      "title": "Combining with Other Middlewares",
-      "description": "When combining with other middlewares, devtools should be the outermost:"
-    },
-    "production": {
-      "title": "Production Considerations",
-      "description": "Disable devtools in production for better performance:"
-    }
-  },
-  "immerPage": {
-    "why": {
-      "title": "Why Immer?",
-      "description": "Immer allows you to write \"mutable\" code that produces immutable updates. This is especially useful when dealing with deeply nested state:"
-    },
-    "installation": {
-      "title": "Installation"
-    },
-    "basicUsage": {
-      "title": "Basic Usage",
-      "description": "Use the immer middleware to enable Immer in your store:"
-    },
-    "nestedState": {
-      "title": "Nested State Updates",
-      "description": "Immer shines when updating deeply nested state:"
-    },
-    "combining": {
-      "title": "Combining with Other Middlewares",
-      "description": "Immer works well with other middlewares:"
-    },
-    "typescript": {
-      "title": "TypeScript Support"
-    }
-  },
-  "blog": {
-    "title": "Zustand Blog",
-    "description": "Latest articles, tutorials, and tips about Zustand state management for React applications.",
-    "minRead": "min read",
-    "readMore": "Read more",
-    "posts": {
-      "zustand-vs-context": {
-        "title": "Zustand vs React Context: When to Use Which?",
-        "excerpt": "A deep dive into when you should use Zustand over React Context and vice versa. Learn the trade-offs and make informed decisions."
-      },
-      "performance-optimization": {
-        "title": "Performance Optimization Tips for Zustand",
-        "excerpt": "Learn how to optimize your Zustand stores for maximum performance. Covers selectors, shallow comparisons, and avoiding common pitfalls."
-      },
-      "typescript-patterns": {
-        "title": "Advanced TypeScript Patterns with Zustand",
-        "excerpt": "Master TypeScript with Zustand. Learn about type inference, generic stores, and creating type-safe middleware."
-      },
-      "testing-zustand": {
-        "title": "Testing Zustand Stores: A Complete Guide",
-        "excerpt": "Everything you need to know about testing Zustand stores. From unit tests to integration tests with React Testing Library."
-      },
-      "server-side-rendering": {
-        "title": "Zustand and Server-Side Rendering",
-        "excerpt": "How to use Zustand with Next.js and other SSR frameworks. Handle hydration and avoid common SSR pitfalls."
-      }
-    },
-    "newsletter": {
-      "title": "Subscribe to Our Newsletter",
-      "description": "Get the latest Zustand tips and tutorials delivered to your inbox.",
-      "placeholder": "Enter your email",
-      "button": "Subscribe"
-    },
-    "backToBlog": "Back to Blog",
-    "shareArticle": "Share this article",
-    "relatedPosts": "Related Posts"
-  },
-  "blogContent": {
-    "zustand-vs-context": "<h2>Introduction</h2><p>When building React applications, state management is one of the most critical decisions you'll make. Two popular options are Zustand and React Context. But when should you use which?</p><h2>React Context: The Built-in Solution</h2><p>React Context is built into React and is great for:</p><ul><li>Theme switching</li><li>User authentication state</li><li>Locale/language preferences</li><li>Small to medium apps with limited state</li></ul><h2>Zustand: The Lightweight Powerhouse</h2><p>Zustand shines when you need:</p><ul><li>Frequent state updates without re-renders</li><li>Complex state logic with multiple stores</li><li>DevTools integration for debugging</li><li>Persistence and middleware support</li></ul><h2>Performance Comparison</h2><p>React Context causes all consumers to re-render when any value changes. Zustand uses selectors to prevent unnecessary re-renders, making it more performant for frequently changing state.</p><h2>Conclusion</h2><p>Use Context for simple, rarely-changing global state. Use Zustand for complex, frequently-updated state that requires fine-grained subscriptions.</p>",
-    "performance-optimization": "<h2>Why Performance Matters</h2><p>State management can be a performance bottleneck in React apps. Let's explore how to optimize Zustand for maximum performance.</p><h2>Use Selectors Wisely</h2><p>The most important optimization is using selectors to subscribe to only the state you need:</p><pre><code>// ❌ Bad: Re-renders on any state change\nconst state = useStore();\n\n// ✅ Good: Only re-renders when count changes\nconst count = useStore(state => state.count);</code></pre><h2>Shallow Comparisons</h2><p>When selecting objects, use shallow comparison:</p><pre><code>import { shallow } from 'zustand/shallow';\n\nconst { name, age } = useStore(\n  state => ({ name: state.name, age: state.age }),\n  shallow\n);</code></pre><h2>Avoid Creating Objects in Selectors</h2><p>Creating new objects in selectors causes unnecessary re-renders. Extract primitives or use shallow comparison.</p><h2>Split Your Stores</h2><p>Consider splitting large stores into smaller, focused stores to minimize subscription scope.</p>",
-    "typescript-patterns": "<h2>TypeScript + Zustand = ❤️</h2><p>Zustand has excellent TypeScript support. Let's explore advanced patterns for type-safe state management.</p><h2>Typing Your Store</h2><p>Define your state interface explicitly:</p><pre><code>interface BearState {\n  bears: number;\n  increase: (by: number) => void;\n}\n\nconst useStore = create<BearState>()((set) => ({\n  bears: 0,\n  increase: (by) => set((state) => ({ bears: state.bears + by })),\n}));</code></pre><h2>Generic Stores</h2><p>Create reusable store patterns with generics:</p><pre><code>function createEntityStore<T>() {\n  return create<EntityStore<T>>()((set) => ({\n    entities: {},\n    add: (id, entity) => set(state => ({\n      entities: { ...state.entities, [id]: entity }\n    })),\n  }));\n}</code></pre><h2>Middleware Typing</h2><p>Properly type your middleware for full type safety throughout your application.</p>",
-    "testing-zustand": "<h2>Testing is Essential</h2><p>Well-tested stores lead to reliable applications. Here's how to test Zustand stores effectively.</p><h2>Unit Testing Stores</h2><p>Test your store logic in isolation:</p><pre><code>import { useStore } from './store';\n\nbeforeEach(() => {\n  useStore.setState({ count: 0 });\n});\n\ntest('increment increases count', () => {\n  useStore.getState().increment();\n  expect(useStore.getState().count).toBe(1);\n});</code></pre><h2>Integration Testing with React Testing Library</h2><p>Test components that use your store:</p><pre><code>import { render, screen, fireEvent } from '@testing-library/react';\nimport Counter from './Counter';\n\ntest('counter increments on click', () => {\n  render(<Counter />);\n  fireEvent.click(screen.getByRole('button'));\n  expect(screen.getByText('1')).toBeInTheDocument();\n});</code></pre><h2>Mocking Stores</h2><p>Create mock stores for testing components in isolation.</p>",
-    "server-side-rendering": "<h2>SSR Challenges</h2><p>Server-side rendering with state management requires special consideration to avoid hydration mismatches.</p><h2>The Hydration Problem</h2><p>When using SSR, the server renders with initial state, but the client may have different state (e.g., from localStorage). This causes hydration mismatches.</p><h2>Solution: Skip Hydration</h2><p>Use the skipHydration option with persist middleware:</p><pre><code>const useStore = create(\n  persist(\n    (set) => ({ ... }),\n    {\n      name: 'store',\n      skipHydration: true,\n    }\n  )\n);\n\n// In your app\nuseEffect(() => {\n  useStore.persist.rehydrate();\n}, []);</code></pre><h2>Next.js App Router</h2><p>With Next.js App Router, consider using Zustand only in Client Components marked with 'use client'.</p><h2>Best Practices</h2><ul><li>Keep SSR-critical state in server components</li><li>Use Zustand for client-side interactivity</li><li>Handle hydration gracefully</li></ul>"
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "description": "Find answers to the most common questions about Zustand state management.",
-    "categories": {
-      "general": "General Questions",
-      "usage": "Usage & Patterns",
-      "advanced": "Advanced Topics",
-      "troubleshooting": "Troubleshooting"
-    },
-    "questions": {
-      "what-is-zustand": {
-        "q": "What is Zustand?",
-        "a": "Zustand is a small, fast, and scalable state management solution for React. It uses hooks and doesn't require providers or context, making it simpler to use than many alternatives."
-      },
-      "why-use-zustand": {
-        "q": "Why should I use Zustand over other state management libraries?",
-        "a": "Zustand offers a minimal API with no boilerplate, excellent TypeScript support, great performance out of the box, and a tiny bundle size (~1KB). It's perfect for projects of any size."
-      },
-      "zustand-vs-redux": {
-        "q": "How does Zustand compare to Redux?",
-        "a": "Zustand is much simpler than Redux with no reducers, action types, or dispatch. It has a smaller bundle size and requires less code. However, Redux has a larger ecosystem and may be better for very large teams."
-      },
-      "bundle-size": {
-        "q": "What is Zustand's bundle size?",
-        "a": "Zustand is incredibly lightweight at around 1KB gzipped. This makes it one of the smallest state management libraries available."
-      },
-      "create-store": {
-        "q": "How do I create a Zustand store?",
-        "a": "Creating a store is simple using the create function. The store is just a hook that you can use directly in your components."
-      },
-      "update-state": {
-        "q": "How do I update state in Zustand?",
-        "a": "Use the set function provided to your store. You can pass a partial state object or an updater function."
-      },
-      "async-actions": {
-        "q": "How do I handle async actions?",
-        "a": "Async actions work naturally in Zustand. Just make your action function async and call set when data is ready."
-      },
-      "selectors": {
-        "q": "How do I use selectors to optimize re-renders?",
-        "a": "Pass a selector function to your store hook to subscribe to specific parts of state. Use shallow comparison for object selections."
-      },
-      "middleware": {
-        "q": "What middleware is available?",
-        "a": "Zustand provides built-in middleware for persistence (persist), DevTools integration (devtools), Immer support (immer), and more. You can also create custom middleware."
-      },
-      "persist-state": {
-        "q": "How do I persist state to localStorage?",
-        "a": "Use the persist middleware to automatically save and restore state from localStorage or sessionStorage."
-      },
-      "devtools": {
-        "q": "Does Zustand support Redux DevTools?",
-        "a": "Yes! Use the devtools middleware to enable Redux DevTools support for debugging your stores."
-      },
-      "typescript": {
-        "q": "How well does Zustand work with TypeScript?",
-        "a": "Zustand has excellent TypeScript support with full type inference. You can type your store state and actions for a great developer experience."
-      },
-      "rerender-issues": {
-        "q": "Why is my component re-rendering too often?",
-        "a": "Make sure you're using selectors to subscribe to only the state you need. Use shallow comparison when selecting objects or arrays."
-      },
-      "state-not-updating": {
-        "q": "Why isn't my state updating?",
-        "a": "Check that you're using the set function correctly. Remember that set merges state by default - use set(state, true) to replace the entire state."
-      },
-      "ssr-issues": {
-        "q": "How do I handle SSR with Zustand?",
-        "a": "For SSR, make sure to handle hydration properly. Use the persist middleware's onRehydrateStorage callback or skip hydration on the server."
-      },
-      "memory-leaks": {
-        "q": "How do I prevent memory leaks?",
-        "a": "Zustand handles cleanup automatically when components unmount. For manual subscriptions with subscribe(), make sure to call the returned unsubscribe function."
-      }
-    },
-    "stillHaveQuestions": {
-      "title": "Still Have Questions?",
-      "description": "Can't find the answer you're looking for? Join our community!",
-      "github": "GitHub Discussions",
-      "discord": "Discord Community"
-    }
-  },
-  "compare": {
-    "title": "State Management Comparison",
-    "description": "Compare Zustand with other popular React state management libraries to find the best fit for your project.",
-    "recommended": "Recommended",
-    "quickSummary": {
-      "title": "Quick Summary"
-    },
-    "libraries": {
-      "zustand": {
-        "name": "Zustand",
-        "icon": "🐻",
-        "summary": "Simple, fast, and scalable. Perfect for most React projects with minimal boilerplate.",
-        "bundleSize": "~1KB",
-        "stars": "40k+"
-      },
-      "redux": {
-        "name": "Redux Toolkit",
-        "icon": "🔄",
-        "summary": "Industry standard with large ecosystem. Best for very large teams and complex apps.",
-        "bundleSize": "~11KB",
-        "stars": "60k+"
-      },
-      "mobx": {
-        "name": "MobX",
-        "icon": "🔮",
-        "summary": "Reactive programming with automatic tracking. Great for complex derived state.",
-        "bundleSize": "~16KB",
-        "stars": "27k+"
-      },
-      "jotai": {
-        "name": "Jotai",
-        "icon": "👻",
-        "summary": "Primitive and flexible atomic state. Similar philosophy to Zustand from the same team.",
-        "bundleSize": "~2KB",
-        "stars": "15k+"
-      },
-      "recoil": {
-        "name": "Recoil",
-        "icon": "⚛️",
-        "summary": "Facebook's atomic state library. Good for complex async data dependencies.",
-        "bundleSize": "~22KB",
-        "stars": "19k+"
-      }
-    },
-    "metrics": {
-      "bundleSize": "Bundle Size",
-      "stars": "GitHub Stars"
-    },
-    "comparisonTable": {
-      "title": "Feature Comparison",
-      "feature": "Feature"
-    },
-    "features": {
-      "bundleSize": "Bundle Size",
-      "boilerplate": "Boilerplate",
-      "learningCurve": "Learning Curve",
-      "typescript": "TypeScript",
-      "devtools": "DevTools",
-      "middleware": "Middleware",
-      "ssr": "SSR Support",
-      "reactNative": "React Native",
-      "persistence": "Persistence",
-      "performance": "Performance"
-    },
-    "ratings": {
-      "zustand": {
-        "bundleSize": "⭐⭐⭐⭐⭐",
-        "boilerplate": "⭐⭐⭐⭐⭐",
-        "learningCurve": "⭐⭐⭐⭐⭐",
-        "typescript": "⭐⭐⭐⭐⭐",
-        "devtools": "⭐⭐⭐⭐",
-        "middleware": "⭐⭐⭐⭐",
-        "ssr": "⭐⭐⭐⭐",
-        "reactNative": "⭐⭐⭐⭐⭐",
-        "persistence": "⭐⭐⭐⭐⭐",
-        "performance": "⭐⭐⭐⭐⭐"
-      },
-      "redux": {
-        "bundleSize": "⭐⭐⭐",
-        "boilerplate": "⭐⭐⭐",
-        "learningCurve": "⭐⭐⭐",
-        "typescript": "⭐⭐⭐⭐",
-        "devtools": "⭐⭐⭐⭐⭐",
-        "middleware": "⭐⭐⭐⭐⭐",
-        "ssr": "⭐⭐⭐⭐",
-        "reactNative": "⭐⭐⭐⭐",
-        "persistence": "⭐⭐⭐⭐",
-        "performance": "⭐⭐⭐⭐"
-      },
-      "mobx": {
-        "bundleSize": "⭐⭐",
-        "boilerplate": "⭐⭐⭐⭐",
-        "learningCurve": "⭐⭐⭐",
-        "typescript": "⭐⭐⭐⭐",
-        "devtools": "⭐⭐⭐⭐",
-        "middleware": "⭐⭐⭐",
-        "ssr": "⭐⭐⭐",
-        "reactNative": "⭐⭐⭐⭐",
-        "persistence": "⭐⭐⭐",
-        "performance": "⭐⭐⭐⭐"
-      },
-      "jotai": {
-        "bundleSize": "⭐⭐⭐⭐⭐",
-        "boilerplate": "⭐⭐⭐⭐⭐",
-        "learningCurve": "⭐⭐⭐⭐",
-        "typescript": "⭐⭐⭐⭐⭐",
-        "devtools": "⭐⭐⭐⭐",
-        "middleware": "⭐⭐⭐⭐",
-        "ssr": "⭐⭐⭐⭐",
-        "reactNative": "⭐⭐⭐⭐⭐",
-        "persistence": "⭐⭐⭐⭐",
-        "performance": "⭐⭐⭐⭐⭐"
-      },
-      "recoil": {
-        "bundleSize": "⭐⭐",
-        "boilerplate": "⭐⭐⭐⭐",
-        "learningCurve": "⭐⭐⭐",
-        "typescript": "⭐⭐⭐⭐",
-        "devtools": "⭐⭐⭐",
-        "middleware": "⭐⭐⭐",
-        "ssr": "⭐⭐⭐",
-        "reactNative": "⭐⭐⭐",
-        "persistence": "⭐⭐⭐",
-        "performance": "⭐⭐⭐⭐"
-      }
-    },
-    "detailed": {
-      "title": "Detailed Comparison",
-      "zustandAdvantages": "Zustand Advantages",
-      "reduxAdvantages": "Redux Advantages",
-      "mobxAdvantages": "MobX Advantages",
-      "codeComparison": "Code Comparison",
-      "zustandVsRedux": {
-        "title": "Zustand vs Redux",
-        "zustand1": "No boilerplate - create stores with minimal code",
-        "zustand2": "No providers needed - use stores anywhere",
-        "zustand3": "Smaller bundle size (~1KB vs ~11KB)",
-        "redux1": "Larger ecosystem and community",
-        "redux2": "Time-travel debugging out of the box",
-        "redux3": "Better for very large teams with strict patterns"
-      },
-      "zustandVsMobx": {
-        "title": "Zustand vs MobX",
-        "zustand1": "Simpler mental model - explicit state updates",
-        "zustand2": "No decorators or observables required",
-        "zustand3": "Better tree-shaking and smaller bundle",
-        "mobx1": "Automatic dependency tracking",
-        "mobx2": "Great for complex derived state",
-        "mobx3": "More familiar for OOP developers"
-      }
-    },
-    "whenToUse": {
-      "title": "When to Use Each",
-      "useZustand": {
-        "title": "Use Zustand When",
-        "reason1": "You want minimal boilerplate and setup",
-        "reason2": "You're building a small to medium project",
-        "reason3": "You prefer a simple, hook-based API",
-        "reason4": "Bundle size is important to you"
-      },
-      "useOthers": {
-        "title": "Consider Alternatives When",
-        "reason1": "You need extensive Redux ecosystem tools",
-        "reason2": "Your team is already familiar with MobX",
-        "reason3": "You need atomic state management (Jotai)"
-      }
-    },
-    "cta": {
-      "title": "Ready to Try Zustand?",
-      "description": "Get started with our comprehensive documentation and tutorials.",
-      "button": "Get Started"
-    }
-  },
-  "examples": {
-    "title": "Zustand Examples",
-    "description": "Explore these practical examples to learn how to use Zustand in real-world applications.",
-    "counter": {
-      "title": "Simple Counter",
-      "description": "A basic counter example demonstrating state updates and actions."
-    },
-    "cart": {
-      "title": "Shopping Cart",
-      "description": "A shopping cart with add, remove, and quantity management."
-    },
-    "form": {
-      "title": "Form Management",
-      "description": "Managing form state with validation and submission."
-    },
-    "async": {
-      "title": "Async Data Fetching",
-      "description": "Handling API calls with loading and error states."
-    },
-    "auth": {
-      "title": "Authentication Store",
-      "description": "Complete authentication flow with login, logout, and token persistence."
-    },
-    "theme": {
-      "title": "Theme Store",
-      "description": "Dark/light theme management with system preference detection."
-    },
-    "notifications": {
-      "title": "Notification System",
-      "description": "Toast notification system with auto-dismiss and different types."
-    }
+  "footer": {
+    "description": "A small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy API based on hooks, isn't boilerplatey or opinionated.",
+    "documentation": "Documentation",
+    "gettingStarted": "Getting Started",
+    "tutorial": "Tutorial",
+    "examples": "Examples",
+    "api": "API Reference",
+    "resources": "Resources",
+    "github": "GitHub",
+    "npm": "NPM",
+    "copyright": "© {year} Zustand Tutorial. All rights reserved."
   }
 }

@@ -22,18 +22,18 @@ export default async function ReduxVsZustandPage({ params }: { params: Promise<{
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Is Zustand better than Redux?',
+        name: t('faq.better.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'For most applications, Zustand is considered better than Redux because it requires significantly less boilerplate code, has a smaller bundle size (1.1kB vs Redux Toolkit), and offers a simpler API without needing to wrap your app in providers.',
+          text: t('faq.better.answer'),
         },
       },
       {
         '@type': 'Question',
-        name: 'Can I replace Redux with Zustand?',
+        name: t('faq.replace.question'),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, you can easily replace Redux with Zustand. Zustand supports Redux DevTools and can even work alongside Redux during a migration period.',
+          text: t('faq.replace.answer'),
         },
       },
     ],
@@ -47,49 +47,49 @@ export default async function ReduxVsZustandPage({ params }: { params: Promise<{
       />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-          Zustand vs Redux in 2026: Why Developers Are Switching
+          {t('h1')}
         </h1>
         <p className="text-xl text-gray-600 mb-12">
-          A comprehensive comparison of boilerplate, performance, and developer experience.
+          {t('subtitle')}
         </p>
 
         {/* Comparison Table */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">At a Glance</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('atAGlance.title')}</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-200">
               <thead>
                 <tr className="bg-gray-50">
-                  <th className="p-4 text-left border border-gray-200">Feature</th>
-                  <th className="p-4 text-left border border-gray-200 text-blue-600 font-bold">Zustand</th>
-                  <th className="p-4 text-left border border-gray-200 text-purple-600 font-bold">Redux Toolkit</th>
+                  <th className="p-4 text-left border border-gray-200">{t('atAGlance.table.feature')}</th>
+                  <th className="p-4 text-left border border-gray-200 text-blue-600 font-bold">{t('atAGlance.table.zustand')}</th>
+                  <th className="p-4 text-left border border-gray-200 text-purple-600 font-bold">{t('atAGlance.table.redux')}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="p-4 border border-gray-200 font-medium">Bundle Size</td>
-                  <td className="p-4 border border-gray-200 text-green-600">~1.1kB (Minified + Gzipped)</td>
-                  <td className="p-4 border border-gray-200">~10kB+ (RTK + React-Redux)</td>
+                  <td className="p-4 border border-gray-200 font-medium">{t('atAGlance.table.bundleSize')}</td>
+                  <td className="p-4 border border-gray-200 text-green-600">{t('atAGlance.table.bundleSizeZustand')}</td>
+                  <td className="p-4 border border-gray-200">{t('atAGlance.table.bundleSizeRedux')}</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border border-gray-200 font-medium">Boilerplate</td>
-                  <td className="p-4 border border-gray-200 text-green-600">Minimal (Create & Use)</td>
-                  <td className="p-4 border border-gray-200">High (Slices, Reducers, Providers)</td>
+                  <td className="p-4 border border-gray-200 font-medium">{t('atAGlance.table.boilerplate')}</td>
+                  <td className="p-4 border border-gray-200 text-green-600">{t('atAGlance.table.boilerplateZustand')}</td>
+                  <td className="p-4 border border-gray-200">{t('atAGlance.table.boilerplateRedux')}</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border border-gray-200 font-medium">Context Provider</td>
-                  <td className="p-4 border border-gray-200 text-green-600">Not Required</td>
-                  <td className="p-4 border border-gray-200">Required</td>
+                  <td className="p-4 border border-gray-200 font-medium">{t('atAGlance.table.contextProvider')}</td>
+                  <td className="p-4 border border-gray-200 text-green-600">{t('atAGlance.table.contextProviderZustand')}</td>
+                  <td className="p-4 border border-gray-200">{t('atAGlance.table.contextProviderRedux')}</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border border-gray-200 font-medium">State Model</td>
-                  <td className="p-4 border border-gray-200">Flux-like (Simplified)</td>
-                  <td className="p-4 border border-gray-200">Flux (Strict)</td>
+                  <td className="p-4 border border-gray-200 font-medium">{t('atAGlance.table.stateModel')}</td>
+                  <td className="p-4 border border-gray-200">{t('atAGlance.table.stateModelZustand')}</td>
+                  <td className="p-4 border border-gray-200">{t('atAGlance.table.stateModelRedux')}</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border border-gray-200 font-medium">Learning Curve</td>
-                  <td className="p-4 border border-gray-200 text-green-600">Low</td>
-                  <td className="p-4 border border-gray-200">Medium/High</td>
+                  <td className="p-4 border border-gray-200 font-medium">{t('atAGlance.table.learningCurve')}</td>
+                  <td className="p-4 border border-gray-200 text-green-600">{t('atAGlance.table.learningCurveZustand')}</td>
+                  <td className="p-4 border border-gray-200">{t('atAGlance.table.learningCurveRedux')}</td>
                 </tr>
               </tbody>
             </table>
@@ -98,17 +98,17 @@ export default async function ReduxVsZustandPage({ params }: { params: Promise<{
 
         {/* Code Comparison */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Code Comparison</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('codeComparison.title')}</h2>
           <p className="mb-6 text-gray-700">
-            Let's implement a simple counter with increment and decrement functionality.
+            {t('codeComparison.description')}
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Zustand */}
             <div className="bg-gray-900 rounded-lg overflow-hidden">
               <div className="bg-gray-800 px-4 py-2 text-white font-bold border-b border-gray-700 flex justify-between items-center">
-                <span>Zustand</span>
-                <span className="text-xs bg-green-600 px-2 py-1 rounded">Simple</span>
+                <span>{t('codeComparison.zustand')}</span>
+                <span className="text-xs bg-green-600 px-2 py-1 rounded">{t('codeComparison.simple')}</span>
               </div>
               <div className="p-4 overflow-x-auto">
                 <pre className="text-sm text-gray-300">
@@ -139,8 +139,8 @@ function Counter() {
             {/* Redux */}
             <div className="bg-gray-900 rounded-lg overflow-hidden">
               <div className="bg-gray-800 px-4 py-2 text-white font-bold border-b border-gray-700 flex justify-between items-center">
-                <span>Redux Toolkit</span>
-                <span className="text-xs bg-purple-600 px-2 py-1 rounded">Verbose</span>
+                <span>{t('codeComparison.redux')}</span>
+                <span className="text-xs bg-purple-600 px-2 py-1 rounded">{t('codeComparison.verbose')}</span>
               </div>
               <div className="p-4 overflow-x-auto">
                 <pre className="text-sm text-gray-300">
@@ -185,24 +185,23 @@ function Counter() {
 
         {/* Performance */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Performance & Re-renders</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('performance.title')}</h2>
           <p className="text-gray-700 mb-4">
-            Zustand solves the "zombie child" problem and unnecessary re-renders out of the box.
-            By using selectors, components only re-render when the specific slice of state they are listening to changes.
+            {t('performance.description')}
           </p>
           <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
             <p className="font-medium text-blue-900">
-              "Zustand is significantly faster because it doesn't wrap your application in a Context Provider, avoiding the Context API's re-render propagation issues."
+              {t('performance.quote')}
             </p>
           </div>
         </section>
 
         {/* Conclusion */}
         <section>
-          <h2 className="text-3xl font-bold mb-6">Conclusion: When to Switch?</h2>
+          <h2 className="text-3xl font-bold mb-6">{t('conclusion.title')}</h2>
           <ul className="list-disc pl-6 space-y-2 text-gray-700">
-            <li><strong>Choose Zustand if:</strong> You want a simple, fast, and unopinionated solution. You prefer hooks over providers. You want to reduce boilerplate.</li>
-            <li><strong>Stick with Redux if:</strong> You have a massive enterprise codebase already heavily invested in the Redux ecosystem, or you strictly need the Flux architecture enforced by Redux.</li>
+            <li dangerouslySetInnerHTML={{ __html: t.raw('conclusion.chooseZustand') }} />
+            <li dangerouslySetInnerHTML={{ __html: t.raw('conclusion.stickWithRedux') }} />
           </ul>
         </section>
       </div>
