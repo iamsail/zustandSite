@@ -15,7 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/docs/immer',
     '/blog',
     '/faq',
-    '/compare'
+    '/compare',
+    '/comparison/redux-vs-zustand',
+    '/guides',
+    '/guides/nextjs-app-router',
+    '/guides/persistence-and-middleware',
+    '/guides/typescript-best-practices'
   ];
 
   const sitemap: MetadataRoute.Sitemap = [];

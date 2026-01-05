@@ -12,6 +12,7 @@
 - [x] Next.js App Router Integration Guide.
 - [x] TypeScript Optimization (Metadata).
 - [x] Schema Markup Implementation.
+- [x] Sitemap Update.
 
 ## Known Issues
 - None currently documented.
