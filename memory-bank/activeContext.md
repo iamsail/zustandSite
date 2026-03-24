@@ -14,6 +14,8 @@ GitHub Pages migration complete on `feature/gh` branch. Ready to merge to `main`
 - Added `export const dynamic = 'force-static'` to `app/robots.ts` and `app/sitemap.ts`.
 - Configured `i18n.ts` with `onError` + `getMessageFallback` to gracefully handle missing translation keys during build.
 
+- 修复 `Header.tsx` 中缺失的 `nav.blog` 和 `nav.compare` translation keys（三个语言文件均已补充）。
+
 ## Next Steps
 1. Merge `feature/gh` → `main` to trigger GitHub Actions deploy.
 2. GitHub repo Settings → Pages → Source: `gh-pages` branch.

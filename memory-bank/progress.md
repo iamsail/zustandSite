@@ -16,5 +16,6 @@
 - [x] GitHub Pages migration.
 
 ## Known Issues
-- Missing translation namespaces in `messages/*.json`: `compare`, `blog`, `faq`.
-  Pages using these namespaces display key paths as placeholders until filled in.
+- Page-level translation namespaces still incomplete in `messages/*.json`: `compare`, `blog`, `faq`.
+  Pages using these namespaces display key paths as placeholders until content translations are filled in.
+  (Nav keys `nav.blog` and `nav.compare` are fixed.)
