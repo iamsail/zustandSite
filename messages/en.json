@@ -10,7 +10,9 @@
     "guides": "Guides",
     "tutorial": "Tutorial",
     "examples": "Examples",
-    "api": "API Reference"
+    "api": "API Reference",
+    "blog": "Blog",
+    "compare": "Compare"
   },
   "home": {
     "hero": {

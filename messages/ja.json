@@ -10,7 +10,9 @@
     "guides": "ガイド",
     "tutorial": "チュートリアル",
     "examples": "例",
-    "api": "API リファレンス"
+    "api": "API リファレンス",
+    "blog": "ブログ",
+    "compare": "比較"
   },
   "home": {
     "hero": {
