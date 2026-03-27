@@ -3,8 +3,8 @@
 ## Status
 - **Project Setup:** Complete.
 - **Basic Pages:** Home, Docs, Examples, Tutorial exist.
-- **i18n:** Configured.
-- **DevOps:** Vercel deployment configured to ignore feature branches.
+- **i18n:** Configured (static mode with `setRequestLocale`).
+- **DevOps:** GitHub Pages deployment configured via GitHub Actions.
 
 ## What's Left to Build (SEO Focus)
 - [x] Comparison Page (Zustand vs Redux).
@@ -13,6 +13,9 @@
 - [x] TypeScript Optimization (Metadata).
 - [x] Schema Markup Implementation.
 - [x] Sitemap Update.
+- [x] GitHub Pages migration.
 
 ## Known Issues
-- None currently documented.
+- Page-level translation namespaces still incomplete in `messages/*.json`: `compare`, `blog`, `faq`.
+  Pages using these namespaces display key paths as placeholders until content translations are filled in.
+  (Nav keys `nav.blog` and `nav.compare` are fixed.)
