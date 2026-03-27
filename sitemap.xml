@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://zustand.site/en</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/docs</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/tutorial</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/tutorial" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/tutorial" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/tutorial" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/examples</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/examples" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/examples" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/examples" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/api</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/api" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/api" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/api" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/docs/middleware</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/middleware" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/middleware" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/middleware" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/docs/persist</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/persist" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/persist" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/persist" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/docs/devtools</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/devtools" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/devtools" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/devtools" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/docs/immer</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/immer" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/immer" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/immer" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/blog</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/blog" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/blog" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/blog" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/faq</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/faq" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/faq" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/faq" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/compare</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/compare" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/compare" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/compare" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/comparison/redux-vs-zustand</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/comparison/redux-vs-zustand" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/comparison/redux-vs-zustand" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/comparison/redux-vs-zustand" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/guides</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/guides/nextjs-app-router</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/nextjs-app-router" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/nextjs-app-router" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/nextjs-app-router" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/guides/persistence-and-middleware</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/persistence-and-middleware" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/persistence-and-middleware" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/persistence-and-middleware" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/en/guides/typescript-best-practices</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/typescript-best-practices" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/typescript-best-practices" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/typescript-best-practices" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/docs</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/tutorial</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/tutorial" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/tutorial" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/tutorial" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/examples</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/examples" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/examples" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/examples" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/api</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/api" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/api" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/api" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/docs/middleware</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/middleware" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/middleware" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/middleware" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/docs/persist</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/persist" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/persist" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/persist" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/docs/devtools</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/devtools" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/devtools" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/devtools" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/docs/immer</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/immer" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/immer" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/immer" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/blog</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/blog" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/blog" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/blog" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/faq</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/faq" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/faq" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/faq" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/compare</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/compare" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/compare" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/compare" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/comparison/redux-vs-zustand</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/comparison/redux-vs-zustand" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/comparison/redux-vs-zustand" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/comparison/redux-vs-zustand" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/guides</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/guides/nextjs-app-router</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/nextjs-app-router" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/nextjs-app-router" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/nextjs-app-router" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/guides/persistence-and-middleware</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/persistence-and-middleware" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/persistence-and-middleware" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/persistence-and-middleware" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/zh/guides/typescript-best-practices</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/typescript-best-practices" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/typescript-best-practices" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/typescript-best-practices" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/docs</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/tutorial</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/tutorial" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/tutorial" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/tutorial" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/examples</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/examples" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/examples" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/examples" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/api</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/api" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/api" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/api" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/docs/middleware</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/middleware" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/middleware" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/middleware" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/docs/persist</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/persist" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/persist" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/persist" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/docs/devtools</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/devtools" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/devtools" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/devtools" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/docs/immer</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/docs/immer" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/docs/immer" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/docs/immer" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/blog</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/blog" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/blog" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/blog" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/faq</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/faq" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/faq" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/faq" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/compare</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/compare" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/compare" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/compare" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/comparison/redux-vs-zustand</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/comparison/redux-vs-zustand" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/comparison/redux-vs-zustand" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/comparison/redux-vs-zustand" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/guides</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/guides/nextjs-app-router</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/nextjs-app-router" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/nextjs-app-router" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/nextjs-app-router" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/guides/persistence-and-middleware</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/persistence-and-middleware" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/persistence-and-middleware" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/persistence-and-middleware" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://zustand.site/ja/guides/typescript-best-practices</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://zustand.site/en/guides/typescript-best-practices" />
+<xhtml:link rel="alternate" hreflang="zh" href="https://zustand.site/zh/guides/typescript-best-practices" />
+<xhtml:link rel="alternate" hreflang="ja" href="https://zustand.site/ja/guides/typescript-best-practices" />
+<lastmod>2026-03-27T08:14:00.086Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+</urlset>

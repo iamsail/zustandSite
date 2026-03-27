@@ -1,0 +1,50 @@
+1:"$Sreact.fragment"
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+2:T472,// src/providers/counter-store-provider.tsx
+'use client'
+
+import { type ReactNode, createContext, useRef, useContext } from 'react'
+import { useStore } from 'zustand'
+import { type CounterStore, createCounterStore } from '@/stores/counter-store'
+
+export type CounterStoreApi = ReturnType<typeof createCounterStore>
+
+export const CounterStoreContext = createContext<CounterStoreApi | undefined>(
+  undefined,
+)
+
+export interface CounterStoreProviderProps {
+  children: ReactNode
+}
+
+export const CounterStoreProvider = ({
+  children,
+}: CounterStoreProviderProps) => {
+  const storeRef = useRef<CounterStoreApi>(null)
+  if (!storeRef.current) {
+    storeRef.current = createCounterStore()
+  }
+
+  return (
+    <CounterStoreContext.Provider value={storeRef.current}>
+      {children}
+    </CounterStoreContext.Provider>
+  )
+}
+
+export const useCounterStore = <T,>(
+  selector: (store: CounterStore) => T,
+): T => {
+  const counterStoreContext = useContext(CounterStoreContext)
+
+  if (!counterStoreContext) {
+    throw new Error(`useCounterStore must be used within CounterStoreProvider`)
+  }
+
+  return useStore(counterStoreContext, selector)
+}0:{"buildId":"NZOstE4fjniOVrBpmlaRl","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container-custom py-12","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Does Zustand work with Next.js App Router?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, Zustand works with the App Router. However, since stores are global, you need to be careful when using them in Server Components to avoid sharing state between requests. The recommended approach is to create a store per request using a Context Provider.\"}},{\"@type\":\"Question\",\"name\":\"How to use Zustand in Server Components?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"You cannot use Zustand hooks directly in Server Components. Instead, you should fetch data in the Server Component and pass it as props to a Client Component, or initialize a store in a Client Component provider.\"}}]}"}}],["$","div",null,{"className":"max-w-4xl mx-auto","children":[["$","h1",null,{"className":"text-4xl md:text-5xl font-bold mb-6 text-gray-900","children":"Using Zustand with Next.js App Router"}],["$","p",null,{"className":"text-xl text-gray-600 mb-12","children":"A complete guide to Server Components, SSR, and avoiding global state pollution."}],["$","section",null,{"className":"mb-16","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"The Challenge: Global State vs. SSR"}],["$","p",null,{"className":"text-gray-700 mb-4","children":"In a Single Page Application (SPA), a global store variable is fine. But in Next.js (SSR), global variables are shared across all requests on the server. This means one user's data could accidentally leak to another user if you aren't careful."}],["$","div",null,{"className":"bg-yellow-50 border-l-4 border-yellow-500 p-4","children":["$","p",null,{"className":"font-medium text-yellow-900","children":"Warning: Do not define a global store using `create()` if you plan to initialize it with data from the server."}]}]]}],["$","section",null,{"className":"mb-16","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"The Solution: Store Provider Pattern"}],["$","p",null,{"className":"text-gray-700 mb-6","children":"To ensure isolation, we create a new store instance for each request (or component tree) using React Context."}],["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"1. Create the Store Factory"}],["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"// src/stores/counter-store.ts\nimport { createStore } from 'zustand/vanilla'\n\nexport type CounterState = {\n  count: number\n}\n\nexport type CounterActions = {\n  decrementCount: () => void\n  incrementCount: () => void\n}\n\nexport type CounterStore = CounterState & CounterActions\n\nexport const defaultInitState: CounterState = {\n  count: 0,\n}\n\nexport const createCounterStore = (initState: CounterState = defaultInitState) => {\n  return createStore<CounterStore>()((set) => ({\n    ...initState,\n    decrementCount: () => set((state) => ({ count: state.count - 1 })),\n    incrementCount: () => set((state) => ({ count: state.count + 1 })),\n  }))\n}"}]}],["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"2. Create the Provider"}],["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"$2"}]}],"$L3","$L4"]}]]}]]}],null,"$L5"]}],"loading":null,"isPartial":false}
+3:["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"3. Use in Layout or Page"}]
+4:["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"// app/layout.tsx\nimport { CounterStoreProvider } from '@/providers/counter-store-provider'\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <html lang=\"en\">\n      <body>\n        <CounterStoreProvider>\n          {children}\n        </CounterStoreProvider>\n      </body>\n    </html>\n  )\n}"}]}]
+5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
+8:null

@@ -1,0 +1,50 @@
+1:"$Sreact.fragment"
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+2:T472,// src/providers/counter-store-provider.tsx
+'use client'
+
+import { type ReactNode, createContext, useRef, useContext } from 'react'
+import { useStore } from 'zustand'
+import { type CounterStore, createCounterStore } from '@/stores/counter-store'
+
+export type CounterStoreApi = ReturnType<typeof createCounterStore>
+
+export const CounterStoreContext = createContext<CounterStoreApi | undefined>(
+  undefined,
+)
+
+export interface CounterStoreProviderProps {
+  children: ReactNode
+}
+
+export const CounterStoreProvider = ({
+  children,
+}: CounterStoreProviderProps) => {
+  const storeRef = useRef<CounterStoreApi>(null)
+  if (!storeRef.current) {
+    storeRef.current = createCounterStore()
+  }
+
+  return (
+    <CounterStoreContext.Provider value={storeRef.current}>
+      {children}
+    </CounterStoreContext.Provider>
+  )
+}
+
+export const useCounterStore = <T,>(
+  selector: (store: CounterStore) => T,
+): T => {
+  const counterStoreContext = useContext(CounterStoreContext)
+
+  if (!counterStoreContext) {
+    throw new Error(`useCounterStore must be used within CounterStoreProvider`)
+  }
+
+  return useStore(counterStoreContext, selector)
+}0:{"buildId":"NZOstE4fjniOVrBpmlaRl","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container-custom py-12","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Zustand は Next.js App Router で動作しますか？\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"はい、Zustand は App Router で動作します。ただし、store はグローバルであるため、Server Components で使用する場合は、リクエスト間で状態を共有しないように注意する必要があります。推奨されるアプローチは、Context Provider を使用してリクエストごとに store を作成することです。\"}},{\"@type\":\"Question\",\"name\":\"Server Components で Zustand を使用するには？\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Server Components で直接 Zustand フックを使用することはできません。代わりに、Server Component でデータを取得し、それを Props として Client Component に渡すか、Client Component プロバイダーで store を初期化する必要があります。\"}}]}"}}],["$","div",null,{"className":"max-w-4xl mx-auto","children":[["$","h1",null,{"className":"text-4xl md:text-5xl font-bold mb-6 text-gray-900","children":"Next.js App Router で Zustand を使用する"}],["$","p",null,{"className":"text-xl text-gray-600 mb-12","children":"Server Components、SSR、およびグローバル状態汚染の回避に関する完全ガイド。"}],["$","section",null,{"className":"mb-16","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"課題：グローバル状態 vs SSR"}],["$","p",null,{"className":"text-gray-700 mb-4","children":"シングルページアプリケーション (SPA) では、グローバルな store 変数で問題ありません。しかし、Next.js (SSR) では、グローバル変数はサーバー上のすべてのリクエスト間で共有されます。つまり、注意しないと、あるユーザーのデータが誤って別のユーザーに漏洩する可能性があります。"}],["$","div",null,{"className":"bg-yellow-50 border-l-4 border-yellow-500 p-4","children":["$","p",null,{"className":"font-medium text-yellow-900","children":"警告：サーバーからのデータで store を初期化する予定がある場合は、`create()` を使用してグローバル store を定義しないでください。"}]}]]}],["$","section",null,{"className":"mb-16","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"解決策：Store Provider パターン"}],["$","p",null,{"className":"text-gray-700 mb-6","children":"分離を確実にするために、React Context を使用してリクエスト（またはコンポーネントツリー）ごとに新しい store インスタンスを作成します。"}],["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"1. Store ファクトリーを作成"}],["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"// src/stores/counter-store.ts\nimport { createStore } from 'zustand/vanilla'\n\nexport type CounterState = {\n  count: number\n}\n\nexport type CounterActions = {\n  decrementCount: () => void\n  incrementCount: () => void\n}\n\nexport type CounterStore = CounterState & CounterActions\n\nexport const defaultInitState: CounterState = {\n  count: 0,\n}\n\nexport const createCounterStore = (initState: CounterState = defaultInitState) => {\n  return createStore<CounterStore>()((set) => ({\n    ...initState,\n    decrementCount: () => set((state) => ({ count: state.count - 1 })),\n    incrementCount: () => set((state) => ({ count: state.count + 1 })),\n  }))\n}"}]}],["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"2. Provider を作成"}],["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"$2"}]}],"$L3","$L4"]}]]}]]}],null,"$L5"]}],"loading":null,"isPartial":false}
+3:["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"3. Layout または Page で使用"}]
+4:["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"// app/layout.tsx\nimport { CounterStoreProvider } from '@/providers/counter-store-provider'\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <html lang=\"en\">\n      <body>\n        <CounterStoreProvider>\n          {children}\n        </CounterStoreProvider>\n      </body>\n    </html>\n  )\n}"}]}]
+5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
+8:null

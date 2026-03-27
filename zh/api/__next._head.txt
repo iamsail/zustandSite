@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"ViewportBoundary"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"NZOstE4fjniOVrBpmlaRl","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"API 参考"}],["$","meta","1",{"name":"description","content":"完整的 Zustand API 参考，包括 create、set、get 和中间件函数。"}],["$","meta","2",{"name":"keywords","content":"zustand, react 状态管理, react hooks, 状态管理, react 教程, zustand 教程"}]]}]}]}],null]}],"loading":null,"isPartial":false}

@@ -1,0 +1,50 @@
+1:"$Sreact.fragment"
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+2:T472,// src/providers/counter-store-provider.tsx
+'use client'
+
+import { type ReactNode, createContext, useRef, useContext } from 'react'
+import { useStore } from 'zustand'
+import { type CounterStore, createCounterStore } from '@/stores/counter-store'
+
+export type CounterStoreApi = ReturnType<typeof createCounterStore>
+
+export const CounterStoreContext = createContext<CounterStoreApi | undefined>(
+  undefined,
+)
+
+export interface CounterStoreProviderProps {
+  children: ReactNode
+}
+
+export const CounterStoreProvider = ({
+  children,
+}: CounterStoreProviderProps) => {
+  const storeRef = useRef<CounterStoreApi>(null)
+  if (!storeRef.current) {
+    storeRef.current = createCounterStore()
+  }
+
+  return (
+    <CounterStoreContext.Provider value={storeRef.current}>
+      {children}
+    </CounterStoreContext.Provider>
+  )
+}
+
+export const useCounterStore = <T,>(
+  selector: (store: CounterStore) => T,
+): T => {
+  const counterStoreContext = useContext(CounterStoreContext)
+
+  if (!counterStoreContext) {
+    throw new Error(`useCounterStore must be used within CounterStoreProvider`)
+  }
+
+  return useStore(counterStoreContext, selector)
+}0:{"buildId":"NZOstE4fjniOVrBpmlaRl","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container-custom py-12","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Zustand 支持 Next.js App Router 吗？\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"是的，Zustand 支持 App Router。但是，由于 store 是全局的，在 Server Components 中使用时需要小心，以避免在请求之间共享状态。推荐的方法是使用 Context Provider 为每个请求创建一个 store。\"}},{\"@type\":\"Question\",\"name\":\"如何在 Server Components 中使用 Zustand？\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"你不能在 Server Components 中直接使用 Zustand hooks。相反，你应该在 Server Component 中获取数据并将其作为 props 传递给 Client Component，或者在 Client Component provider 中初始化 store。\"}}]}"}}],["$","div",null,{"className":"max-w-4xl mx-auto","children":[["$","h1",null,{"className":"text-4xl md:text-5xl font-bold mb-6 text-gray-900","children":"在 Next.js App Router 中使用 Zustand"}],["$","p",null,{"className":"text-xl text-gray-600 mb-12","children":"关于 Server Components、SSR 以及避免全局状态污染的完整指南。"}],["$","section",null,{"className":"mb-16","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"挑战：全局状态 vs SSR"}],["$","p",null,{"className":"text-gray-700 mb-4","children":"在单页应用 (SPA) 中，全局 store 变量没问题。但在 Next.js (SSR) 中，全局变量在服务器上的所有请求之间共享。这意味着如果不小心，一个用户的数据可能会意外泄漏给另一个用户。"}],["$","div",null,{"className":"bg-yellow-50 border-l-4 border-yellow-500 p-4","children":["$","p",null,{"className":"font-medium text-yellow-900","children":"警告：如果你计划用服务器数据初始化 store，请勿使用 `create()` 定义全局 store。"}]}]]}],["$","section",null,{"className":"mb-16","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"解决方案：Store Provider 模式"}],["$","p",null,{"className":"text-gray-700 mb-6","children":"为了确保隔离，我们使用 React Context 为每个请求（或组件树）创建一个新的 store 实例。"}],["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"1. 创建 Store 工厂"}],["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"// src/stores/counter-store.ts\nimport { createStore } from 'zustand/vanilla'\n\nexport type CounterState = {\n  count: number\n}\n\nexport type CounterActions = {\n  decrementCount: () => void\n  incrementCount: () => void\n}\n\nexport type CounterStore = CounterState & CounterActions\n\nexport const defaultInitState: CounterState = {\n  count: 0,\n}\n\nexport const createCounterStore = (initState: CounterState = defaultInitState) => {\n  return createStore<CounterStore>()((set) => ({\n    ...initState,\n    decrementCount: () => set((state) => ({ count: state.count - 1 })),\n    incrementCount: () => set((state) => ({ count: state.count + 1 })),\n  }))\n}"}]}],["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"2. 创建 Provider"}],["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"$2"}]}],"$L3","$L4"]}]]}]]}],null,"$L5"]}],"loading":null,"isPartial":false}
+3:["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"3. 在 Layout 或 Page 中使用"}]
+4:["$","pre",null,{"className":"bg-gray-900 text-gray-100 p-4 rounded-lg mb-8 overflow-x-auto","children":["$","code",null,{"children":"// app/layout.tsx\nimport { CounterStoreProvider } from '@/providers/counter-store-provider'\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <html lang=\"en\">\n      <body>\n        <CounterStoreProvider>\n          {children}\n        </CounterStoreProvider>\n      </body>\n    </html>\n  )\n}"}]}]
+5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
+8:null

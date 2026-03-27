@@ -1,0 +1,53 @@
+1:"$Sreact.fragment"
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+2:T4c9,function TodoList() {
+  const todos = useTodoStore((state) => state.todos)
+  const addTodo = useTodoStore((state) => state.addTodo)
+  const toggleTodo = useTodoStore((state) => state.toggleTodo)
+  const removeTodo = useTodoStore((state) => state.removeTodo)
+  const [input, setInput] = useState('')
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (input.trim()) {
+      addTodo(input)
+      setInput('')
+    }
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Add a todo..."
+        />
+        <button type="submit">Add</button>
+      </form>
+      
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => toggleTodo(todo.id)}
+            />
+            <span style={{ 
+              textDecoration: todo.completed ? 'line-through' : 'none' 
+            }}>
+              {todo.text}
+            </span>
+            <button onClick={() => removeTodo(todo.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}0:{"buildId":"NZOstE4fjniOVrBpmlaRl","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container-custom py-12","children":["$","div",null,{"className":"max-w-4xl mx-auto","children":[["$","h1",null,{"className":"text-4xl font-bold mb-8","children":"Zustand 教程"}],["$","div",null,{"className":"prose max-w-none","children":[["$","section",null,{"className":"mb-12","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"教程概览"}],["$","p",null,{"className":"text-lg mb-4","children":"欢迎来到全面的 Zustand 教程！本指南将带你从入门到精通，教你关于 Zustand 状态管理的一切。"}]]}],["$","section",null,{"className":"mb-12","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"第 1 课：Zustand 简介"}],["$","p",null,{"className":"mb-4","children":"Zustand 是一个轻量级的 React 状态管理库，它提供："}],["$","ul",null,{"className":"list-disc pl-6 mb-4 space-y-2","children":[["$","li",null,{"children":"简单直观的 API"}],["$","li",null,{"children":"无需样板代码"}],["$","li",null,{"children":"出色的 TypeScript 支持"}],["$","li",null,{"children":"卓越的性能和自动优化"}],["$","li",null,{"children":"小巧的包体积（小于 1KB）"}]]}],["$","h3",null,{"className":"text-2xl font-semibold mb-4 mt-6","children":"为什么选择 Zustand？"}],["$","p",null,{"className":"mb-4","children":"与其他状态管理解决方案（如 Redux 或 MobX）相比，Zustand 提供了更简单的 API 和更少的样板代码，同时保持了强大的功能和卓越的性能。"}]]}],["$","section",null,{"className":"mb-12","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"第 2 课：创建你的第一个 Store"}],["$","p",null,{"className":"mb-4","children":"让我们创建一个简单的待办事项列表应用程序："}],["$","pre",null,{"children":["$","code",null,{"children":"import { create } from 'zustand'\n\ninterface Todo {\n  id: number\n  text: string\n  completed: boolean\n}\n\ninterface TodoStore {\n  todos: Todo[]\n  addTodo: (text: string) => void\n  toggleTodo: (id: number) => void\n  removeTodo: (id: number) => void\n}\n\nconst useTodoStore = create<TodoStore>((set) => ({\n  todos: [],\n  addTodo: (text) =>\n    set((state) => ({\n      todos: [\n        ...state.todos,\n        { id: Date.now(), text, completed: false }\n      ]\n    })),\n  toggleTodo: (id) =>\n    set((state) => ({\n      todos: state.todos.map((todo) =>\n        todo.id === id\n          ? { ...todo, completed: !todo.completed }\n          : todo\n      )\n    })),\n  removeTodo: (id) =>\n    set((state) => ({\n      todos: state.todos.filter((todo) => todo.id !== id)\n    })),\n}))"}]}]]}],["$","section",null,{"className":"mb-12","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"Lesson 3: Using the Store in Components"}],["$","pre",null,{"children":["$","code",null,{"children":"$2"}]}]]}],"$L3","$L4"]}]]}]}],null,"$L5"]}],"loading":null,"isPartial":false}
+3:["$","section",null,{"className":"mb-12","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"第 4 课：异步操作和高级模式"}],["$","h3",null,{"className":"text-2xl font-semibold mb-4","children":"异步操作"}],["$","p",null,{"className":"mb-4","children":"在 Zustand 中处理异步操作非常简单 - 只需将你的操作设为 async！"}],["$","pre",null,{"children":["$","code",null,{"children":"const useStore = create((set) => ({\n  data: null,\n  loading: false,\n  error: null,\n  fetchData: async () => {\n    set({ loading: true, error: null })\n    try {\n      const response = await fetch('https://api.example.com/data')\n      const data = await response.json()\n      set({ data, loading: false })\n    } catch (error) {\n      set({ error: error.message, loading: false })\n    }\n  }\n}))"}]}],["$","h3",null,{"className":"text-2xl font-semibold mb-4 mt-6","children":"计算属性"}],["$","p",null,{"className":"mb-4","children":"使用选择器创建派生状态："}],["$","pre",null,{"children":["$","code",null,{"children":"const useStore = create((set) => ({\n  todos: [],\n  // ... actions\n}))\n\n// In your component\nconst completedCount = useStore(\n  (state) => state.todos.filter(t => t.completed).length\n)\nconst totalCount = useStore((state) => state.todos.length)"}]}]]}]
+4:["$","section",null,{"className":"mb-12","children":[["$","h2",null,{"className":"text-3xl font-bold mb-6","children":"下一步"}],["$","p",null,{"className":"mb-4","children":"继续学习以下主题："}],["$","ul",null,{"className":"list-disc pl-6 space-y-2","children":[["$","li",null,{"children":"用于持久化和开发工具的中间件"}],["$","li",null,{"children":"测试 Zustand store"}],["$","li",null,{"children":"高级 TypeScript 模式"}],["$","li",null,{"children":"性能优化技巧"}],["$","li",null,{"children":"与其他库集成"}]]}]]}]
+5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
+8:null
